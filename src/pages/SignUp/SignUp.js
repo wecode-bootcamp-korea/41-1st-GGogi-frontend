@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './SignUp.scss';
 
 const SignUp = () => {
@@ -35,9 +35,6 @@ const SignUp = () => {
   const { birthYear, birthMonth, birthDay } = inputValues;
   const birthdate = birthYear.slice(-2) + birthMonth + birthDay;
 
-  console.log(email, userName, birthdate, phone, address, pwd, confirmPwd);
-
-  // useEffect(() => {
   const onClickSignUp = (e) => {
     e.preventDefault();
     fetch('http://10.58.52.143:3000/users/signup', {
@@ -55,7 +52,6 @@ const SignUp = () => {
       .then((response) => response.json())
       .then((result) => console.log(result));
   };
-  // }, []);
 
   return (
     <div className="signUp">
