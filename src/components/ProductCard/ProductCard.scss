@@ -1,0 +1,41 @@
+.productCard {
+  width: 249px;
+
+  .productImg {
+    height: 320px;
+    width: 249px;
+    position: relative;
+  }
+  .shoppingCartBtn {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 280px;
+    left: 190px;
+    background-color: transparent;
+    img {
+      margin-right: 100px;
+    }
+  }
+  .productInfo {
+    width: 249px;
+    height: 92.39px;
+    padding: 14px 10px 0 0;
+  }
+  .contentRow {
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .reviewCount {
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .reviewCount {
+    display: flex;
+    flex-direction: row;
+  }
+}
