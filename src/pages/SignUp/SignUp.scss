@@ -1,0 +1,124 @@
+@import './../../styles/common.scss';
+
+.signUp {
+  @include flexColumn(center, center);
+  margin: 50px 0 60px 0;
+
+  .title {
+    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .criticalItems {
+    text-align: right;
+    font-size: 12px;
+    width: 640px;
+  }
+
+  .star {
+    color: $highlight-color;
+  }
+
+  .line {
+    width: 640px;
+    border: 1px solid #333333;
+  }
+
+  .signUpSection {
+    display: flex;
+    align-items: center;
+    width: 640px;
+    padding: 10px 20px;
+
+    &:nth-child(7) {
+      margin-top: 20px;
+    }
+
+    .nameSection {
+      width: 139px;
+      text-align: left;
+    }
+  }
+
+  .inputSection {
+    margin-right: 10px;
+    height: 48px;
+    font-size: 14px;
+
+    .inputValue {
+      width: 333px;
+      height: 46px;
+      padding: 0 11px 1px 15px;
+      font-size: 14px;
+    }
+
+    .error,
+    .notifyAddress {
+      text-indent: 10px;
+      font-size: 12px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .notifyAddress {
+      margin: 15px 0;
+      color: $border-color;
+    }
+
+    .birthWrapper {
+      border: 1px solid $border-color;
+      border-radius: 3px;
+    }
+
+    .inputBirth {
+      width: 96px;
+      text-align: center;
+      border: none;
+    }
+  }
+
+  .btnSection {
+    width: 120px;
+
+    button,
+    .none {
+      width: 100%;
+      height: 44px;
+    }
+
+    .comfirmRepetition,
+    .getCode {
+      color: $basic-color;
+      background-color: white;
+      border: 1px solid $basic-color;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+
+  .radioSection {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+
+  .signUpBtnSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0;
+
+    .signupBtn {
+      width: 240px;
+      height: 56px;
+      background-color: $basic-color;
+      color: white;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
