@@ -1,3 +1,22 @@
 * {
   box-sizing: border-box;
+  font-family: 'Lobster', cursive;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+$basic-color: #5f0080;
+$highlight-color: #fa622f;
+$border-color: #666666;
+
+@mixin flexRow($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flexColumn($justify, $align) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
 }
