@@ -1,8 +1,16 @@
-import React from 'react';
+import Navloginsignup from './components/Navloginsignup';
+import Navsearchline from './components/Navsearchline';
+import Navcategory from './components/Navcategory';
 import './Nav.scss';
 
 const Nav = () => {
-  return <div>Nav</div>;
+  return (
+    <nav className="nav">
+      <Navloginsignup />
+      <Navsearchline />
+      <Navcategory />
+    </nav>
+  );
 };
 
 export default Nav;
