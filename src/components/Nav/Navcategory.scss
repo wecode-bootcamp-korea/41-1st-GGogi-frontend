@@ -1,4 +1,4 @@
-.Navcategory {
+.navCategory {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,8 +11,10 @@
   width: 1050px;
   background-color: white;
 
-  .Navcategory {
+  .category {
+    margin-left: 15px;
   }
+
   .itemCategory span {
     padding: 0 40px;
     font-size: 15px;

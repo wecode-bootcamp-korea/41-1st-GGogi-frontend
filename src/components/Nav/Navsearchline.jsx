@@ -1,12 +1,12 @@
 import React from 'react';
 import './Navsearchline.scss';
-import Pin from '../images/pin.png';
-import Heart from '../images/heart.png';
-import Cart from '../images/shoppingCart.png';
+import Pin from '../../assets/images/pin.png';
+import Heart from '../../assets/images/heart.png';
+import Cart from '../../assets/images/shoppingCart.png';
 
 const Navsearchline = () => {
   return (
-    <div className="Navsearchline">
+    <div className="navSearchLine">
       <div className="logo">
         <span className="navMarketKurlyEg">kurly</span>
         <span className="navMarketKurlyKr">마켓컬리</span>

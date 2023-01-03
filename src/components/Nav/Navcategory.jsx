@@ -4,9 +4,9 @@ import './Navcategory.scss';
 
 const Navcategory = () => {
   return (
-    <div className="Navcategory">
+    <div className="navCategory">
       <div className="sideCategory">
-        <span>
+        <span className="category">
           <i class="fa-solid fa-bars"></i> 카테고리
         </span>
       </div>
@@ -16,7 +16,7 @@ const Navcategory = () => {
         ))}
       </div>
       <div className="luciferParcel">
-        <span className="lucifer">샛별 택배 </span>{' '}
+        <span className="lucifer">샛별 택배 </span>
         <span className="parcel"> 배송안내</span>
       </div>
     </div>

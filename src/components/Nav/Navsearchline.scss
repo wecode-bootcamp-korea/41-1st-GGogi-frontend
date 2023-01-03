@@ -1,4 +1,4 @@
-.Navsearchline {
+.navSearchLine {
   width: 1050px;
   display: flex;
   justify-content: space-around;
@@ -20,6 +20,7 @@
       bottom: 3px;
     }
   }
+
   .navSearchBar {
     position: relative;
     .searchBar {
@@ -27,7 +28,6 @@
       width: 360px;
       height: 44px;
       padding-left: 16px;
-      // margin-right: 85px;
       border: 1px solid #5f0080;
       border-radius: 6px;
       background-color: rgb(255, 255, 255);

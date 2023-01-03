@@ -1,6 +1,6 @@
-import Navloginsignup from './components/Navloginsignup';
-import Navsearchline from './components/Navsearchline';
-import Navcategory from './components/Navcategory';
+import Navloginsignup from './Navloginsignup';
+import Navsearchline from './Navsearchline';
+import Navcategory from './Navcategory';
 import './Nav.scss';
 
 const Nav = () => {
