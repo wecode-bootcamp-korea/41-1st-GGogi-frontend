@@ -1,8 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
-  return <div>Login</div>;
+  const [inputValues, setInputValues] = useState({
+    id: '',
+    pwd: '',
+  });
+
+  const handleValues = (e) => {
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+  };
+
+  const { id, pwd } = inputValues;
+
+  const onClickLogin = (e) => {
+    e.preventDefault();
+    // fetch("경로", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json; charset=utf-8" },
+    //   body: JSON.stringify({
+    //     id: id,
+    //     password: pwd,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log(result.accessToken);
+    //     localStorage.setItem("Token", result.accessToken);
+    //   });
+  };
+
+  return (
+    <div className="login">
+      <h1 className="title">로그인</h1>
+      <form onChange={handleValues}>
+        <input
+          className="inputId"
+          name="id"
+          type="email"
+          defaultValue={id}
+          placeholder="아이디를 입력해주세요"
+        />
+        <input
+          className="inputPwd"
+          name="pwd"
+          type="password"
+          defaultValue={pwd}
+          placeholder="비밀번호를 입력해주세요"
+        />
+        <div className="findSection">
+          <Link to="/find/id">아이디 찾기</Link>
+          <span> | </span>
+          <Link to="/find/password">비밀번호 찾기</Link>
+        </div>
+        <button className="loginBtn" type="submit">
+          로그인
+        </button>
+        <button className="signUpBtn" onClick={onClickLogin}>
+          <Link to="/signup">회원가입</Link>
+          {/* 회원가입 */}
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;
