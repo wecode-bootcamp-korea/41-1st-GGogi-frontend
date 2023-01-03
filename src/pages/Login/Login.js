@@ -17,17 +17,16 @@ const Login = () => {
 
   const onClickLogin = (e) => {
     e.preventDefault();
-    fetch('경로', {
+    fetch('http://10.58.52.143:3000/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
-        id: id,
+        email: id,
         password: pwd,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.accessToken);
         localStorage.setItem('Token', result.accessToken);
       });
   };
