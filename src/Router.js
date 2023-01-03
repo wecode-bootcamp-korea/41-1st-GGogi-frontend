@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav path="Nav" element={<Nav />} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
