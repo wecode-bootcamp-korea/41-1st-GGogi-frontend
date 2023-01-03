@@ -1,7 +1,5 @@
 import React from 'react';
 import shoppingCart from '../../assets/images/shoppingCart.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
 import './ProductCard.scss';
 
@@ -20,12 +18,7 @@ const ProductCard = ({ product }) => {
         <h3 className="productName">{product.username}</h3>
         <div className="contentRow">
           {product.username}
-          <span>원</span>
-        </div>
-        <div className="reviewCount">
-          <FontAwesomeIcon icon={faMessage} />
-          <span>후기</span>
-          <div>{product.username}</div>
+          <span> 원</span>
         </div>
       </div>
     </div>
