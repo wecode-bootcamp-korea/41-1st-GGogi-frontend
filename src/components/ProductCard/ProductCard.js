@@ -1,6 +1,5 @@
 import React from 'react';
 import shoppingCart from '../../assets/images/shoppingCart.svg';
-
 import './ProductCard.scss';
 
 const ProductCard = ({ product }) => {
