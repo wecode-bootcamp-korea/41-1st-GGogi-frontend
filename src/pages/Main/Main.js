@@ -1,8 +1,9 @@
 import React from 'react';
+import ShoppingModal from '../../components/ShoppingModal/ShoppingModal';
 import './Main.scss';
 
 const Main = () => {
-  return <div>Main</div>;
+  return <ShoppingModal />;
 };
 
 export default Main;

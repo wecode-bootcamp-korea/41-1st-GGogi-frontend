@@ -1,0 +1,50 @@
+body {
+  background-color: yellow;
+}
+
+.shoppingModal {
+  height: 322.094px;
+  width: 440px;
+  margin: 32px;
+  padding: 30px;
+  max-width: 600px;
+  font-size: 16px;
+  position: relative;
+  border: 1px black;
+  background-color: white;
+  border-radius: 12px;
+  // transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  .shoppingModalTop {
+    .shoppingModalName {
+      font-size: 14px;
+    }
+    .shoppingModalCount {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      span {
+        font-size: 16px;
+        font-weight: 700px;
+      }
+
+      input {
+      }
+    }
+  }
+  .shoppingModalMiddle {
+    .shoppingModalPrice {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      span {
+      }
+      div {
+      }
+    }
+  }
+  .shoppingModalBottom {
+    button {
+    }
+  }
+}
