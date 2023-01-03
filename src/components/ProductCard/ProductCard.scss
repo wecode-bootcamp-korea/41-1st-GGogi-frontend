@@ -1,10 +1,10 @@
 .productCard {
   width: 249px;
+  position: relative;
 
   .productImg {
     height: 320px;
     width: 249px;
-    position: relative;
   }
   .shoppingCartBtn {
     height: 45px;
@@ -12,18 +12,22 @@
     border-radius: 100%;
     border: 0;
     cursor: pointer;
-    position: absolute;
-    top: 280px;
-    left: 190px;
     background-color: transparent;
+    position: absolute;
+    bottom: 110px;
+    left: 190px;
+
     img {
-      margin-right: 100px;
+      width: 45px;
+      height: 45px;
     }
   }
   .productInfo {
-    width: 249px;
     height: 92.39px;
     padding: 14px 10px 0 0;
+    h3 {
+      font-size: 16px;
+    }
   }
   .contentRow {
     font-size: 16px;

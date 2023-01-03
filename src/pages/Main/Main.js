@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ProductCardList from '../../components/ProductCard/ProductCardList';
 import './Main.scss';
-import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Main = () => {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((result) => result.json())
+      .then((data) => setProductList(data));
+  }, []);
+
   return (
-    <div>
-      <ProductCard />
+    <div className="main">
+      <ProductCardList productList={productList} />
     </div>
   );
 };
