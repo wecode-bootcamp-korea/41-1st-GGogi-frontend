@@ -17,19 +17,19 @@ const Login = () => {
 
   const onClickLogin = (e) => {
     e.preventDefault();
-    // fetch("경로", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json; charset=utf-8" },
-    //   body: JSON.stringify({
-    //     id: id,
-    //     password: pwd,
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     console.log(result.accessToken);
-    //     localStorage.setItem("Token", result.accessToken);
-    //   });
+    fetch('경로', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        id: id,
+        password: pwd,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.accessToken);
+        localStorage.setItem('Token', result.accessToken);
+      });
   };
 
   return (
@@ -60,7 +60,6 @@ const Login = () => {
         </button>
         <button className="signUpBtn" onClick={onClickLogin}>
           <Link to="/signup">회원가입</Link>
-          {/* 회원가입 */}
         </button>
       </form>
     </div>
