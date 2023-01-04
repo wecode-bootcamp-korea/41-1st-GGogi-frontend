@@ -11,9 +11,9 @@
       height: 24px;
     }
     .cartProductImg {
-      margin: 0 20px;
       width: 60px;
       height: 78px;
+      margin: 0 20px;
     }
 
     .productName {
@@ -26,15 +26,15 @@
 
     .price {
       width: 127px;
+      margin-right: 20px;
       text-align: right;
       font-weight: 700;
-      margin-right: 20px;
     }
 
     .deleteBtn {
-      color: $border-color;
       background-color: white;
       border: none;
+      color: $border-color;
       cursor: pointer;
     }
   }

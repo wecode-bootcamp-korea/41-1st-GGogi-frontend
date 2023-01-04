@@ -1,6 +1,8 @@
 @import './../../../styles/variables.scss';
 
 .cartInfo {
+  position: sticky;
+  top: 60px;
   width: 283px;
   height: 450px;
 
@@ -8,11 +10,18 @@
     width: 284px;
     height: 56px;
     margin-top: 20px;
-    font-size: 16px;
-    color: white;
     background-color: $basic-color;
     border: none;
     border-radius: 3px;
+    font-size: 16px;
+    color: white;
     cursor: pointer;
+  }
+
+  .cartInfoAside {
+    padding: 10px 9px;
+    line-height: 16px;
+    font-size: 12px;
+    color: $border-color;
   }
 }

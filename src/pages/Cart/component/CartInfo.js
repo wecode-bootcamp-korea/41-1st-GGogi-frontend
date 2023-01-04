@@ -1,7 +1,7 @@
-import React from 'react';
-import './CartInfo.scss';
 import CartInfoAddress from './CartInfoAddress';
 import CartInfoPrice from './CartInfoPrice';
+import { CARTINFO_ASIDE } from './CartInfoAside';
+import './CartInfo.scss';
 
 const CartInfo = () => {
   return (
@@ -9,6 +9,15 @@ const CartInfo = () => {
       <CartInfoAddress />
       <CartInfoPrice />
       <button className="orderBtn">주문하기</button>
+      <div className="cartInfoAside">
+        {CARTINFO_ASIDE.map((item) => {
+          return (
+            <ul key={item.id}>
+              <li className="cartInfoAsideList">・ {item.content}</li>
+            </ul>
+          );
+        })}
+      </div>
     </div>
   );
 };

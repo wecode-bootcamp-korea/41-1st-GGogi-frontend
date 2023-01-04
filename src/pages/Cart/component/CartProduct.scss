@@ -39,20 +39,21 @@
       padding-bottom: 4px;
 
       .deleteSelectionBtn {
-        border: none;
-        background-color: white;
-        font-size: 14px;
         padding: 0;
+        background-color: white;
+        border: none;
+        font-size: 14px;
         cursor: pointer;
       }
     }
   }
 
-  .cartLine {
+  .cartLineTop {
     width: 100%;
     border: 1px solid black;
     margin: 10px 0;
   }
+
   .cartTitleSection {
     display: flex;
     align-items: center;
@@ -70,5 +71,11 @@
       font-size: 20px;
       font-weight: 600;
     }
+  }
+
+  .cartLineUnder {
+    width: 100%;
+    border: 1px solid $border-color;
+    margin: 10px 0;
   }
 }

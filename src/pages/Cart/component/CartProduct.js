@@ -1,8 +1,7 @@
-import React from 'react';
 import CartProductList from './CartProductList';
-import './CartProduct.scss';
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import './CartProduct.scss';
 
 const CartProduct = () => {
   return (
@@ -22,12 +21,13 @@ const CartProduct = () => {
           <button className="deleteSelectionBtn">선택삭제</button>
         </div>
       </div>
-      <hr className="cartLine" />
+      <hr className="cartLineTop" />
       <div className="cartTitleSection">
         <AiOutlineShoppingCart className="cartIcon" />
         <span className="wholeProduct">전체상품</span>
       </div>
       <CartProductList />
+      <hr className="cartLineUnder" />
     </div>
   );
 };
