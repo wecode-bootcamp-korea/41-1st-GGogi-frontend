@@ -25,8 +25,8 @@ const Navcategory = () => {
 export default Navcategory;
 
 const NAVLIST = [
-  { id: 'new', name: '신상품' },
-  { id: 'best', name: '베스트' },
-  { id: 'Sale', name: '알뜰쇼핑' },
-  { id: 'Benefits', name: '특가/헤택' },
+  { id: '1', name: '신상품' },
+  { id: '2', name: '베스트' },
+  { id: '3', name: '알뜰쇼핑' },
+  { id: '4', name: '특가/헤택' },
 ];
