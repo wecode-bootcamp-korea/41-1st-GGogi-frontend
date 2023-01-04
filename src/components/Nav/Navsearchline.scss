@@ -1,0 +1,52 @@
+.navSearchLine {
+  width: 1050px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 12.5px auto;
+
+  .logo {
+    margin: 0 15px;
+    .navMarketKurlyEg,
+    .navMarketKurlyKr {
+      color: #5f0080;
+      font-size: 30px;
+      margin-left: 20px;
+    }
+
+    .navMarketKurlyKr {
+      font-size: 18px;
+      bottom: 3px;
+    }
+  }
+
+  .navSearchBar {
+    position: relative;
+    .searchBar {
+      color: rgb(255, 255, 255, 0.1);
+      width: 360px;
+      height: 44px;
+      padding-left: 16px;
+      border: 1px solid #5f0080;
+      border-radius: 6px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgb(247 247 247) 0px 0px 0px 1px inset;
+    }
+    .navMagnifyingGlassIcon {
+      position: absolute;
+      color: #5f0080;
+      right: 11px;
+      top: 14px;
+      font-size: 16px;
+    }
+  }
+
+  .navFontIcon {
+    margin-right: 10px;
+    img {
+      width: 25px;
+      margin: 0 14px;
+    }
+  }
+}

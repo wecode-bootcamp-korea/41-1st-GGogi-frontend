@@ -1,0 +1,27 @@
+.loginSignup {
+  width: 950px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  color: rgb(0, 0, 0, 0.7);
+  margin: 10px auto 12.5px auto;
+
+  .login {
+    border-right: 1px solid rgb(0, 0, 0, 0.1);
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  .signup {
+    color: #5f0080;
+    border-right: 1px solid rgb(0, 0, 0, 0.1);
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  .inquiry {
+    margin-right: 23px;
+  }
+}
