@@ -6,7 +6,7 @@ const PlusMinusBtn = () => {
     <div className="plusMinusBtn">
       <button className="ModalBtn">-</button>
       <div className="plusMinusTotal">1</div>
-      <button className="ModalBtn">+</button>
+      <button className="modalBtn">+</button>
     </div>
   );
 };
