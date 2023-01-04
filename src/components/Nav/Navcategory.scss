@@ -1,0 +1,44 @@
+.navCategory {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 80px;
+  width: 1050px;
+  background-color: white;
+
+  .category {
+    margin-left: 15px;
+  }
+
+  .itemCategory span {
+    padding: 0 40px;
+    font-size: 15px;
+  }
+
+  .sideCategory {
+    margin-left: 32px;
+  }
+
+  .luciferParcel {
+    width: 125px;
+    height: 27px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 18px;
+    padding-top: 5px;
+    margin-right: 30px;
+    margin-bottom: 3px;
+  }
+
+  .lucifer {
+    color: #5f0080;
+    font-size: 13px;
+  }
+  .parcel {
+    font-size: 13px;
+  }
+}
