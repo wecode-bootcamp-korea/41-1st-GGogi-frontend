@@ -1,0 +1,41 @@
+@import './../../../styles/variables.scss';
+
+.cartProductList {
+  .productList {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .checkIcon {
+      width: 24px;
+      height: 24px;
+    }
+    .cartProductImg {
+      margin: 0 10px;
+      width: 60px;
+      height: 78px;
+    }
+
+    .productName {
+      width: 345px;
+    }
+
+    .wating {
+      width: 88px;
+    }
+
+    .price {
+      width: 127px;
+      text-align: right;
+      font-weight: 700;
+      margin-right: 20px;
+    }
+
+    .deleteBtn {
+      color: $border-color;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

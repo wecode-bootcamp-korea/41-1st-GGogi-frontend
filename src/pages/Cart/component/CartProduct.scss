@@ -1,0 +1,75 @@
+@import './../../../styles/variables.scss';
+
+.cartProduct {
+  width: 742px;
+  padding: 10px;
+  border: 1px solid blue;
+
+  .checkSection {
+    display: flex;
+    align-items: center;
+    height: 36px;
+
+    .checkIcon {
+      width: 24px;
+      height: 24px;
+      color: $basic-color;
+      cursor: pointer;
+    }
+
+    .uncheckIcon {
+      width: 24px;
+      height: 24px;
+      color: lightgray;
+      cursor: pointer;
+    }
+
+    .wholeCheckWord {
+      margin-left: 12px;
+    }
+
+    .checkCountSection {
+      margin-left: 5px;
+    }
+
+    .stick {
+      margin: 0 20px;
+    }
+
+    .deleteBtnSection {
+      padding-bottom: 4px;
+
+      .deleteSelectionBtn {
+        border: none;
+        background-color: white;
+        font-size: 14px;
+        padding: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .cartLine {
+    width: 100%;
+    border: 1px solid black;
+    margin: 10px 0;
+  }
+  .cartTitleSection {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+
+    .cartIcon {
+      width: 30px;
+      height: 30px;
+      color: skyblue;
+      margin-right: 5px;
+    }
+
+    .wholeProduct {
+      padding-top: 3px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import './../../../styles/variables.scss';
+
+.cartInfoPrice {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .priceInfoSection {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+
+    &:last-of-type {
+      margin-top: 16px;
+
+      .priceInfo {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .orderBtn {
+    width: 284px;
+    height: 56px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: $basic-color;
+    border: none;
+    border-radius: 3px;
+  }
+}
