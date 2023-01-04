@@ -7,7 +7,7 @@ const ShoppingModal = () => {
       <div className="shoppingModalTop">
         <div className="shoppingModalName">[예찬원] 사골 미역국</div>
         <div className="shoppingModalCount">
-          <span>29,000원</span>
+          <span className="shoppingModalName">29,000원</span>
           <input type="number" placeholder="0" min="0" />
         </div>
       </div>
@@ -19,8 +19,8 @@ const ShoppingModal = () => {
         <span>로그인 후, 회원가입 적립혜택 제공</span>
       </div>
       <div className="shoppingModalBottom">
-        <button>취소</button>
-        <button>장바구니 담기</button>
+        <button className="cancelShoppingModalBtn">취소</button>
+        <button className="addShoppingModalBtn">장바구니 담기</button>
       </div>
     </div>
   );
