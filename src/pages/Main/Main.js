@@ -15,7 +15,7 @@ const Main = () => {
 
   return (
     <div className="main">
-      <ShoppingModal />;
+      <ShoppingModal />
       <ProductCardList productList={productList} />
     </div>
   );
