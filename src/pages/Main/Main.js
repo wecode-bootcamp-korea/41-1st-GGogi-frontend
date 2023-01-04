@@ -1,12 +1,20 @@
-import React from 'react';
-import AlertModal from '../../components/AlertModal/AlertModal';
+import React, { useState, useEffect } from 'react';
+import ProductCardList from '../../components/ProductCard/ProductCardList';
 import './Main.scss';
 
 const Main = () => {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((result) => result.json())
+      .then((data) => setProductList(data));
+  }, []);
+
   return (
-    <div>
-      <div>test</div>
-      <AlertModal />
+    <div className="main">
+      <ProductCardList productList={productList} />
+
     </div>
   );
 };
