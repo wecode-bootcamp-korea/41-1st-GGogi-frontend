@@ -14,8 +14,6 @@ const SignUp = () => {
     birthDay: '',
   });
 
-  const { email, userName, pwd, confirmPwd, address, phone } = inputValues;
-
   const [errorMsg, setErrorMsg] = useState({
     emailError: '',
     pwdError: '',
@@ -24,16 +22,16 @@ const SignUp = () => {
     phoneError: '',
   });
 
-  const { emailError, pwdError, confirmPwdError, userNameError, phoneError } =
-    errorMsg;
-
   const hadnleValues = (e) => {
     const { name, value } = e.target;
     setInputValues({ ...inputValues, [name]: value });
   };
 
+  const { email, userName, pwd, confirmPwd, address, phone } = inputValues;
+  const { emailError, pwdError, confirmPwdError, userNameError, phoneError } =
+    errorMsg;
   const { birthYear, birthMonth, birthDay } = inputValues;
-  const birthdate = birthYear.slice(-2) + birthMonth + birthDay;
+  const birthdate = birthYear + '-' + birthMonth + '-' + birthDay;
 
   const onClickSignUp = (e) => {
     e.preventDefault();
