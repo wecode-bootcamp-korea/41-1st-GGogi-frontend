@@ -35,7 +35,7 @@ const SignUp = () => {
 
   const onClickSignUp = (e) => {
     e.preventDefault();
-    fetch('http://10.58.52.143:3000/users/signup', {
+    fetch('http://10.58.52.116:3000/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
@@ -53,8 +53,8 @@ const SignUp = () => {
   console.log(email);
   const onClickCheckEmail = (e) => {
     e.preventDefault();
-    fetch('http://10.58.52.143:3000/users/emailcheck', {
-      method: 'GET',
+    fetch('http://10.58.52.116:3000/users/emailcheck', {
+      method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
         email: email,
@@ -173,7 +173,7 @@ const SignUp = () => {
             <p className="error">{phoneError}</p>
           </div>
           <div className="btnSection">
-            <button className="getCode">인증번호받기</button>
+            <div className="none" />
           </div>
         </div>
         <div className="signUpSection">
