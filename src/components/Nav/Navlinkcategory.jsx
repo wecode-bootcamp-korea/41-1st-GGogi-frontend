@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Navlinkcategory = ({ key, name }) => {
-  return <span key={key}>{name}</span>;
+const Navlinkcategory = ({ name }) => {
+  return <span>{name}</span>;
 };
 
 export default Navlinkcategory;

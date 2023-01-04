@@ -12,7 +12,7 @@ const Navcategory = () => {
       </div>
       <div className="itemCategory">
         {NAVLIST.map((item) => (
-          <Navlinkcategory key={item.id} name={item.name} />
+          <Navlinkcategory name={item.name} />
         ))}
       </div>
       <div className="luciferParcel">
