@@ -1,4 +1,5 @@
 import React from 'react';
+import PlusMinusBtn from '../PlusMinusBtn/PlusMinusBtn';
 import './ShoppingModal.scss';
 
 const ShoppingModal = () => {
@@ -8,12 +9,7 @@ const ShoppingModal = () => {
         <div className="shoppingModalName">[예찬원] 사골 미역국</div>
         <div className="shoppingModalCount">
           <span className="shoppingModalPrice">29,000원</span>
-          <input
-            className="modalTotalInput"
-            type="number"
-            placeholder="0"
-            min="0"
-          />
+          <PlusMinusBtn />
         </div>
       </div>
       <div className="shoppingModalMiddle">

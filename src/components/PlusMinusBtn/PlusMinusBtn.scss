@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.plusMinusBtn {
+  @include flexRow(center, center);
+  width: 100px;
+  height: 35px;
+  font-weight: 500;
+  border: 1px solid #dddfe1;
+  border-radius: 3px;
+
+  .plusMinusTotal {
+    width: 35px;
+    height: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 7px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    background-color: white;
+  }
+}
