@@ -1,10 +1,15 @@
 @import './../../../styles/variables.scss';
 
 .cartInfoPrice {
-  margin: 20px 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 1px solid $border-color;
+  padding-top: 30px;
+  background-color: rgb(250, 247, 247);
+  border: 1px solid $border-color;
+  border-top: none;
 
   .priceInfoSection {
     width: 100%;
@@ -21,16 +26,5 @@
         font-weight: 700;
       }
     }
-  }
-
-  .orderBtn {
-    width: 284px;
-    height: 56px;
-    margin-top: 20px;
-    font-size: 16px;
-    color: white;
-    background-color: $basic-color;
-    border: none;
-    border-radius: 3px;
   }
 }

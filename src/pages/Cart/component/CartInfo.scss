@@ -1,4 +1,18 @@
+@import './../../../styles/variables.scss';
+
 .cartInfo {
   width: 283px;
-  border: 1px solid red;
+  height: 450px;
+
+  .orderBtn {
+    width: 284px;
+    height: 56px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: $basic-color;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
 }

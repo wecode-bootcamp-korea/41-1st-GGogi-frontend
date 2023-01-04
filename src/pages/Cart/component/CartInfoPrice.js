@@ -34,7 +34,6 @@ const CartInfoPrice = () => {
           </div>
         );
       })}
-      <button className="orderBtn">주문하기</button>
     </div>
   );
 };

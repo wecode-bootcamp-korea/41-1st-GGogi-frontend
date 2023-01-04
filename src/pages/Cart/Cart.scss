@@ -1,7 +1,6 @@
 @import './../../styles/variables.scss';
 
 .cart {
-  border: 1px solid yellow;
   @include flexColumn(center, center);
 
   .header {

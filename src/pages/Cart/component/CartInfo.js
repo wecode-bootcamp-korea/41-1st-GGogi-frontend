@@ -8,6 +8,7 @@ const CartInfo = () => {
     <div className="cartInfo">
       <CartInfoAddress />
       <CartInfoPrice />
+      <button className="orderBtn">주문하기</button>
     </div>
   );
 };
