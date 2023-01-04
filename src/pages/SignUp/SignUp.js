@@ -50,6 +50,20 @@ const SignUp = () => {
       .then((response) => response.json())
       .then((result) => console.log(result));
   };
+  console.log(email);
+  const onClickCheckEmail = (e) => {
+    e.preventDefault();
+    fetch('http://10.58.52.143:3000/users/emailcheck', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        email: email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="signUp">
@@ -77,7 +91,9 @@ const SignUp = () => {
             <p className="error">{emailError}</p>
           </div>
           <div className="btnSection">
-            <button className="comfirmRepetition">중복확인</button>
+            <button className="comfirmRepetition" onClick={onClickCheckEmail}>
+              중복확인
+            </button>
           </div>
         </div>
         <div className="signUpSection">
