@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+.productDetailCart {
+  .tableRow {
+    @include flexRow(space-between, flex-start);
+    width: 560px;
+    padding: 10px 0;
+
+    .tableHead {
+      width: 128px;
+      font-size: 14px;
+      color: #666;
+    }
+    .tableBody {
+      width: 405px;
+      color: #333333;
+      .detailCartCount {
+        height: 75px;
+        width: 405px;
+        padding: 10px;
+        border: 1px solid #f4f4f4;
+        inline-height: 13.8px;
+        font-size: 12px;
+        .detailCartCountName {
+          padding-bottom: 10px;
+        }
+        .detailCartCountBottom {
+          @include flexRow(space-between, center);
+          .detailCartCountBtn {
+          }
+          .detailCartCountPrice {
+            padding: 0 5px 0 0;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+          }
+        }
+      }
+    }
+  }
+}
