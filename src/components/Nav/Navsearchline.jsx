@@ -20,7 +20,7 @@ const Navsearchline = () => {
         />
         <span>
           <i
-            class="fa-solid fa-magnifying-glass navMagnifyingGlassIcon"
+            className="fa-solid fa-magnifying-glass navMagnifyingGlassIcon"
             alt="magnifying glass"
           />
         </span>
