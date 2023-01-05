@@ -1,6 +1,8 @@
 import React from 'react';
 import './ProductDetailCart.scss';
 import PlusMinusBtn from '../../../components/PlusMinusBtn/PlusMinusBtn';
+import { VscHeart } from 'react-icons/vsc';
+import { BsBell } from 'react-icons/bs';
 
 const ProductDetailCart = () => {
   return (
@@ -21,8 +23,15 @@ const ProductDetailCart = () => {
           </div>
         </div>
       </div>
-      <div>18,990원</div>
-      <div>버튼</div>
+      <div className="detailCartTotal">
+        <div className="detailCartTotalT">총 상품금액:</div>
+        <div className="detailCartTotalPrice">18,990원</div>
+      </div>
+      <div className="detailCartTotalBtn">
+        <VscHeart className="cartIcon" />
+        <BsBell className="cartIcon" />
+        <button className="cart">장바구니 담기</button>
+      </div>
     </div>
   );
 };
