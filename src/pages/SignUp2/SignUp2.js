@@ -97,7 +97,7 @@ const SignUp2 = () => {
       </div>
       <hr className="signUpLine" />
       <UserAgreement />
-      <button type="submit" className="joinBtn" onChange={onClickSignUp}>
+      <button type="submit" className="joinBtn" onClick={onClickSignUp}>
         가입하기
       </button>
     </div>
