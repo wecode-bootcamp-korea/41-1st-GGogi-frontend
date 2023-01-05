@@ -1,0 +1,50 @@
+export const INPUT_DATA = [
+  {
+    id: 1,
+    title: '이메일',
+    name: 'email',
+    type: 'email',
+    placeholder: '아이디를 입력해주세요',
+  },
+  {
+    id: 2,
+    title: '비밀번호',
+    name: 'pwd',
+    type: 'password',
+    placeholder: '비밀번호를 입력해주세요',
+  },
+  {
+    id: 3,
+    title: '비밀번호확인',
+    name: 'confirmPwd',
+    type: 'password',
+    placeholder: '비밀번호를 한 번 더 입력해주세요',
+  },
+  {
+    id: 4,
+    title: '이름',
+    name: 'name',
+    type: 'text',
+    placeholder: '이름을 입력해주세요',
+  },
+  {
+    id: 5,
+    title: '휴대폰',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '숫자를 입력해주세요',
+  },
+  {
+    id: 6,
+    title: '주소',
+    name: 'address',
+    type: 'text',
+    placeholder: '주소를 입력해주세요',
+  },
+  {
+    id: 7,
+    title: '생년월일',
+    name: 'birthday',
+    type: 'text',
+  },
+];

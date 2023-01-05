@@ -1,0 +1,28 @@
+@import './../../../../styles/variables.scss';
+
+.signUpItem {
+  display: grid;
+  grid-template-columns: 120px 333px 120px;
+  width: 640px;
+  grid-column-gap: 10px;
+  padding: 10px 20px;
+
+  .nameSection {
+    padding-top: 20px;
+  }
+
+  .inputSection {
+    height: 46px;
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+  }
+
+  .comfirmRepetition {
+    background-color: white;
+    color: $basic-color;
+    border: 1px solid $basic-color;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

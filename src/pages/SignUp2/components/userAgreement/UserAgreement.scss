@@ -1,0 +1,15 @@
+.userAgreement {
+  display: flex;
+  width: 640px;
+  padding-top: 10px;
+
+  .userAgreementTitle {
+    width: 139px;
+    height: 330px;
+    padding-left: 20px;
+  }
+
+  .allAgreementPhrase {
+    font-size: 18px;
+  }
+}
