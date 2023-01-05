@@ -29,36 +29,32 @@ const MyPageUserInterface = () => {
             <p>최초 1회 무료 배송</p>
           </div>
           <div className="userLevel">
-            <button className="userlevelBtn cursor">전체등급 보기</button>
-            <button className="userlevelBtn cursor">
-              다음 달 예상등급 보기
-            </button>
+            <button className="userlevelBtn">전체등급 보기</button>
+            <button className="userlevelBtn">다음 달 예상등급 보기</button>
           </div>
         </div>
         <div className="userReserves">
-          <div className="userPoint">
-            <button className="btnWidthColors userReservesCommonPadding cursor">
-              <div className="kurlyBtnColors">적립금</div>
-              <div className="kurlyBtnPurpleColors itemMargin">0원</div>
-              <div className="deletePointColor">소멸 예정 0원</div>
-            </button>
-          </div>
-          <div className="userCoupon">
-            <button className="btnWidthColors userReservesCommonPadding cursor">
-              <div className="kurlyBtnColors">쿠폰</div>
-              <div className="kurlyBtnPurpleColors itemMargin">0개</div>
-            </button>
-          </div>
-          <div className="userBigdata">
-            <button className="btnWidthColors userReservesCommonPadding cursor">
-              <div className="kurlyBtnColors">나의 컬리스타일</div>
-              <div className="kurlyBtnPurpleColors itemMargin">등록하기</div>
-            </button>
-          </div>
+          {USERBIGDATA.map((list) => {
+            return (
+              <button
+                className="btnWidthColors userReservesCommonPadding "
+                key={list.id}
+              >
+                <div className="kurlyBtnColors">{list.title}</div>
+                <div className="kurlyBtnPurpleColors itemMargin">
+                  {list.point === '원' && '0  '}
+                  {list.point}
+                </div>
+                {list.title === '적립금' && (
+                  <div className="deletePointColor">{list.delete} 0원</div>
+                )}
+              </button>
+            );
+          })}
         </div>
         <div className="kurlyPromotion">
           <div className="kurlyPurpleBox">
-            <button className="btnWidthColors kurlyPromotionCommonPadding cursor">
+            <button className="btnWidthColors kurlyPromotionCommonPadding">
               <div className="kurlyBtnColors">
                 컬리 퍼플 박스<span className="spanArrowColor"> ></span>
               </div>
@@ -66,7 +62,7 @@ const MyPageUserInterface = () => {
             </button>
           </div>
           <div className="kurlyPass">
-            <button className="btnWidthColors kurlyPromotionCommonPadding cursor">
+            <button className="btnWidthColors kurlyPromotionCommonPadding">
               <div className="kurlyBtnColors">
                 컬리 패스 <span className="spanArrowColor"> ></span>
               </div>
@@ -80,3 +76,14 @@ const MyPageUserInterface = () => {
 };
 
 export default MyPageUserInterface;
+
+<button className="btnWidthColors userReservesCommonPadding">
+  <div className="kurlyBtnColors">나의 컬리스타일</div>
+  <div className="kurlyBtnPurpleColors itemMargin">등록하기</div>
+</button>;
+
+const USERBIGDATA = [
+  { id: 1, title: '적립금', point: '원', delete: '소멸 예정' },
+  { id: 2, title: '쿠폰', point: '0 개' },
+  { id: 3, title: '나의 컬리스타일', point: '등록하기' },
+];
