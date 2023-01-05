@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ProductCardList from '../../components/ProductCard/ProductCardList';
-import AlertModal from '../../components/AlertModal/AlertModal';
-
 import './Main.scss';
 
 const Main = () => {
@@ -16,7 +14,6 @@ const Main = () => {
   return (
     <div className="main">
       <ProductCardList productList={productList} />
-      <AlertModal />
     </div>
   );
 };
