@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import FormLayout from './components/FormLayout';
 import './SignUp.scss';
 
 const SignUp = () => {
@@ -51,7 +50,6 @@ const SignUp = () => {
       .then((response) => response.json())
       .then((result) => console.log(result));
   };
-  console.log(email);
   const onClickCheckEmail = (e) => {
     e.preventDefault();
     fetch('http://10.58.52.116:3000/users/emailcheck', {
@@ -75,9 +73,7 @@ const SignUp = () => {
       </div>
       <hr className="line" />
       <form onChange={hadnleValues}>
-        <FormLayout />
-        {/* // */}
-        {/* <div className="signUpSection">
+        <div className="signUpSection">
           <div className="nameSection">
             <label htmlFor="email">
               이메일<span className="star">*</span>
@@ -241,7 +237,7 @@ const SignUp = () => {
           <button type="submit" className="signupBtn" onClick={onClickSignUp}>
             가입하기
           </button>
-        </div> */}
+        </div>
       </form>
     </div>
   );
