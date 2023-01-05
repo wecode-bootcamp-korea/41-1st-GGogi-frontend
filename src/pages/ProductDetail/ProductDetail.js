@@ -1,4 +1,6 @@
 import React from 'react';
+import ProductDetailInfo from './ProductDetailInfo/ProductDetailInfo';
+import { MdShare } from 'react-icons/md';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
@@ -12,12 +14,12 @@ const ProductDetail = () => {
             <div className="productDetailNameMiddleL">
               [kF365] 양념 소불고기 1kg (냉장)
             </div>
-            <div className="productDetailNameMiddleR">공유버튼</div>
+            <MdShare className="productDetailNameMiddleR" />
           </div>
         </div>
         <div className="productDetailPrice">18,990원</div>
-        <div className="productDetailInfo">상세정보표</div>
-        <div className="productDetailCard">상품추가카드</div>
+
+        <ProductDetailInfo />
       </section>
     </div>
   );
