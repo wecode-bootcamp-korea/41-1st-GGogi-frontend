@@ -1,0 +1,142 @@
+@import '../../styles/variables.scss';
+
+.myPageUserInterface {
+  width: 100%;
+  padding: 50px 0px;
+  margin-bottom: -20px;
+  background-color: rgb(247, 247, 247);
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .deletePointColor {
+    margin-top: 5px;
+    color: rgb(0, 0, 0, 0.6);
+    font-size: 12px;
+  }
+
+  .itemMargin {
+    margin-top: 10px;
+  }
+
+  .kurlyBtnColors {
+    color: #333333;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .kurlyBtnPurpleColors {
+    color: $basic-color;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .btnWidthColors {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid white;
+  }
+  .myPageGrid {
+    display: grid;
+    grid-template-columns: 372px auto;
+    width: 1050px;
+    margin: 0px auto;
+    gap: 4px;
+  }
+
+  .spanArrowColor {
+    color: rgb(0, 0, 0, 0.3);
+  }
+
+  .userInfrm {
+    padding: 30px 26px 30px 26px;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+
+    .userlevelBtn {
+      margin-left: 9px;
+      height: 42px;
+      width: 151px;
+      color: #333333;
+      border: 1px solid #f4f4f4;
+      border-radius: 30px;
+    }
+    .userProfileName {
+      display: flex;
+
+      .myPageUserName {
+        font-size: 20px;
+        padding: 15px 20px;
+      }
+
+      .welcomeUser {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgb(148, 146, 150);
+        border-radius: 3px;
+      }
+
+      .welcomeBox {
+        position: absolute;
+        left: 10px;
+        top: 18px;
+        color: rgb(0, 0, 0, 0.6);
+        line-height: 16px;
+        font-size: 14px;
+      }
+    }
+    .userAccumulate {
+      margin: 10px 0;
+    }
+    .userAccumulate p {
+      padding: 3px 0;
+      color: #333333;
+      font-size: 14px;
+    }
+  }
+}
+
+.userReserves {
+  display: flex;
+  column-gap: 4px;
+
+  .userReservesCommonPadding {
+    padding: 30px auto;
+  }
+
+  .userPoint {
+    flex: 1 1 0%;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .userCoupon {
+    flex: 1 1 0%;
+  }
+
+  .userBigdata {
+    flex: 1 1 0%;
+  }
+}
+
+.kurlyPromotion {
+  display: flex;
+  column-gap: 4px;
+
+  .kurlyPromotionCommonPadding {
+    @include flexRow(space-between, center);
+    padding: 20px 30px;
+  }
+  .kurlyPurpleBox {
+    flex: 1 1 0%;
+  }
+  .kurlyPass {
+    flex: 1 1 0%;
+  }
+}
