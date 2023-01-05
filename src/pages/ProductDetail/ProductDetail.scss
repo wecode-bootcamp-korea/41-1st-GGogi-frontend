@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.productDetail {
+  width: 1050px;
+  margin: 0 435px;
+  padding-top: 30px;
+  @include flexRow(space-between, flex-start);
+
+  .productDetailImg {
+    width: 430px;
+    height: 552px;
+    background-color: yellow;
+  }
+  .productDetailInfo {
+    width: 500px;
+    height: 1200px;
+    .productDetailName {
+      .productDetailNameTop {
+        width: 500px;
+        height: 19px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        line-height: 19px;
+        color: #999999;
+      }
+      .productDetailNameMiddle {
+        width: 500px;
+        @include flexRow(space-between, center);
+
+        .productDetailNameMiddleL {
+          width: 500px;
+          height: 40px;
+          font-size: 24px;
+          font-weight: 500;
+          letter-spacing: -0.5px;
+          inline-height: 34px;
+          color: #333333;
+        }
+        .productDetailNameMiddleR {
+        }
+      }
+    }
+    .productDetailPrice {
+      width: 560px;
+      height: 49px;
+      padding-left: 4px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 30px;
+      color: #333333;
+    }
+    .productDetailInfo {
+    }
+    .productDetailCard {
+    }
+  }
+}
