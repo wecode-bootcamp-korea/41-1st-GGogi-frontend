@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FormLayout from './components/FormLayout';
 import './SignUp.scss';
 
 const SignUp = () => {
@@ -74,7 +75,9 @@ const SignUp = () => {
       </div>
       <hr className="line" />
       <form onChange={hadnleValues}>
-        <div className="signUpSection">
+        <FormLayout />
+        {/* // */}
+        {/* <div className="signUpSection">
           <div className="nameSection">
             <label htmlFor="email">
               이메일<span className="star">*</span>
@@ -238,7 +241,7 @@ const SignUp = () => {
           <button type="submit" className="signupBtn" onClick={onClickSignUp}>
             가입하기
           </button>
-        </div>
+        </div> */}
       </form>
     </div>
   );
