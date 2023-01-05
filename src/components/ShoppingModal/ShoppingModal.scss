@@ -1,0 +1,98 @@
+@import '../../styles/variables.scss';
+
+.shoppingModal {
+  @include flexColumn(space-between, center);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 250px;
+  width: 440px;
+  margin: 32px;
+  padding: 30px;
+  max-width: 600px;
+  border: 1px black;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgb(0 0 0 / 15%);
+  font-size: 16px;
+
+  .shoppingModalTop {
+    width: 380px;
+    height: 100px;
+
+    .shoppingModalName {
+      height: 36px;
+      padding-top: 6px;
+      font-size: 14px;
+    }
+    .shoppingModalCount {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .shoppingModalPrice {
+        font-weight: bold;
+        font-size: 16px;
+        color: rgb(51, 51, 51);
+        line-height: 21px;
+      }
+    }
+  }
+
+  .shoppingModalMiddle {
+    width: 380px;
+    height: 50px;
+
+    .shoppingModalTotal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+
+      .modalTotalPrice {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .shoppingModalBottom {
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+    .cancelShoppingModalBtn {
+      font-size: 16px;
+      font-weight: 700px;
+      width: 186px;
+      height: 52px;
+      padding: 0 10px;
+      margin: 0 4px;
+      background-color: white;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+    }
+
+    .addShoppingModalBtn {
+      font-size: 16px;
+      font-weight: 700px;
+      width: 186px;
+      height: 52px;
+      padding: 0 10px;
+      margin: 0 4px;
+      background-color: $basic-color;
+      color: white;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+    }
+  }
+}
