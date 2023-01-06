@@ -3,17 +3,22 @@ import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
 const MyPageUserInterface = () => {
-  const [userProfile, setUserProfile] = useState([]);
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     fetch(`http://10.58.52.116:3000/users/mypage`, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Authorization: localStorage.getItem('Token'),
+      },
     })
       .then((response) => response.json())
-      .then((myPageData) => setUserProfile(myPageData));
+      .then((data) => setState(data.data[0]));
   }, []);
+  console.log(state);
 
+  console.log(state.name);
   return (
     <div className="myPageUserInterface">
       <div className="myPageGrid">
@@ -41,7 +46,13 @@ const MyPageUserInterface = () => {
                 key={list.id}
               >
                 <div className="kurlyBtnColors">{list.title}</div>
-                <div className="kurlyBtnPurpleColors itemMargin">
+                <div
+                  className={
+                    list.point === '원'
+                      ? 'kurlyBtnPurpleColors marginDown'
+                      : 'kurlyBtnPurpleColors marginnthDown'
+                  }
+                >
                   {list.point === '원' && '0  '}
                   {list.point}
                 </div>
@@ -56,7 +67,10 @@ const MyPageUserInterface = () => {
           <div className="kurlyPurpleBox">
             <button className="btnWidthColors kurlyPromotionCommonPadding">
               <div className="kurlyBtnColors">
-                컬리 퍼플 박스<span className="spanArrowColor"> ></span>
+                컬리 퍼플 박스
+                <span className="spanArrowColor">
+                  <i className="fa-solid fa-angle-right"></i>
+                </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>
             </button>
@@ -64,7 +78,10 @@ const MyPageUserInterface = () => {
           <div className="kurlyPass">
             <button className="btnWidthColors kurlyPromotionCommonPadding">
               <div className="kurlyBtnColors">
-                컬리 패스 <span className="spanArrowColor"> ></span>
+                컬리 패스
+                <span className="spanArrowColor">
+                  <i className="fa-solid fa-angle-right"></i>
+                </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>
             </button>

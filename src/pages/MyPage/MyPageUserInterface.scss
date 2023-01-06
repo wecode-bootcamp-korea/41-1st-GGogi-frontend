@@ -11,10 +11,6 @@
     font-size: 12px;
   }
 
-  .itemMargin {
-    margin-top: 20px;
-  }
-
   .kurlyBtnColors {
     color: #333333;
     font-size: 16px;
@@ -113,8 +109,16 @@
     padding: 30px auto;
   }
 
+  .marginDown {
+    margin: 10px 0 10px 0;
+  }
+
+  .marginnthDown {
+    margin-top: 15px;
+  }
+
   .userPoint {
-    // flex: 1;
+    flex: 1;
     width: 100%;
     display: flex;
     font-size: 14px;

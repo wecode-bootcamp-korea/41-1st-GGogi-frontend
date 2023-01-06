@@ -5,7 +5,7 @@ import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Footer from './components/Footer/Footer';
-import MyPage from './pages/MyPage/MyPageUserInterface';
+import MyPage from './pages/MyPage/MyPage';
 
 const Router = () => {
   return (
