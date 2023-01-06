@@ -3,10 +3,10 @@ import { useState } from 'react';
 import './MypageBtn.scss';
 
 const MypageBtn = ({ id, name, link, renderFn }) => {
-  const [clickevent, setClickevent] = useState({ state: false });
+  const [clickevent, setClickevent] = useState(false);
 
   const changeBtnColor = () => {
-    setClickevent({ state: !clickevent.state });
+    setClickevent(!state);
   };
 
   return (

@@ -1,11 +1,10 @@
+import { useState } from 'react';
 import MyPageUserInterface from './MyPageUserInterface';
 import MypageCategory from './MypageCategory';
 import MypageOrder from './components/MypageOrder';
 import MypageUserInfo from './components/MypageUserInfo';
 import MypageAddress from './components/MypageAddress';
-
 import './MyPage.scss';
-import { useState } from 'react';
 
 const MyPage = () => {
   const [renderPage, setRenderPage] = useState('MypageOrder');

@@ -16,6 +16,7 @@ const MyPageUserInterface = () => {
       .then((response) => response.json())
       .then((data) => setState(data.data[0]));
   }, []);
+
   return (
     <div className="myPageUserInterface">
       <div className="myPageGrid">
