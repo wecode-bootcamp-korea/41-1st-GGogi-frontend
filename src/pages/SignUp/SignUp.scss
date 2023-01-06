@@ -1,0 +1,42 @@
+@import './../../styles/variables.scss';
+
+.signUp {
+  @include flexColumn(center, center);
+  margin: 60px 0;
+  font-size: 14px;
+
+  .signUpTitle {
+    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .inputInfo {
+    width: 640px;
+    text-align: right;
+
+    .inputItemsInfo {
+      color: $border-color;
+      font-size: 14px;
+    }
+  }
+
+  .star {
+    color: $highlight-color;
+  }
+
+  .signUpLine {
+    width: 640px;
+    border: 1px solid black;
+  }
+
+  .joinBtn {
+    width: 240px;
+    height: 56px;
+    background-color: $basic-color;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
+}
