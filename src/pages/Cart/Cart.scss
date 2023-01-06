@@ -1,0 +1,14 @@
+@import './../../styles/variables.scss';
+
+.cart {
+  @include flexColumn(center, center);
+
+  .header {
+    padding: 50px 0;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .cartWrapper {
+    display: flex;
+  }
+}
