@@ -1,0 +1,47 @@
+@import './../../../styles/variables.scss';
+
+.CartInfoAddress {
+  height: 203px;
+  border: 1px solid $border-color;
+
+  .addressWrapper {
+    padding: 20px;
+
+    .titleSection {
+      display: flex;
+      margin-bottom: 12px;
+
+      .pinImg {
+        width: 16px;
+        margin-right: 5px;
+      }
+
+      .title {
+        padding-top: 3px;
+      }
+    }
+
+    .addressInfo {
+      line-height: 24px;
+    }
+
+    .pointSection {
+      margin: 7px 0;
+
+      .point {
+        color: $basic-color;
+        font-size: 14px;
+      }
+    }
+
+    .changeAddressBtn {
+      width: 244px;
+      height: 36px;
+      background-color: white;
+      border: 1px solid $basic-color;
+      border-radius: 3px;
+      color: $basic-color;
+      cursor: pointer;
+    }
+  }
+}

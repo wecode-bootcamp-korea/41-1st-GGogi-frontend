@@ -1,0 +1,51 @@
+@import './../../../styles/variables.scss';
+
+.cartProductList {
+  .productList {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .checkIcon {
+      width: 24px;
+      height: 24px;
+      color: $basic-color;
+      cursor: pointer;
+    }
+
+    .uncheckIcon {
+      width: 24px;
+      height: 24px;
+      color: lightgray;
+      cursor: pointer;
+    }
+
+    .cartProductImg {
+      width: 60px;
+      height: 78px;
+      margin: 0 20px;
+    }
+
+    .productName {
+      width: 345px;
+    }
+
+    .wating {
+      width: 88px;
+    }
+
+    .price {
+      width: 127px;
+      margin-right: 20px;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .deleteBtn {
+      background-color: white;
+      border: none;
+      color: $border-color;
+      cursor: pointer;
+    }
+  }
+}

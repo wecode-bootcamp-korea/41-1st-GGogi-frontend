@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.plusMinusBtn {
+  @include flexRow(center, center);
+  width: 100px;
+  height: 35px;
+  border: 1px solid #dddfe1;
+  border-radius: 3px;
+  font-weight: 500;
+
+  .plusMinusTotal {
+    width: 35px;
+    height: 25px;
+    padding-top: 7px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .modalBtn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
