@@ -6,7 +6,7 @@ const CartProductList = () => {
   const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('/data/cartProductData.json')
       .then((result) => result.json())
       .then((data) => setCartList(data));
   }, []);
@@ -19,15 +19,11 @@ const CartProductList = () => {
             <BsCheckCircleFill className="checkIcon" />
             {/* [Todo] 선택 여부에 따라 버튼 다르게 만들기
           <BsCheckCircle className="uncheckIcon" /> */}
-            <img
-              className="cartProductImg"
-              src={`https://robohash.org/${item.id}?set=set2&size=180x180`}
-              alt="음식사진1"
-            />
-            <p className="productName">[연세우유 X 마켓컬리] {item.name}</p>
+            <img className="cartProductImg" src={item.img} alt="음식사진1" />
+            <p className="productName">{item.title}</p>
             {/* [Todo] 버튼 컴포넌트 merge되면 사용 예정 */}
             <button className="wating">버튼</button>
-            <span className="price">{item.username}원</span>
+            <span className="price">{item.price}원</span>
             <button className="deleteBtn">X</button>
           </div>
         );
