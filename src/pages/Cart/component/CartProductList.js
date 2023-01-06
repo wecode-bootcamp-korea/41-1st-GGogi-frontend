@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
+import PlusMinusBtn from './../../../components/PlusMinusBtn/PlusMinusBtn';
 import './CartProductList.scss';
 
 const CartProductList = () => {
@@ -22,7 +23,7 @@ const CartProductList = () => {
             <img className="cartProductImg" src={item.img} alt="음식사진1" />
             <p className="productName">{item.title}</p>
             {/* [Todo] 버튼 컴포넌트 merge되면 사용 예정 */}
-            <button className="wating">버튼</button>
+            <PlusMinusBtn />
             <span className="price">{item.price}원</span>
             <button className="deleteBtn">X</button>
           </div>
