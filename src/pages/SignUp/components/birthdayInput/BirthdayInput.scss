@@ -8,7 +8,12 @@
 
   .inputBirth {
     width: 97px;
-    border: none;
     text-align: center;
+    border: none;
+  }
+
+  .slash {
+    padding-top: 3px;
+    color: $border-color;
   }
 }

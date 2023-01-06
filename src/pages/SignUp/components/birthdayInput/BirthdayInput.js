@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import './BirthdayInput.scss';
 
 const BirthdayInput = ({ handleUserInfo }) => {
@@ -21,7 +21,7 @@ const BirthdayInput = ({ handleUserInfo }) => {
                 placeholder={item.placeholder}
                 onChange={handleUserInfo}
               />
-              {item.id !== 3 && <p>/</p>}
+              {item.id !== 3 && <p className="slash">/</p>}
             </Fragment>
           );
         })}
