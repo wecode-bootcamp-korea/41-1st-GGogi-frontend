@@ -7,7 +7,6 @@
   @include flexRow(space-between, flex-start);
 
   .productDetailImg {
-    background-color: yellow;
     width: 430px;
     height: 552px;
   }
@@ -50,10 +49,6 @@
       letter-spacing: -0.5px;
       line-height: 30px;
       color: #333333;
-    }
-    .productDetailInfo {
-    }
-    .productDetailCard {
     }
   }
 }

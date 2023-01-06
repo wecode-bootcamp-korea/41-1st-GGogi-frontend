@@ -3,7 +3,7 @@ import './ProductDetailInfo.scss';
 
 const ProductDetailInfo = () => {
   return (
-    <table className="productDetailInfo">
+    <div className="productDetailInfo">
       <div className="table">
         <div className="tableRow">
           <div className="tableHead">배송</div>
@@ -70,7 +70,7 @@ const ProductDetailInfo = () => {
           </div>
         </div>
       </div>
-    </table>
+    </div>
   );
 };
 
