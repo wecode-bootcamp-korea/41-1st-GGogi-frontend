@@ -5,6 +5,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
+import MyPage from './pages/MyPage/MyPage';
 
 const Router = () => {
   return (
@@ -15,6 +16,8 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/mypage" element={<MyPage />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
