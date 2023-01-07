@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import { MdShare } from 'react-icons/md';
 import ProductDetailInfo from './ProductDetailInfo/ProductDetailInfo';
 import ProductDetailCart from './ProductDetailCart/ProductDetailCart';
+import GGogi from '../../assets/images/GGogi.png';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
-  const { id } = useParams();
+  const { title, price, img } = productDetail;
 
   useEffect(() => {
     fetch(
@@ -19,21 +20,22 @@ const ProductDetail = () => {
 
   return (
     <div className="productDetail">
-      <img src={productDetail.img} className="productDetailImg" />
-      <section className="productDetailInfo">
-        <div className="productDetailName">
-          <div className="productDetailNameTop">샛별배송</div>
-          <div className="productDetailNameMiddle">
-            <div className="productDetailNameMiddleL">
-              {productDetail.title}
+      <div className="productDetailTop">
+        <img src={img} className="productDetailImg" />
+        <section className="productDetailInfo">
+          <div className="productDetailName">
+            <div className="productDetailNameTop">샛별배송</div>
+            <div className="productDetailNameMiddle">
+              <div className="productDetailNameMiddleL">{title}</div>
+              <MdShare className="productDetailNameMiddleR" />
             </div>
-            <MdShare className="productDetailNameMiddleR" />
           </div>
-        </div>
-        <div className="productDetailPrice">{productDetail.price}</div>
-        <ProductDetailInfo />
-        <ProductDetailCart product={productDetail} />
-      </section>
+          <div className="productDetailPrice">{price}</div>
+          <ProductDetailInfo />
+          <ProductDetailCart product={productDetail} />
+        </section>
+      </div>
+      <img className="productDetailImages" src={GGogi} alt="whyGGogi" />
     </div>
   );
 };

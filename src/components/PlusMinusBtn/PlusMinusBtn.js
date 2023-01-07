@@ -1,7 +1,7 @@
 import React from 'react';
 import './PlusMinusBtn.scss';
 
-const PlusMinusBtn = () => {
+const PlusMinusBtn = ({ product }) => {
   return (
     <div className="plusMinusBtn">
       <button className="modalBtn">-</button>

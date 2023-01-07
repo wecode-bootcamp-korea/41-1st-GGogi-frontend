@@ -14,7 +14,7 @@ const ProductDetailCart = ({ product }) => {
             <div className="detailCartCountName">{product.title} </div>
             <div className="detailCartCountBottom">
               <div className="detailCartCountBtn">
-                <PlusMinusBtn />
+                <PlusMinusBtn product={product} />
               </div>
               <div className="detailCartCountPrice">{product.price}</div>
             </div>
