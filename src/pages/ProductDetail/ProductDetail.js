@@ -9,14 +9,16 @@ import './ProductDetail.scss';
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
   const { title, price, img } = productDetail;
+  const params = useParams();
+  const productId = params.id;
 
   useEffect(() => {
     fetch(
-      `https://my-json-server.typicode.com/legobitna/hnm-react-router/products/1`
+      `https://my-json-server.typicode.com/legobitna/hnm-react-router/products/${productId}`
     )
       .then((result) => result.json())
       .then((data) => setProductDetail(data));
-  }, []);
+  }, [productId]);
 
   return (
     <div className="productDetail">
