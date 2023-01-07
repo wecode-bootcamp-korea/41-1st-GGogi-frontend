@@ -2,7 +2,7 @@ import React from 'react';
 import PlusMinusBtn from '../PlusMinusBtn/PlusMinusBtn';
 import './ShoppingModal.scss';
 
-const ShoppingModal = ({ product }) => {
+const ShoppingModal = ({ product, isShoppingModal }) => {
   return (
     <div className="shoppingModal">
       <div className="shoppingModalTop">
@@ -19,7 +19,9 @@ const ShoppingModal = ({ product }) => {
         </div>
       </div>
       <div className="shoppingModalBottom">
-        <button className="cancelShoppingModalBtn">취소</button>
+        <button className="cancelShoppingModalBtn" onClick={isShoppingModal}>
+          취소
+        </button>
         <button className="addShoppingModalBtn">장바구니 담기</button>
       </div>
     </div>

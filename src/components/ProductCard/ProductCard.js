@@ -33,7 +33,11 @@ const ProductCard = ({ product }) => {
           <span> 원</span>
         </div>
       </div>
-      {shoppingModal ? <ShoppingModal product={product} /> : ''}
+      {shoppingModal ? (
+        <ShoppingModal product={product} isShoppingModal={isShoppingModal} />
+      ) : (
+        ''
+      )}
     </div>
   );
 };
