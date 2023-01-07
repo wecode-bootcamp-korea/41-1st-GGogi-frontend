@@ -4,7 +4,6 @@ import './ProductCard.scss';
 
 const ProductCard = ({ product }) => {
   const { img, title, price } = product;
-
   return (
     <div className="productCard">
       <img className="productImg" src={img} alt="productImg" />

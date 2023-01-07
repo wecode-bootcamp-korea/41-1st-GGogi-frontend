@@ -1,23 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import ProductCardList from '../../components/ProductCard/ProductCardList';
+import React from 'react';
 import './Main.scss';
 
 const Main = () => {
-  const [productList, setProductList] = useState([]);
-
-  useEffect(() => {
-    fetch(
-      'https://my-json-server.typicode.com/legobitna/hnm-react-router/products/'
-    )
-      .then((result) => result.json())
-      .then((data) => setProductList(data));
-  }, []);
-
-  return (
-    <div className="main">
-      <ProductCardList productList={productList} />
-    </div>
-  );
+  return <div className="main">main</div>;
 };
 
 export default Main;
