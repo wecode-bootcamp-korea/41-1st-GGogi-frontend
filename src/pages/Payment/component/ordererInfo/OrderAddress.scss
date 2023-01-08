@@ -1,0 +1,104 @@
+@import './../../../../styles/variables.scss';
+
+.orderAddress {
+  width: 1050px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  position: relative;
+
+  .titleSection {
+    @include flexRow(space-between, center);
+    height: 62px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid;
+
+    .changeAddressInfo {
+      font-size: 14px;
+      color: $border-color;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .questionIcon {
+      margin-left: 5px;
+    }
+  }
+  .changeAddressInfoWindow {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: $basic-color;
+    width: 188px;
+    height: 60px;
+    padding: 0 20px;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 6px;
+    @include flexColumn(center, flex-start);
+
+    .closeWindow {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+  .orderAddressSection {
+    display: grid;
+    grid-template-columns: 160px 860px;
+    grid-column-gap: 10px;
+    height: 50px;
+    margin-top: 20px;
+    align-items: center;
+
+    .addressTitle {
+      font-weight: 600;
+      text-indent: 10px;
+    }
+    .addressInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .defaultAddress {
+      background-color: $light-gray-color;
+      text-decoration: 1px solid rgb(102, 102, 102);
+      color: $border-color;
+      width: 70px;
+      height: 20px;
+      border-radius: 11px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      padding-top: 5px;
+      text-align: center;
+    }
+    .anotherAddress {
+      display: flex;
+      align-items: center;
+    }
+
+    .anotherAddressInput {
+      background-color: white;
+      border: 1px solid $basic-color;
+      color: $basic-color;
+      width: 60px;
+      height: 30px;
+      border-radius: 3px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .plzInputAddress {
+      color: #f03f40;
+    }
+  }
+}

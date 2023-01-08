@@ -1,0 +1,61 @@
+@import './../../../../styles/variables.scss';
+
+.personalInfo {
+  width: 1050px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  position: relative;
+
+  .titleSection {
+    @include flexRow(flex-start, center);
+    height: 62px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+  }
+  .personalInfoCheckSection {
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 30px;
+
+    .agreementSection {
+      display: flex;
+      align-items: center;
+      padding: 20px 0 0 10px;
+
+      .checkAll {
+        font-size: 18px;
+      }
+
+      .checkAllBtn {
+        font-size: 24px;
+      }
+
+      .agreementCheckBtn,
+      .checkAllBtn {
+        margin-right: 10px;
+        color: $basic-color;
+      }
+
+      .agreementCheckBtn {
+        margin-left: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .noticeSection {
+    font-size: 12px;
+    color: $border-color;
+    margin-top: 10px;
+    text-indent: 20px;
+
+    &:first-of-type {
+      margin-top: 20px;
+    }
+    &:last-of-type {
+      text-indent: 35px;
+    }
+  }
+}

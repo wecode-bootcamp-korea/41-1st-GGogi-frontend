@@ -1,6 +1,7 @@
 $basic-color: #5f0080;
 $highlight-color: #fa622f;
 $border-color: #666666;
+$light-gray-color: #f4f4f4;
 
 @mixin flexRow($justify, $align) {
   display: flex;

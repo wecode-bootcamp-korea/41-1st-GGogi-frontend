@@ -1,0 +1,34 @@
+@import './../../../../styles/variables.scss';
+
+.orderProduct {
+  width: 1050px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .titleSection {
+    @include flexRow(space-between, center);
+    width: 100%;
+    height: 62px;
+    border-bottom: 1px solid black;
+
+    .orderProductTitle {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .arrowIcon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+
+  .orderProductContent {
+    @include flexRow(center, center);
+    height: 100px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid $light-gray-color;
+  }
+}
