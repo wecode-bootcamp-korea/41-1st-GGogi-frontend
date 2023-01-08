@@ -1,42 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import { GrRotateRight } from 'react-icons/gr';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import './Category.scss';
 
-const CATEGORY_LIST = [
-  {
-    category_id: 1,
-    name: '소고기',
-    quantity: 10,
-    url: '/',
-  },
-  {
-    category_id: 2,
-    name: '돼지고기',
-    quantity: 10,
-    url: '/',
-  },
-  {
-    category_id: 3,
-    name: '양고기',
-    quantity: 10,
-    url: '/',
-  },
-  {
-    category_id: 4,
-    name: '닭고기',
-    quantity: 10,
-    url: '/',
-  },
-  {
-    category_id: 5,
-    name: '오리고기',
-    quantity: 10,
-    url: '/',
-  },
-];
-
 const Category = () => {
+  const [showCategoryList, setShowCategoryList] = useState(false);
+  const [categoryList, setCategoryList] = useState([]);
+
+  useEffect(() => {
+    return fetch('./data/categoryListData.json')
+      .then((res) => res.json())
+      .then((res) => {
+        setCategoryList(res);
+      });
+  }, []);
+
+  const categoryListUl = document.getElementsByTagName('ul');
+
+  const onClickShowList = () => {
+    setShowCategoryList(!showCategoryList);
+  };
+
+  const hideCategoryList = () => {
+    showCategoryList
+      ? (categoryListUl.style = 'display:none')
+      : (categoryListUl.style = 'display:block');
+  };
+
+  const changeArrowIcon = showCategoryList ? (
+    <IoIosArrowDown
+      className="arrowIcon"
+      onClick={() => {
+        onClickShowList();
+        hideCategoryList();
+      }}
+    />
+  ) : (
+    <IoIosArrowUp className="arrowIcon" onClick={onClickShowList} />
+  );
+
   return (
     <div className="category">
       <div className="titleSection">
@@ -49,9 +52,10 @@ const Category = () => {
       <div className="categoryListWrapper">
         <div className="categoryType">
           <span className="categoryTitle">카테고리</span>
+          {changeArrowIcon}
         </div>
-        <ul className="categoryList">
-          {CATEGORY_LIST.map((item) => {
+        <ul className="categoryListUl">
+          {categoryList.map((item) => {
             return (
               <li key={item.category_id} className="categoryItem">
                 <div className="categoryItemSection">
