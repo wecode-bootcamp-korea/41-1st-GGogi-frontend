@@ -1,37 +1,38 @@
 @import './../../../../styles/variables.scss';
 
 .ordererInfo {
-  width: 1050px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 1050px;
   margin-top: 50px;
 
   .ordererInfoTitle {
     display: flex;
     align-items: center;
     height: 62px;
+    border-bottom: 1px solid;
     font-size: 20px;
     font-weight: 500;
-    border-bottom: 1px solid;
   }
 
   .ordererInfoRow {
     display: grid;
     grid-template-columns: 160px 860px;
     grid-column-gap: 10px;
+    align-items: center;
     height: 50px;
     padding-top: 20px;
-    align-items: center;
 
     .infoTitle {
-      font-weight: 600;
       text-indent: 10px;
+      font-weight: 600;
     }
   }
+
   .additionalInfo {
-    padding-left: 170px;
     margin-top: 5px;
+    padding-left: 170px;
     color: $border-color;
     font-size: 12px;
   }

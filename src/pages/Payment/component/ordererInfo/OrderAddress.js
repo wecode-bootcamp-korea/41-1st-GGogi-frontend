@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BsQuestionCircle } from 'react-icons/bs';
 import { MdOutlineClose } from 'react-icons/md';
-
 import './OrderAddress.scss';
 
 const OrderAddress = () => {
@@ -14,6 +13,7 @@ const OrderAddress = () => {
   const onClickCloseMsg = () => {
     setShowMsg(false);
   };
+
   const showAddressInfoMsg = (
     <div className="changeAddressInfoWindow">
       장바구니, 홈에서

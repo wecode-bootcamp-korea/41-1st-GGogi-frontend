@@ -2,9 +2,9 @@ import React from 'react';
 import OrderProduct from './component/orderList/OrderProduct';
 import OrdererInfo from './component/ordererInfo/OrdererInfo';
 import OrderAddress from './component/ordererInfo/OrderAddress';
-import './Payment.scss';
 import HowToPay from './component/howToPay/HowToPay';
 import PersonalInfo from './component/personalInfo/PersonalInfo';
+import './Payment.scss';
 
 const Payment = () => {
   return (

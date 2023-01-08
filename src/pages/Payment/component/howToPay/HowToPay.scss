@@ -5,8 +5,8 @@
 
   .paymentAside {
     position: absolute;
-    right: 0;
     top: 20px;
+    right: 0;
     height: 500px;
   }
 
@@ -14,11 +14,12 @@
     position: sticky;
     top: 0px;
   }
+
   .howToPaySection {
-    width: 1050px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 1050px;
 
     .howToPayWrapper {
       width: 708px;
@@ -26,9 +27,9 @@
 
       .titleSection {
         height: 40px;
+        border-bottom: 1px solid;
         font-size: 20px;
         font-weight: 500;
-        border-bottom: 1px solid;
       }
 
       .payContentRow {
@@ -57,20 +58,20 @@
           .usePointInput {
             width: 150px;
             height: 44px;
-            background-color: #efefef;
-            border-radius: 5px;
-            border: none;
-            color: $border-color;
             padding-left: 20px;
+            background-color: #efefef;
+            border: none;
+            border-radius: 5px;
+            color: $border-color;
             font-size: 16px;
           }
 
           .allUseBtn {
-            margin-left: 10px;
             width: 80px;
             height: 44px;
-            border: 1px solid $border-color;
+            margin-left: 10px;
             background-color: white;
+            border: 1px solid $border-color;
             border-radius: 4px;
             color: #c9c9c9;
             cursor: pointer;
@@ -89,8 +90,8 @@
           }
 
           .howToSeePointHistory {
-            font-size: 12px;
             color: $border-color;
+            font-size: 12px;
           }
         }
       }
@@ -103,16 +104,16 @@
         width: 140px;
         height: 48px;
         margin-right: 5px;
-        border-radius: 4px;
-        border: 1px solid $border-color;
         background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 4px;
         cursor: pointer;
       }
 
       .paymentInfo {
+        text-indent: 10px;
         color: $border-color;
         font-size: 12px;
-        text-indent: 10px;
 
         &:first-of-type {
           margin: 20px 0 10px;

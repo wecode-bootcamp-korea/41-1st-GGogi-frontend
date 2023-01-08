@@ -1,6 +1,6 @@
 import React from 'react';
-import './HowToPay.scss';
 import PaymentAmount from './PaymentAmount';
+import './HowToPay.scss';
 
 const HowToPay = () => {
   return (

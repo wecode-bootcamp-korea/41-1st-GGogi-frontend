@@ -1,6 +1,6 @@
 import React from 'react';
+//[Todo] 버튼 클릭 시 색 변경(BsCheckCircleFill-BsCheckCircle)
 import { BsCheckCircleFill, BsCheckCircle, BsCheck2 } from 'react-icons/bs';
-
 import './PersonalInfo.scss';
 
 const AGREEMENT_INFO = [
