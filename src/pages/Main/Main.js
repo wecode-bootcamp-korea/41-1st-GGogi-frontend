@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import ShoppingModal from '../../components/ShoppingModal/ShoppingModal';
 import ProductCardList from '../../components/ProductCard/ProductCardList';
 import './Main.scss';
+import Category from '../../components/Category/Category';
 
 const Main = () => {
   const [productList, setProductList] = useState([]);
@@ -13,10 +14,13 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="main">
-      <ShoppingModal />
-      <ProductCardList productList={productList} />
-    </div>
+    <Fragment>
+      <div className="main">
+        <ShoppingModal />
+        <ProductCardList productList={productList} />
+      </div>
+      <Category />
+    </Fragment>
   );
 };
 
