@@ -9,23 +9,23 @@ const Category = () => {
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
-    return fetch('./data/categoryListData.json')
+    fetch('./data/categoryListData.json')
       .then((res) => res.json())
       .then((res) => {
         setCategoryList(res);
       });
   }, []);
 
-  const categoryListUl = document.getElementsByTagName('ul');
-
+  const categoryListUl = document.getElementsByClassName('categoryListUl');
+  console.log(categoryListUl);
   const onClickShowList = () => {
     setShowCategoryList(!showCategoryList);
   };
 
   const hideCategoryList = () => {
     showCategoryList
-      ? (categoryListUl.style = 'display:none')
-      : (categoryListUl.style = 'display:block');
+      ? (categoryListUl.style = 'maxHeight: 100vh, opacity: 1')
+      : (categoryListUl.style = 'maxHeight: 0;');
   };
 
   const changeArrowIcon = showCategoryList ? (
@@ -33,7 +33,6 @@ const Category = () => {
       className="arrowIcon"
       onClick={() => {
         onClickShowList();
-        hideCategoryList();
       }}
     />
   ) : (
@@ -52,7 +51,9 @@ const Category = () => {
       <div className="categoryListWrapper">
         <div className="categoryType">
           <span className="categoryTitle">카테고리</span>
-          {changeArrowIcon}
+          <div className="iconSection" onClick={hideCategoryList}>
+            {changeArrowIcon}
+          </div>
         </div>
         <ul className="categoryListUl">
           {categoryList.map((item) => {
