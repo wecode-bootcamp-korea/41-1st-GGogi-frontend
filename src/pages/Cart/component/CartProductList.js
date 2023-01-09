@@ -4,17 +4,26 @@ import PlusMinusBtn from './../../../components/PlusMinusBtn/PlusMinusBtn';
 import './CartProductList.scss';
 
 const CartProductList = () => {
-  const [cartList, setCartList] = useState([]);
+  const [itemList, setItemList] = useState([]);
 
+  // 아이템 리스트를 담아서 컴포넌트로 보내고, 컴포넌트에서 map()으로 리스트 뿌리기?
+  // 이것을 Cart.jsx에서 해야하는지 아니면 CartProductList에서 해야하는지.
   useEffect(() => {
-    fetch('/data/cartProductData.json')
-      .then((result) => result.json())
-      .then((data) => setCartList(data));
+    fetch('http://10.58.52.62:3000/cart', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('Token'),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data); // setItemList(data.results);
+      });
   }, []);
 
   return (
     <div className="cartProductList">
-      {cartList.map((item) => {
+      {itemList.map((item) => {
         return (
           <div key={item.id} className="productList">
             <BsCheckCircleFill className="checkIcon" />
