@@ -2,7 +2,7 @@ import React from 'react';
 import './CartInfoPrice.scss';
 
 const CartInfoPrice = () => {
-  //[Todo] 차후 백엔드에서 가격 정보 가져오기
+  //[Todo] cart 정보 가져와서 합산해야 함
   const CART_PRICEINFO = [
     {
       id: 1,

@@ -23,6 +23,7 @@ const CartProductList = () => {
 
   return (
     <div className="cartProductList">
+      {/* cart 로 이름 바꾸기 */}
       {itemList.map((item) => {
         return (
           <div key={item.id} className="productList">
