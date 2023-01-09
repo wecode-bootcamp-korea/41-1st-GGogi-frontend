@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import ShoppingModal from '../../components/ShoppingModal/ShoppingModal';
-import ProductCardList from '../../components/ProductCard/ProductCardList';
+import React from 'react';
 import './Main.scss';
 import ProductCardList2 from '../../components/ProductCard2/ProductCard2List';
 
