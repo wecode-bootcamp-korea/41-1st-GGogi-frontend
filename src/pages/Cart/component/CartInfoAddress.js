@@ -1,6 +1,21 @@
 import './CartInfoAddress.scss';
+import { useEffect } from 'react';
 
-const CartInfoAddress = () => {
+const CartInfoAddress = ({ userAddress, setUserAddress }) => {
+  /* 유저 주소 잘 가져오는지 확인하기 + 유저정보는 바뀔일이 없는데 의존성 배열 추가하라고 함..고민해보기 */
+  useEffect(() => {
+    fetch('10.58.52.62:3000/users/address', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('Token'),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUserAddress(data.results);
+      });
+  }, []);
+
   return (
     <div className="CartInfoAddress">
       <div className="addressWrapper">
@@ -9,7 +24,9 @@ const CartInfoAddress = () => {
           <p className="title">배송지</p>
         </div>
         <p className="addressInfo">
-          경기도 ㅇㅇ시 ㅇㅇ구 ㅇㅇ로 100 (ㅇㅇ아파트) 1000-1000
+          {/* 유저 주소 잘 가져오는지 확인하기 */}
+          {userAddress.address}
+          <br />
         </p>
         <div className="pointSection">
           <span className="point">샛별배송</span>
