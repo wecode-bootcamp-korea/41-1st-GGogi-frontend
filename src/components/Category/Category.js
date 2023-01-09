@@ -5,7 +5,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import './Category.scss';
 
 const Category = () => {
-  const [showCategoryList, setShowCategoryList] = useState(false);
+  const [showCategoryList, setShowCategoryList] = useState(true);
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
@@ -16,16 +16,8 @@ const Category = () => {
       });
   }, []);
 
-  const categoryListUl = document.getElementsByClassName('categoryListUl');
-  console.log(categoryListUl);
   const onClickShowList = () => {
     setShowCategoryList(!showCategoryList);
-  };
-
-  const hideCategoryList = () => {
-    showCategoryList
-      ? (categoryListUl.style = 'maxHeight: 100vh, opacity: 1')
-      : (categoryListUl.style = 'maxHeight: 0;');
   };
 
   const changeArrowIcon = showCategoryList ? (
@@ -51,11 +43,11 @@ const Category = () => {
       <div className="categoryListWrapper">
         <div className="categoryType">
           <span className="categoryTitle">카테고리</span>
-          <div className="iconSection" onClick={hideCategoryList}>
-            {changeArrowIcon}
-          </div>
+          <div className="iconSection">{changeArrowIcon}</div>
         </div>
-        <ul className="categoryListUl">
+        <ul
+          className={showCategoryList ? 'categoryListUl' : 'categoryListUlNone'}
+        >
           {categoryList.map((item) => {
             return (
               <li key={item.category_id} className="categoryItem">
