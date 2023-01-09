@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Navcategory.scss';
 
 const Navcategory = () => {
   const [categoryData, setCategoryData] = useState([]);
   const [subCategoryId, setSubCategoryId] = useState('');
-  const [categoeyPoint, setCategoryPoint] = useState(false);
-  const [subCategory, setSubCategory] = useState(true);
   const [scrollY, setScrollY] = useState(0);
-  const [scrollActive, setScrollActive] = useState(false);
-  const [scrollSubActive, setScrollSubActive] = useState(true);
+  const [subCategory, setSubCategory] = useState(true);
+  const [isActive, setIsActive] = useState({
+    categoeyPoint: false,
+    scrollActive: false,
+  });
+
+  const { categoeyPoint, scrollActive } = isActive;
 
   const handleClick = (e) => {
     setSubCategoryId(e.target.id);
-    setCategoryPoint(true);
+    setIsActive({ categoeyPoint: true });
   };
 
   const scrollFixed = () => {
     if (scrollY > 96) {
       setScrollY(window.pageYOffset);
-      setScrollActive(true);
+      setIsActive({ scrollActive: true });
     } else {
       setScrollY(window.pageYOffset);
-      setScrollActive(false);
+      setIsActive({ scrollActive: false });
     }
   };
 
   const handleOff = (e) => setSubCategory(!subCategory);
-
-  const handleSubOff = (e) => setScrollSubActive(!scrollSubActive);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -83,9 +83,9 @@ const Navcategory = () => {
           </ul>
         </div>
         <button className="itemCategory">
-          {NAVLIST.map((item) => (
-            <span className="categoryBtn" key={item.id}>
-              {item.name}
+          {NAVLIST.map(({ id, name }) => (
+            <span className="categoryBtn" key={id}>
+              {name}
             </span>
           ))}
         </button>
