@@ -22,7 +22,7 @@ const ProductDetailCart = ({ product }) => {
         </div>
       </div>
       <div className="detailCartTotal">
-        <div className="detailCartTotalT">총 상품금액:</div>
+        <div className="detailCartTotalTop">총 상품금액:</div>
         <div className="detailCartTotalPrice">{product.price}</div>
       </div>
       <div className="detailCartTotalBtn">
