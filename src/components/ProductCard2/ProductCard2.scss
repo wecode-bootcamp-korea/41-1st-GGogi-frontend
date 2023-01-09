@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+.productCard2 {
+  width: 500px;
+  height: 96px;
+  @include flexRow(space-between, center);
+
+  .productCard2Img {
+    width: 74px;
+    height: 74px;
+  }
+
+  .productCard2Middle {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 72px;
+    width: 311px;
+
+    .productCard2title {
+      height: 32px;
+      font-size: 16px;
+    }
+
+    .productCard2price {
+      height: 25px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+
+  .productCard2Cart {
+    height: 36px;
+    width: 104px;
+    border: 1px solid #dddddd;
+    margin-left: 18px;
+    border-radius: 4px;
+    color: #333333;
+    .productCart2Btn {
+      height: 36px;
+      width: 104px;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}
