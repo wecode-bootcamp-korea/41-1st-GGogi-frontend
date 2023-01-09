@@ -58,6 +58,25 @@ const SignUp = () => {
     }
   };
 
+  const onClickCheckEmail = (e) => {
+    e.preventDefault();
+    fetch('http://10.58.52.62:3000/users/emailcheck', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        email: email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.message === '사용 불가능한 이메일입니다.') {
+          alert('이미 사용 중인 이메일입니다.');
+        } else {
+          alert('사용 가능한 이메일입니다.');
+        }
+      });
+  };
+
   const onClickSignUp = (e) => {
     e.preventDefault();
     fetch('http://10.58.52.62:3000/users/signup', {
@@ -88,25 +107,6 @@ const SignUp = () => {
           setErrorMsg('');
           alert('회원가입 되었습니다.');
           navigate('/');
-        }
-      });
-  };
-  //
-  const onClickCheckEmail = (e) => {
-    e.preventDefault();
-    fetch('http://10.58.52.62:3000/users/emailcheck', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        email: email,
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.message === '사용 불가능한 이메일입니다.') {
-          alert('이미 사용 중인 이메일입니다.');
-        } else {
-          alert('사용 가능한 이메일입니다.');
         }
       });
   };
