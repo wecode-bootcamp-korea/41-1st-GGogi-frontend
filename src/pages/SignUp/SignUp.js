@@ -18,6 +18,8 @@ const SignUp = () => {
     birthDay: '',
   });
 
+  const [errorMsg, setErrorMsg] = useState('');
+
   const navigate = useNavigate();
 
   const handleUserInfo = (e) => {
@@ -28,7 +30,6 @@ const SignUp = () => {
   const {
     email,
     pwd,
-    //[Todo] pwd != confirmPwd 일 때 error 메세지 띄우기
     confirmPwd,
     name,
     phone,
@@ -40,9 +41,26 @@ const SignUp = () => {
 
   const birthdate = birthYear + '-' + birthMonth + '-' + birthDay;
 
+  const showErrorMsg = () => {
+    if (
+      email === '' ||
+      pwd === '' ||
+      confirmPwd === '' ||
+      name === '' ||
+      phone === '' ||
+      address === ''
+    ) {
+      setErrorMsg('빈 칸을 채워주세요.');
+    } else if (!email.includes('@')) {
+      setErrorMsg('이메일 형식이 올바르지 않습니다.');
+    } else if (pwd !== confirmPwd) {
+      setErrorMsg('비밀번호가 일치하지 않습니다.');
+    }
+  };
+
   const onClickSignUp = (e) => {
     e.preventDefault();
-    fetch('http://10.58.52.116:3000/users/signup', {
+    fetch('http://10.58.52.62:3000/users/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
@@ -56,16 +74,27 @@ const SignUp = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === 'SUCCESS') {
+        if (result.message === 'KEY_ERROR') {
+          setErrorMsg('빈 칸을 채워주세요');
+        } else if (result.message === '이메일 양식이 맞지않습니다.') {
+          setErrorMsg('이메일 형식에 맞지 않습니다.');
+        } else if (result.message === '비밀번호 양식이 맞지않습니다.') {
+          setErrorMsg(
+            '비밀번호는 8자리 이상, 숫자와 영어, 특수문자를 포함해야 합니다.'
+          );
+        } else if (pwd !== confirmPwd) {
+          setErrorMsg('비밀번호가 일치하지 않습니다.');
+        } else if (result.message === 'SIGNUP_SUCCESS') {
+          setErrorMsg('');
           alert('회원가입 되었습니다.');
           navigate('/');
         }
       });
   };
-
+  //
   const onClickCheckEmail = (e) => {
     e.preventDefault();
-    fetch('http://10.58.52.116:3000/users/emailcheck', {
+    fetch('http://10.58.52.62:3000/users/emailcheck', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
@@ -74,10 +103,10 @@ const SignUp = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === '사용가능한 이메일입니다.') {
-          alert('사용 가능한 이메일입니다.');
-        } else {
+        if (result.message === '사용 불가능한 이메일입니다.') {
           alert('이미 사용 중인 이메일입니다.');
+        } else {
+          alert('사용 가능한 이메일입니다.');
         }
       });
   };
@@ -109,6 +138,7 @@ const SignUp = () => {
       </div>
       <hr className="signUpLine" />
       <UserAgreement />
+      <p className="error">{errorMsg}</p>
       <button type="submit" className="joinBtn" onClick={onClickSignUp}>
         가입하기
       </button>
