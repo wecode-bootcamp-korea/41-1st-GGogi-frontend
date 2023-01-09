@@ -8,7 +8,7 @@ import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
 
 const Router = () => {
-  const [cart, setCart] = useState([]);
+  const [cartList, setCartList] = useState([]);
   const [userAddress, setUserAddress] = useState({});
 
   return (
@@ -22,8 +22,8 @@ const Router = () => {
           path="/cart"
           element={
             <Cart
-              cart={cart}
-              setCart={setCart}
+              cartList={cartList}
+              setCartList={setCartList}
               userAddress={userAddress}
               setUserAddress={setUserAddress}
             />

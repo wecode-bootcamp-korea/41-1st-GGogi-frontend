@@ -11,6 +11,7 @@ const CartInfo = ({ cart, setCart, userAddress, setUserAddress }) => {
         setUserAddress={setUserAddress}
       />
       <CartInfoPrice />
+      {/* 주문하기 누르면 데이터가 백엔드로 전달되도록 해야 함 */}
       <button className="orderBtn">주문하기</button>
       <div className="cartInfoAside">
         {CARTINFO_ASIDE.map((item) => {

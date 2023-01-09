@@ -29,7 +29,7 @@ const CartProduct = () => {
         <AiOutlineShoppingCart className="cartIcon" />
         <span className="wholeProduct">전체상품</span>
       </div>
-      {/* {cart.length === 0 ? (
+      {/* {cartList.length === 0 ? (
         <div className="emptyBaseketSection">
           <p className="emptyBaseketInfo">장바구니에 담긴 상품이 없습니다.</p>
         </div>

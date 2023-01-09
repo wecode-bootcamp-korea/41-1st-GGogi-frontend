@@ -3,15 +3,15 @@ import CartProduct from './component/CartProduct';
 import CartInfo from './component/CartInfo';
 import './Cart.scss';
 
-const Cart = ({ cart, setCart, userAddress, setUserAddress }) => {
+const Cart = ({ cartList, setCartList, userAddress, setUserAddress }) => {
   return (
     <div className="cart">
       <h1 className="header">장바구니</h1>
       <div className="cartWrapper">
-        <CartProduct cart={cart} setCart={setCart} />
+        <CartProduct cartList={cartList} setCartList={setCartList} />
         <CartInfo
-          cart={cart}
-          setCart={setCart}
+          cartList={cartList}
+          setCartList={setCartList}
           userAddress={userAddress}
           setUserAddress={setUserAddress}
         />
