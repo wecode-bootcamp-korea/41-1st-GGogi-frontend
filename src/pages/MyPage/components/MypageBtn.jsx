@@ -3,17 +3,25 @@ import { useState } from 'react';
 import './MypageBtn.scss';
 
 const MypageBtn = ({ id, name, link, renderFn }) => {
-  const [clickevent, setClickevent] = useState(false);
+  const [clickevent, setClickevent] = useState({});
 
   const changeBtnColor = () => {
-    setClickevent(!state);
+    setClickevent(!clickevent);
+  };
+
+  const [changedBtnColor, SetChangedBtnColor] = useState(false);
+
+  const changedBtnColors = (e) => {
+    if (changedBtnColor === true) {
+      SetChangedBtnColor(!changedBtnColor);
+    } else SetChangedBtnColor(!changedBtnColor);
   };
 
   return (
     <button
-      className={clickevent.isActive ? 'clickMypageBtn' : 'mypageBtn'}
+      className={changedBtnColor === true ? 'clickMypageBtn' : 'mypageBtn'}
       name={link}
-      onClick={(e) => renderFn(e) && changeBtnColor()}
+      onClick={(e) => renderFn(e)}
       key={id}
     >
       <div className="btnfontsize15">{name}</div>

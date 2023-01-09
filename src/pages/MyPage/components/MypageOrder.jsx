@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MypageOrder.scss';
 
-const MypageOrder = () => {
+const MypageOrder = ({ orderList }) => {
   const [userAddressData, setUserAddressData] = useState([]);
 
   const userAddressPostData = (e) => {

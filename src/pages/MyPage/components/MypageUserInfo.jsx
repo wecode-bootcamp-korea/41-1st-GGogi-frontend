@@ -111,7 +111,7 @@ const MypageUserInfo = () => {
                 placeholder={placeholder}
                 value={userNewPwd.name}
                 onChange={samePassword}
-              ></input>
+              />
             </div>
           </form>
         ))}
