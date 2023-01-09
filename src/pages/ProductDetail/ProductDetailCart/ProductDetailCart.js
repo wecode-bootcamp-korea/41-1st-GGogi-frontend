@@ -11,7 +11,7 @@ const ProductDetailCart = ({ product }) => {
         <div className="tableHead">배송</div>
         <div className="tableBody">
           <div className="detailCartCount">
-            <div className="detailCartCountName">{product.title} </div>
+            <div className="detailCartCountName">{product.name} </div>
             <div className="detailCartCountBottom">
               <div className="detailCartCountBtn">
                 <PlusMinusBtn product={product} />

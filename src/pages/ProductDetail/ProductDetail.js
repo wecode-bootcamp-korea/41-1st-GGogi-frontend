@@ -8,14 +8,14 @@ import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
-  const { title, price, img } = productDetail;
+  const { name, price, image_url } = productDetail;
+  console.log(productDetail);
   const params = useParams();
   const productId = params.id;
 
   useEffect(() => {
-    fetch(
-      `https://my-json-server.typicode.com/legobitna/hnm-react-router/products/${productId}`
-    )
+    fetch(`http://10.58.52.62:3000/products/${productId}`)
+      // fetch(`http://10.58.52.62:3000/products`)
       .then((result) => result.json())
       .then((data) => setProductDetail(data));
   }, [productId]);
@@ -23,12 +23,12 @@ const ProductDetail = () => {
   return (
     <div className="productDetail">
       <div className="productDetailTop">
-        <img src={img} className="productDetailImg" />
+        <img src={image_url} className="productDetailImg" />
         <section className="productDetailInfo">
           <div className="productDetailName">
             <div className="productDetailNameTop">샛별배송</div>
             <div className="productDetailNameMiddle">
-              <div className="productDetailNameMiddleL">{title}</div>
+              <div className="productDetailNameMiddleL">{name}</div>
               <MdShare className="productDetailNameMiddleR" />
             </div>
           </div>

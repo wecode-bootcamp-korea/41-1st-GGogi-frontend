@@ -6,7 +6,7 @@ const ShoppingModal = ({ product, isShoppingModal }) => {
   return (
     <div className="shoppingModal">
       <div className="shoppingModalTop">
-        <div className="shoppingModalName">{product.title}</div>
+        <div className="shoppingModalName">{product.name}</div>
         <div className="shoppingModalCount">
           <div className="shoppingModalPrice">{product.price}원</div>
           <PlusMinusBtn />
