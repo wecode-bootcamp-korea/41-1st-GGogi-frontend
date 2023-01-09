@@ -7,12 +7,12 @@ const Navcategory = () => {
     <div className="navCategory">
       <div className="sideCategory">
         <span className="category">
-          <i class="fa-solid fa-bars"></i> 카테고리
+          <i className="fa-solid fa-bars"></i> 카테고리
         </span>
       </div>
       <div className="itemCategory">
         {NAVLIST.map((item) => (
-          <Navlinkcategory name={item.name} />
+          <Navlinkcategory key={item.id} name={item.name} />
         ))}
       </div>
       <div className="luciferParcel">

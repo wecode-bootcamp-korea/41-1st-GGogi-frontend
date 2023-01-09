@@ -1,0 +1,19 @@
+@import './../../../../styles/variables.scss';
+
+.birthWrapper {
+  @include flexRow(center, center);
+  height: 46px;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+
+  .inputBirth {
+    width: 97px;
+    text-align: center;
+    border: none;
+  }
+
+  .slash {
+    padding-top: 3px;
+    color: $border-color;
+  }
+}

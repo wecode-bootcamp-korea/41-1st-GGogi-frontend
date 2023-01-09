@@ -1,12 +1,12 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
+import Cart from './pages/Cart/Cart';
 import Footer from './components/Footer/Footer';
-import ProductDetail from './pages/ProductDetail/ProductDetail';
-import ProductList from './pages/ProductList/ProductList';
+import MyPage from './pages/MyPage/MyPage';
+
 const Router = () => {
   return (
     <BrowserRouter>
@@ -17,6 +17,8 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
