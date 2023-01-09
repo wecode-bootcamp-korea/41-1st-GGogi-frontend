@@ -73,8 +73,13 @@ const SignUp = () => {
       }),
     })
       .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
+      .then((result) => {
+        if (result.message === '사용가능한 이메일입니다.') {
+          alert('사용 가능한 이메일입니다.');
+        } else {
+          alert('이미 사용 중인 이메일입니다.');
+        }
+      });
   };
 
   return (
