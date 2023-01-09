@@ -9,13 +9,11 @@ import './ProductDetail.scss';
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
   const { name, price, image_url } = productDetail;
-  console.log(productDetail);
   const params = useParams();
   const productId = params.id;
 
   useEffect(() => {
     fetch(`http://10.58.52.62:3000/products/${productId}`)
-      // fetch(`http://10.58.52.62:3000/products`)
       .then((result) => result.json())
       .then((data) => setProductDetail(data));
   }, [productId]);

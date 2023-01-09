@@ -12,11 +12,6 @@ const PlusMinusBtn = ({ product }) => {
       return setCount(count - 1);
     }
   };
-
-  // const totalPrice = (product) => {
-  //   return Int(count) * product.price;
-  // };
-
   return (
     <div className="plusMinusBtn">
       <button className="modalBtn" onClick={minusCount}>
