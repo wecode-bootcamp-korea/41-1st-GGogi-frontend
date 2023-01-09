@@ -4,6 +4,7 @@ import ShoppingModal from '../ShoppingModal/ShoppingModal';
 import './ProductCardMini.scss';
 
 const ProductCardMini = ({ product }) => {
+  const { title, price, img } = product;
   const [shoppingModal2, setShoppingModal2] = useState();
   const isShoppingModal2 = (e) => {
     setShoppingModal2(!shoppingModal2);
@@ -11,10 +12,10 @@ const ProductCardMini = ({ product }) => {
 
   return (
     <div className="productCardMini">
-      <img src={product.img} className="productCardMiniImg" />
+      <img src={img} className="productCardMiniImg" />
       <div className="productCardMiniMiddle">
-        <div className="productCardMinititle">{product.title}</div>
-        <div className="productCardMiniprice">{product.price}원</div>
+        <div className="productCardMinititle">{title}</div>
+        <div className="productCardMiniprice">{price}원</div>
       </div>
       <div className="productCardMiniCart">
         <button className="productCart2Btn" onClick={isShoppingModal2}>
