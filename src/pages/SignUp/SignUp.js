@@ -41,23 +41,6 @@ const SignUp = () => {
 
   const birthdate = birthYear + '-' + birthMonth + '-' + birthDay;
 
-  const showErrorMsg = () => {
-    if (
-      email === '' ||
-      pwd === '' ||
-      confirmPwd === '' ||
-      name === '' ||
-      phone === '' ||
-      address === ''
-    ) {
-      setErrorMsg('빈 칸을 채워주세요.');
-    } else if (!email.includes('@')) {
-      setErrorMsg('이메일 형식이 올바르지 않습니다.');
-    } else if (pwd !== confirmPwd) {
-      setErrorMsg('비밀번호가 일치하지 않습니다.');
-    }
-  };
-
   const onClickCheckEmail = (e) => {
     e.preventDefault();
     fetch('http://10.58.52.62:3000/users/emailcheck', {
