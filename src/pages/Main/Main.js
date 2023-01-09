@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProductCardMiniList from '../../components/ProductCardMini/ProductCardMiniList';
 import './Main.scss';
-import ProductCardList2 from '../../components/ProductCard2/ProductCard2List';
 
 const Main = () => {
   const [productList, setProductList] = useState([]);
@@ -15,7 +15,7 @@ const Main = () => {
 
   return (
     <div className="main">
-      <ProductCardList2 productList={productList} />
+      <ProductCardMiniList productList={productList} />
     </div>
   );
 };

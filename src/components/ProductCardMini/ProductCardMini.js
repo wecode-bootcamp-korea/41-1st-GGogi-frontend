@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { BsCart2 } from 'react-icons/bs';
 import ShoppingModal from '../ShoppingModal/ShoppingModal';
-import './ProductCard2.scss';
+import './ProductCardMini.scss';
 
-const ProductCard2 = ({ product }) => {
+const ProductCardMini = ({ product }) => {
   const [shoppingModal2, setShoppingModal2] = useState();
   const isShoppingModal2 = (e) => {
     setShoppingModal2(!shoppingModal2);
   };
 
   return (
-    <div className="productCard2">
-      <img src={product.img} className="productCard2Img" />
-      <div className="productCard2Middle">
-        <div className="productCard2title">{product.title}</div>
-        <div className="productCard2price">{product.price}원</div>
+    <div className="productCardMini">
+      <img src={product.img} className="productCardMiniImg" />
+      <div className="productCardMiniMiddle">
+        <div className="productCardMinititle">{product.title}</div>
+        <div className="productCardMiniprice">{product.price}원</div>
       </div>
-      <div className="productCard2Cart">
+      <div className="productCardMiniCart">
         <button className="productCart2Btn" onClick={isShoppingModal2}>
           <BsCart2 />
           담기
@@ -31,4 +31,4 @@ const ProductCard2 = ({ product }) => {
   );
 };
 
-export default ProductCard2;
+export default ProductCardMini;

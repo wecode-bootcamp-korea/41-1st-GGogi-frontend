@@ -1,26 +1,26 @@
 @import '../../styles/variables.scss';
-.productCard2 {
+.productCardMini {
   width: 500px;
   height: 96px;
   @include flexRow(space-between, center);
 
-  .productCard2Img {
+  .productCardMiniImg {
     width: 74px;
     height: 74px;
   }
 
-  .productCard2Middle {
+  .productCardMiniMiddle {
     margin-top: 20px;
     margin-left: 20px;
     height: 72px;
     width: 311px;
 
-    .productCard2title {
+    .productCardMinititle {
       height: 32px;
       font-size: 16px;
     }
 
-    .productCard2price {
+    .productCardMiniprice {
       height: 25px;
       font-size: 16px;
       font-weight: 700;
@@ -28,7 +28,7 @@
     }
   }
 
-  .productCard2Cart {
+  .productCardMiniCart {
     height: 36px;
     width: 104px;
     border: 1px solid #dddddd;
