@@ -8,8 +8,15 @@ const CartProductList = ({
   handleCheckBtn,
 }) => {
   const handleRemove = (id) => {
+    console.log(id); //el.cartId !== id
+    fetch('/data/cartList.json', {
+      method: 'DELETE',
+      // headers: {
+      //   Authorization: userToken,
+      // },
+      body: JSON.stringify({ productId: id }),
+    });
     setCartList(cartList.filter((el) => el.cartId !== id));
-    console.log(cartList);
 
     // fetch('http://10.58.52.62:3000/cart/deleteItem', {
     //     method: 'DELETE',
@@ -17,10 +24,11 @@ const CartProductList = ({
     //       Authorization: localStorage.getItem('Token'),
     //     },
     //     body: JSON.stringify({
-    //       productId: cartId,
+    //       productId: id,
     //     }),
     // id와 같지 않은 것들을 새로 담아주기
   };
+  console.log(cartList);
 
   return (
     <div className="cartProductList">
