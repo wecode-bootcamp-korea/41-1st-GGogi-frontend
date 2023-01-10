@@ -7,7 +7,7 @@ const OrderProduct = () => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
 
   const onClickArrowIcon = () => {
-    setClickArrowIcon(!clickArrowIcon);
+    setClickArrowIcon((prev) => !prev);
   };
 
   const showWhatYouOrder = (

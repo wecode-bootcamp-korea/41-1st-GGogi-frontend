@@ -7,7 +7,7 @@ const OrderAddress = () => {
   const [showMsg, setShowMsg] = useState(false);
 
   const onClickShowMsg = () => {
-    setShowMsg(!showMsg);
+    setShowMsg((prev) => !prev);
   };
 
   const onClickCloseMsg = () => {
