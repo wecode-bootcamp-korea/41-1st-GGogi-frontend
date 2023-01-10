@@ -35,9 +35,7 @@ const ProductCard = ({ product }) => {
       </div>
       {shoppingModal ? (
         <ShoppingModal product={product} isShoppingModal={isShoppingModal} />
-      ) : (
-        ''
-      )}
+      ) : null}
     </div>
   );
 };
