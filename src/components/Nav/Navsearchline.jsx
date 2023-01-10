@@ -1,15 +1,19 @@
 import React from 'react';
-import './Navsearchline.scss';
+import { useNavigate } from 'react-router-dom';
 import Pin from '../../assets/images/pin.png';
 import Heart from '../../assets/images/heart.png';
 import Cart from '../../assets/images/shoppingCart.png';
+import './Navsearchline.scss';
 
 const Navsearchline = () => {
+  const navigatre = useNavigate();
+
+  const goToMain = () => navigatre('./');
   return (
     <div className="navSearchLine">
-      <div className="logo">
-        <span className="navMarketKurlyEg">kurly</span>
-        <span className="navMarketKurlyKr">마켓컬리</span>
+      <div className="logo" onClick={goToMain}>
+        <span className="navMarketKurlyEg">GGOGI</span>
+        <span className="navMarketKurlyKr">마켓꼬기</span>
       </div>
 
       <div className="navSearchBar">

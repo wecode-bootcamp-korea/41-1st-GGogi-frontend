@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlusMinusBtn.scss';
 
-const PlusMinusBtn = ({ quantity }) => {
+const PlusMinusBtn = ({ num }) => {
+  const [quantity, setQuantity] = useState(num);
+
+  const plusCount = () => {
+    return setQuantity(quantity + 1);
+  };
+
+  const minusCount = () => {
+    if (quantity > 1) {
+      return setQuantity(quantity - 1);
+    }
+  };
   return (
     <div className="plusMinusBtn">
-      <button className="modalBtn">-</button>
+      <button className="modalBtn" onClick={minusCount}>
+        -
+      </button>
       <div className="plusMinusTotal">{quantity}</div>
-      <button className="modalBtn">+</button>
+      <button className="modalBtn" onClick={plusCount}>
+        +
+      </button>
     </div>
   );
 };
