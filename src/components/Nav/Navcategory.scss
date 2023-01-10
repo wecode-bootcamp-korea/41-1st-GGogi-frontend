@@ -55,10 +55,11 @@
   }
 
   .sideCategory {
+    display: inline-block;
     position: relative;
     margin-left: 32px;
-    display: inline-block;
   }
+
   .sideCategory > ul {
     position: absolute;
     top: 42.5px;
@@ -66,7 +67,7 @@
     width: 200px;
     background-color: white;
     border: none;
-    z-index: 9999;
+    z-index: 1000;
   }
   .meatCategory {
     padding: 20px;
@@ -86,7 +87,7 @@
   }
 
   .lucifer {
-    color: #5f0080;
+    color: $basic-color;
     font-size: 13px;
   }
   .parcel {
@@ -95,21 +96,15 @@
 }
 
 .navCategory {
-  left: 0;
-  right: 0;
-  top: 80px;
   z-index: 9999;
-  top: 0px;
   background-color: white;
 
   .categoryStyle {
-    width: 1050px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    height: 60px;
+    @include flexRow(space-between, center);
     margin: 0 auto;
+    width: 1050px;
+    height: 60px;
+    text-align: center;
   }
 
   button {
@@ -155,6 +150,7 @@
     position: relative;
     margin-left: 32px;
   }
+
   .sideCategory > ul {
     position: absolute;
     top: 42.5px;
