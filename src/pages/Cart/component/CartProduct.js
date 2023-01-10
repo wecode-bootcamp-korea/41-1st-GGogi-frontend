@@ -4,7 +4,13 @@ import CartProductList from './CartProductList';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './CartProduct.scss';
 
-const CartProduct = ({ cartList, setCartList }) => {
+const CartProduct = ({
+  cartList,
+  setCartList,
+  selectedItemIdArr,
+  setSelectedItemIdArr,
+  handleCheckBtn,
+}) => {
   return (
     <div className="cartProduct">
       <div className="checkSection">
@@ -13,9 +19,8 @@ const CartProduct = ({ cartList, setCartList }) => {
         <BsCheckCircle className="uncheckIcon" /> */}
         <span className="wholeCheckWord">전체선택</span>
         <div className="checkCountSection">
-          <span className="checkedQuantity">0</span>
-          <span className="slash">/</span>
-          {/* 전체 수량 나오게끔 연결해야 함 */}
+          <span className="checkedQuantity">{selectedItemIdArr.length}</span>
+          <span className="slash"> / </span>
           <span className="wholeQuantity">{cartList.length}</span>
         </div>
         <div className="stick">|</div>
@@ -34,7 +39,12 @@ const CartProduct = ({ cartList, setCartList }) => {
             <AiOutlineShoppingCart className="cartIcon" />
             <span className="wholeProduct">전체상품</span>
           </div>
-          <CartProductList cartList={cartList} setCartList={setCartList} />
+          <CartProductList
+            cartList={cartList}
+            setCartList={setCartList}
+            setSelectedItemIdArr={setSelectedItemIdArr}
+            handleCheckBtn={handleCheckBtn}
+          />
         </Fragment>
       )}
 
