@@ -3,7 +3,7 @@ import CartInfoPrice from './CartInfoPrice';
 import { CARTINFO_ASIDE } from './CartInfoAside';
 import './CartInfo.scss';
 
-const CartInfo = ({ cart, setCart, userAddress, setUserAddress }) => {
+const CartInfo = ({ cartList, setCartList, address }) => {
   // 버튼을 눌렀을 때 전송해야 할 데이터 담기
   // const onClickSignUp = (e) => {
   //   e.preventDefault();
@@ -24,10 +24,7 @@ const CartInfo = ({ cart, setCart, userAddress, setUserAddress }) => {
 
   return (
     <div className="cartInfo">
-      <CartInfoAddress
-        userAddress={userAddress}
-        setUserAddress={setUserAddress}
-      />
+      <CartInfoAddress address={address} />
       <CartInfoPrice />
       {/* 주문하기 누르면 데이터가 백엔드로 전달되도록 해야 함 */}
       <button className="orderBtn">주문하기</button>
