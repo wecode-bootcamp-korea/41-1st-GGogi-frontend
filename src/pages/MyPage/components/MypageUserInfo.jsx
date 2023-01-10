@@ -24,7 +24,7 @@ const MypageUserInfo = () => {
           'Content-Type': 'application/json; charset=utf-8',
           Authorization: localStorage.getItem('Token'),
         },
-        body: JSON.stringify({ password: 'confirmPwdagain' }),
+        body: JSON.stringify({ password: '' }),
       });
     }
   };

@@ -42,7 +42,6 @@ const MypageOrder = ({ orderList }) => {
             <div key={item.id} className="getCartData">
               <div className="cartItemListDiv">
                 <img className="orderImg" src={item.img} />
-
                 <div>
                   <div className="cartItemListDiv">
                     <div className="orderFontSize">상품명 : </div>

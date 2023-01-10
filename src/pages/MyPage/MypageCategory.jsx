@@ -7,14 +7,9 @@ const MypageCategory = ({ renderFn }) => {
     <div className="mypageCategory">
       <div className="myGgoginame">마이꼬기</div>
       <ul>
-        {MAINPAGELIST.map((item) => {
+        {MAINPAGELIST.map(({ id, name, link }) => {
           return (
-            <MypageBtn
-              key={item.id}
-              name={item.name}
-              renderFn={renderFn}
-              link={item.link}
-            />
+            <MypageBtn key={id} name={name} renderFn={renderFn} link={link} />
           );
         })}
       </ul>

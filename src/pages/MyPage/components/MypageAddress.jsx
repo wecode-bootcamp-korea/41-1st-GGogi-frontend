@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './MypageAddress.scss';
 import { HiOutlinePencil } from 'react-icons/hi';
 import { AiOutlineCheck } from 'react-icons/ai';
+import './MypageAddress.scss';
 
 const MypageAddress = () => {
   const [userAddressData, setUserAddressData] = useState([]);
@@ -37,7 +37,7 @@ const MypageAddress = () => {
       <div className="addressModify">
         <div className="addressModifyCategory">
           {ADDRESSINFO.map((item) => (
-            <div className="addressCategory" key={item.id}>
+            <div className={item.className} key={item.id}>
               {item.title}
             </div>
           ))}
@@ -69,10 +69,10 @@ const MypageAddress = () => {
 export default MypageAddress;
 
 const ADDRESSINFO = [
-  { id: 1, title: '선택' },
-  { id: 2, title: '주소' },
-  { id: 3, title: '받으실 분' },
-  { id: 4, title: '연락처' },
-  { id: 5, title: '배송유형' },
-  { id: 6, title: '수정' },
+  { id: 1, title: '선택', className: 'addressSelect' },
+  { id: 2, title: '주소', className: 'addressUser' },
+  { id: 3, title: '받으실 분', className: 'addressPlace' },
+  { id: 4, title: '연락처', className: 'addressPhone' },
+  { id: 5, title: '배송유형', className: 'addressHow' },
+  { id: 6, title: '수정', className: 'addressModifynd' },
 ];

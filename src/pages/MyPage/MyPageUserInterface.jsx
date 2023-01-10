@@ -2,6 +2,19 @@ import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
 const MyPageUserInterface = ({ name, point }) => {
+  const pointStr = Number(point);
+  const pointDeleteDot = Math.floor(pointStr);
+
+  const USERBIGDATA = [
+    {
+      id: 1,
+      title: '적립금',
+      point: `${pointDeleteDot} 원`,
+      delete: '소멸 예정',
+    },
+    { id: 2, title: '쿠폰', point: '0 개' },
+    { id: 3, title: '나의 컬리스타일', point: '등록하기' },
+  ];
   return (
     <div className="myPageUserInterface">
       <div className="myPageGrid">
@@ -40,9 +53,7 @@ const MyPageUserInterface = ({ name, point }) => {
                   {list.point}
                 </div>
                 {list.title === '적립금' && (
-                  <div className="deletePointColor">
-                    {list.delete} {point}원
-                  </div>
+                  <div className="deletePointColor">{list.delete} 원</div>
                 )}
               </button>
             );
@@ -78,14 +89,3 @@ const MyPageUserInterface = ({ name, point }) => {
 };
 
 export default MyPageUserInterface;
-
-<button className="btnWidthColors userReservesCommonPadding">
-  <div className="kurlyBtnColors">나의 컬리스타일</div>
-  <div className="kurlyBtnPurpleColors itemMargin">등록하기</div>
-</button>;
-
-const USERBIGDATA = [
-  { id: 1, title: '적립금', point: '0 원', delete: '소멸 예정' },
-  { id: 2, title: '쿠폰', point: '0 개' },
-  { id: 3, title: '나의 컬리스타일', point: '등록하기' },
-];
