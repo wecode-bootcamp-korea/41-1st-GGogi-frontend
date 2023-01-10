@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCardMiniList from '../../components/ProductCardMini/ProductCardMiniList';
 import './Main.scss';
 import MainCard from './Components/MainCard';
+import MainCardMini from './Components/MainCardMini';
 
 const Main = () => {
   const [productList, setProductList] = useState([]);
@@ -16,8 +17,7 @@ const Main = () => {
 
   return (
     <div className="main">
-      <MainCard />
-      <ProductCardMiniList productList={productList} />
+      <MainCardMini />
     </div>
   );
 };

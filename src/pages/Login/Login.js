@@ -18,7 +18,6 @@ const Login = () => {
   const onClickLogin = (e) => {
     e.preventDefault();
     fetch('http://10.58.52.62:3000/users/login', {
-
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
