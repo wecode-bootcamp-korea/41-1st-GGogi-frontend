@@ -1,10 +1,10 @@
 import React from 'react';
 import ProductCard from '../../../components/ProductCard/ProductCard';
-import './MainCard1.scss';
+import './MainCard.scss';
 
-const MainCard1 = () => {
+const MainCard = () => {
   return (
-    <div className="mainCard1">
+    <div className="mainCard">
       <div>최대 80% 선물 빅세일</div>
       <div>
         <ProductCard />
@@ -13,4 +13,4 @@ const MainCard1 = () => {
   );
 };
 
-export default MainCard1;
+export default MainCard;

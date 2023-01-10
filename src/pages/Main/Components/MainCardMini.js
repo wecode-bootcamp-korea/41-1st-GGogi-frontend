@@ -1,8 +1,8 @@
 import React from 'react';
 import './MainCard2.scss';
 
-const MainCard2 = () => {
+const MainCardMini = () => {
   return <div>MainCard2</div>;
 };
 
-export default MainCard2;
+export default MainCardMini;
