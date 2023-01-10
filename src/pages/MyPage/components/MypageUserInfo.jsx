@@ -46,7 +46,6 @@ const MypageUserInfo = () => {
       .then((response) => response.json())
       .then((userAddress) => setUserAddressData(userAddress.data[0]));
   }, []);
-  console.log(userNewPwd);
   return (
     <div className="mypageUserModify">
       <div className="userModifyHaader">
@@ -77,6 +76,7 @@ const MypageUserInfo = () => {
               value={oldPassword}
               onChange={passwordValue}
               placeholder="현재 사용중인 비밀번호를 입력해주세요"
+              autoComplete="on"
             />
           </div>
         </form>
@@ -90,6 +90,7 @@ const MypageUserInfo = () => {
               value={newPassword}
               onChange={passwordValue}
               placeholder="변경하실 비밀번호를 입력해주세요"
+              autoComplete="on"
             />
           </div>
         </form>
@@ -103,6 +104,7 @@ const MypageUserInfo = () => {
               value={againPassword}
               onChange={passwordValue}
               placeholder="비밀번호를 한 번 더 입력해주세요"
+              autoComplete="on"
             />
           </div>
         </form>

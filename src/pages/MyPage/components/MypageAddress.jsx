@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './MypageAddress.scss';
 import { HiOutlinePencil } from 'react-icons/hi';
 import { AiOutlineCheck } from 'react-icons/ai';
+import './MypageAddress.scss';
 
 const MypageAddress = () => {
   const [userAddressData, setUserAddressData] = useState([]);
-  const [inputBtn, setInputBtn] = useState('');
 
   useEffect(() => {
     fetch(`http://10.58.52.62:3000/users/address`, {
@@ -19,33 +18,12 @@ const MypageAddress = () => {
       .then((data) => setUserAddressData(data.data[0]));
   }, []);
 
-  console.log(userAddressData);
-
   const { address, name, phone } = userAddressData;
 
-  // const phoneline = (e) => {
-  //   const phoneNum = e.replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
-  //   return phoneNum;
-  // };
+  const phoneline = (e) =>
+    e && e.replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
 
-  // const userPhoneNum = phoneline(phone);
-
-  // const userAddressPostData = (e) => {
-  //   e.preventDefault();
-
-  //   fetch(`http://10.58.52.62:3000/users/mypage`, {
-  //     method: 'patch',
-  //     headers: {
-  //       'Content-Type': 'application/json; charset=utf-8',
-  //       Authorization: localStorage.getItem('Token'),
-  //     },
-  //     body: JSON.stringify({
-  //       address: 'update title',
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((userAddress) => setUserAddressData(userAddress.data[0]));
-  // };
+  const userPhoneNum = phoneline(phone);
 
   return (
     <div className="mypageAddress">
@@ -79,7 +57,7 @@ const MypageAddress = () => {
           {}
           <div className="userAddressName blockpaddingmargin">{name}</div>
           <div className="userAddressPhoneNumber blockpaddingmargin">
-            {phone}
+            {userPhoneNum}
           </div>
           <div className="postDetail blockpaddingmargin">샛별배송</div>
           <div className="modifypencil blockpaddingmargin">

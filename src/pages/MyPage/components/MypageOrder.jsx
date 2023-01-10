@@ -38,12 +38,9 @@ const MypageOrder = ({ orderList }) => {
       <div>
         {orderList &&
           orderList.map(
-            (
-              { orderNum, productId, orderStatus, productName, thumbnailImage },
-              idx
-            ) => {
+            ({ orderNum, orderStatus, productName, thumbnailImage }, idx) => {
               return (
-                <div key={productId} className="getCartData">
+                <div key={idx} className="getCartData">
                   <div className="cartItemListDiv">
                     <img className="orderImg" src={thumbnailImage} />
 
@@ -77,30 +74,3 @@ const MypageOrder = ({ orderList }) => {
 };
 
 export default MypageOrder;
-
-const ORDERINFO = [
-  {
-    id: 1,
-    img: './images/gogi.jpg',
-    title: '키위새 구이',
-    ordernum: '98236456453',
-    howorder: '무통장 입금',
-    price: '10원',
-  },
-  {
-    id: 2,
-    img: './images/gogi.jpg',
-    title: '참새 구이',
-    ordernum: '349394839',
-    howorder: '무통장 입금',
-    price: '200원',
-  },
-  {
-    id: 3,
-    img: './images/gogi.jpg',
-    title: '까마귀 구이',
-    ordernum: '8687757767',
-    howorder: '무통장 입금',
-    price: '3,000원',
-  },
-];
