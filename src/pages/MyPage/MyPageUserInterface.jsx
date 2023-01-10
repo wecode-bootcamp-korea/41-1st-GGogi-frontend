@@ -15,6 +15,19 @@ const MyPageUserInterface = ({ name, point }) => {
     { id: 2, title: '쿠폰', point: '0 개' },
     { id: 3, title: '나의 컬리스타일', point: '등록하기' },
   ];
+
+  useEffect(() => {
+    fetch(`http://10.58.52.116:3000/users/mypage`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Authorization: localStorage.getItem('Token'),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setState(data.data[0]));
+  }, []);
+
   return (
     <div className="myPageUserInterface">
       <div className="myPageGrid">
