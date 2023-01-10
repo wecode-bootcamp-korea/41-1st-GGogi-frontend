@@ -3,23 +3,25 @@ import './BirthdayInput.scss';
 
 const BirthdayInput = ({ handleUserInfo }) => {
   const BIRTHDAYINPUT_DATA = [
-    { id: 1, name: 'birthYear', placeholder: 'YYYY' },
-    { id: 2, name: 'birthMonth', placeholder: 'MM' },
-    { id: 3, name: 'birthDay', placeholder: 'DD' },
+    { id: 1, name: 'birthYear', placeholder: 'YYYY', maxlength: 4 },
+    { id: 2, name: 'birthMonth', placeholder: 'MM', maxlength: 2 },
+    { id: 3, name: 'birthDay', placeholder: 'DD', maxlength: 2 },
   ];
 
   return (
     <div className="birthday">
       <div className="birthWrapper">
         {BIRTHDAYINPUT_DATA.map((item) => {
+          const { id, name, placeholder, maxlength } = item;
           return (
-            <Fragment key={item.id}>
+            <Fragment key={id}>
               <input
                 className="inputBirth"
-                name={item.name}
+                name={name}
                 type="text"
-                placeholder={item.placeholder}
+                placeholder={placeholder}
                 onChange={handleUserInfo}
+                maxlength={maxlength}
               />
               {item.id !== 3 && <p className="slash">/</p>}
             </Fragment>

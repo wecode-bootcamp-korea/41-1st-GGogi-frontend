@@ -18,6 +18,28 @@ const SignUp = () => {
     birthDay: '',
   });
 
+  const handleMsg = {
+    emptyError: 'KEY_ERROR',
+    emptyMsg: '빈 칸을 채워주세요.',
+    emailError: '이메일 양식이 맞지않습니다.',
+    emailMsg: '이메일 형식에 맞지 않습니다.',
+    pwdError: '비밀번호 양식이 맞지않습니다.',
+    pwdMsg: '비밀번호는 8자리 이상, 숫자와 영어, 특수문자를 포함해야 합니다.',
+    success: 'SIGNUP_SUCCESS',
+    successMsg: '회원가입 되었습니다.',
+  };
+
+  const {
+    emptyError,
+    emptyMsg,
+    emailError,
+    emailMsg,
+    pwdError,
+    pwdMsg,
+    success,
+    successMsg,
+  } = handleMsg;
+
   const [errorMsg, setErrorMsg] = useState('');
 
   const navigate = useNavigate();
@@ -76,19 +98,17 @@ const SignUp = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === 'KEY_ERROR') {
-          setErrorMsg('빈 칸을 채워주세요');
-        } else if (result.message === '이메일 양식이 맞지않습니다.') {
-          setErrorMsg('이메일 형식에 맞지 않습니다.');
-        } else if (result.message === '비밀번호 양식이 맞지않습니다.') {
-          setErrorMsg(
-            '비밀번호는 8자리 이상, 숫자와 영어, 특수문자를 포함해야 합니다.'
-          );
+        if (result.message === emptyError) {
+          setErrorMsg(emptyMsg);
+        } else if (result.message === emailError) {
+          setErrorMsg(emailMsg);
+        } else if (result.message === pwdError) {
+          setErrorMsg(pwdMsg);
         } else if (pwd !== confirmPwd) {
           setErrorMsg('비밀번호가 일치하지 않습니다.');
-        } else if (result.message === 'SIGNUP_SUCCESS') {
+        } else if (result.message === success) {
           setErrorMsg('');
-          alert('회원가입 되었습니다.');
+          alert(successMsg);
           navigate('/');
         }
       });
