@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from 'react';
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
-const MyPageUserInterface = () => {
-  const [state, setState] = useState([]);
+const MyPageUserInterface = ({ name, point }) => {
+  const pointStr = Number(point);
+  const pointDeleteDot = Math.floor(pointStr);
+
+  const USERBIGDATA = [
+    {
+      id: 1,
+      title: '적립금',
+      point: `${pointDeleteDot} 원`,
+      delete: '소멸 예정',
+    },
+    { id: 2, title: '쿠폰', point: '0 개' },
+    { id: 3, title: '나의 컬리스타일', point: '등록하기' },
+  ];
 
   useEffect(() => {
-    fetch(`http://10.58.52.116:3000/users/mypage`, {
+    fetch(`http://10.58.52.62:3000/users/mypage`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -16,9 +27,7 @@ const MyPageUserInterface = () => {
       .then((response) => response.json())
       .then((data) => setState(data.data[0]));
   }, []);
-  console.log(state);
 
-  console.log(state.name);
   return (
     <div className="myPageUserInterface">
       <div className="myPageGrid">
@@ -27,7 +36,7 @@ const MyPageUserInterface = () => {
             <div className="welcomeUser">
               <p className="welcomeBox">웰컴</p>
             </div>
-            <div className="myPageUserName">username</div>
+            <div className="myPageUserName">{name}</div>
           </div>
           <div className="userAccumulate">
             <p>적립 5%</p>
@@ -57,7 +66,7 @@ const MyPageUserInterface = () => {
                   {list.point}
                 </div>
                 {list.title === '적립금' && (
-                  <div className="deletePointColor">{list.delete} 0원</div>
+                  <div className="deletePointColor">{list.delete} 원</div>
                 )}
               </button>
             );
@@ -93,14 +102,3 @@ const MyPageUserInterface = () => {
 };
 
 export default MyPageUserInterface;
-
-<button className="btnWidthColors userReservesCommonPadding">
-  <div className="kurlyBtnColors">나의 컬리스타일</div>
-  <div className="kurlyBtnPurpleColors itemMargin">등록하기</div>
-</button>;
-
-const USERBIGDATA = [
-  { id: 1, title: '적립금', point: '원', delete: '소멸 예정' },
-  { id: 2, title: '쿠폰', point: '0 개' },
-  { id: 3, title: '나의 컬리스타일', point: '등록하기' },
-];
