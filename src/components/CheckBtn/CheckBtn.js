@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import './CheckBtn.scss';
 
-const CheckBtn = ({ onChange }) => {
+const CheckBtn = ({}) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const onClickChangeIcon = (e) => {
-    setIsChecked(!isChecked);
-    onChange(!isChecked);
+    setIsChecked((prev) => !prev);
   };
   return (
     <div className="checkBtn" onClick={onClickChangeIcon}>
