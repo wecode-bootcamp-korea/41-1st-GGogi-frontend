@@ -26,6 +26,10 @@ const Cart = () => {
   }
   const calTotalPrice = totalPriceArr.reduce((a, b) => a + b);
 
+  const convertPrice = (price) => {
+    return price.toLocaleString();
+  };
+
   // useEffect(() => {
   //   fetch('http://10.58.52.62:3000/carts', {
   //     method: 'GET',
@@ -67,6 +71,7 @@ const Cart = () => {
           handleCheckBtn={handleCheckBtn}
           selectedItemIdArr={selectedItemIdArr}
           setSelectedItemIdArr={setSelectedItemIdArr}
+          convertPrice={convertPrice}
         />
         <CartInfo
           address={address}
@@ -74,6 +79,7 @@ const Cart = () => {
           setCartList={setCartList}
           handleOrderBtn={handleOrderBtn}
           calTotalPrice={calTotalPrice}
+          convertPrice={convertPrice}
         />
       </div>
     </div>

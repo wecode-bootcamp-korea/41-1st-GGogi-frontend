@@ -10,6 +10,7 @@ const CartProduct = ({
   selectedItemIdArr,
   setSelectedItemIdArr,
   handleCheckBtn,
+  convertPrice,
 }) => {
   return (
     <div className="cartProduct">
@@ -44,6 +45,7 @@ const CartProduct = ({
             setCartList={setCartList}
             setSelectedItemIdArr={setSelectedItemIdArr}
             handleCheckBtn={handleCheckBtn}
+            convertPrice={convertPrice}
           />
         </Fragment>
       )}

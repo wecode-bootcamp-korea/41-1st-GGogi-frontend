@@ -6,6 +6,7 @@ const CartProductList = ({
   setCartList,
   setSelectedItemIdArr,
   handleCheckBtn,
+  convertPrice,
 }) => {
   const handleRemove = (id) => {
     console.log(id); //el.cartId !== id
@@ -85,7 +86,9 @@ const CartProductList = ({
                 +
               </button>
             </div>
-            <span className="price">{price * quantity}원</span>
+            <span className="price">
+              {price * quantity && convertPrice(price * quantity)}원
+            </span>
             <button className="deleteBtn" onClick={() => handleRemove(cartId)}>
               X
             </button>
