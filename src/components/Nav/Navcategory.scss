@@ -6,7 +6,7 @@
   right: 0;
   top: 0px;
   background-color: white;
-  z-index: 9999;
+  z-index: 10;
 
   .categoryStyle {
     @include flexRow(space-between, center);
@@ -67,8 +67,8 @@
     width: 200px;
     background-color: white;
     border: none;
-    z-index: 1000;
   }
+
   .meatCategory {
     padding: 20px;
     border: 1px solid rgb(0, 0, 0, 0.1);
@@ -78,16 +78,16 @@
   }
 
   .luciferParcel {
+    margin-bottom: 3px;
     width: 125px;
     height: 27px;
     border: 1px solid rgb(0, 0, 0, 0.2);
     border-radius: 18px;
-    margin-bottom: 3px;
     cursor: pointer;
   }
 
   .lucifer {
-    color: $basic-color;
+    color: #5f0080;
     font-size: 13px;
   }
   .parcel {
@@ -96,7 +96,11 @@
 }
 
 .navCategory {
+  left: 0;
+  right: 0;
+  top: 80px;
   z-index: 9999;
+  top: 0px;
   background-color: white;
 
   .categoryStyle {
@@ -158,7 +162,6 @@
     width: 200px;
     background-color: white;
     border: none;
-    z-index: 1000;
   }
 
   .luciferParcel {

@@ -1,30 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navcategory.scss';
 
 const Navcategory = () => {
   const [categoryData, setCategoryData] = useState([]);
   const [subCategoryId, setSubCategoryId] = useState('');
-  const [scrollY, setScrollY] = useState(0);
+  const [categoeyPoint, setCategoryPoint] = useState(false);
   const [subCategory, setSubCategory] = useState(true);
-  const [isActive, setIsActive] = useState({
-    categoeyPoint: false,
-    scrollActive: false,
-  });
-
-  const { categoeyPoint, scrollActive } = isActive;
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollActive, setScrollActive] = useState(false);
+  const [scrollSubActive, setScrollSubActive] = useState(true);
 
   const handleClick = (e) => {
     setSubCategoryId(e.target.id);
-    setIsActive({ categoeyPoint: true });
+    setCategoryPoint(true);
   };
 
   const scrollFixed = () => {
     if (scrollY > 96) {
       setScrollY(window.pageYOffset);
-      setIsActive({ scrollActive: true });
+      setScrollActive(true);
     } else {
       setScrollY(window.pageYOffset);
-      setIsActive({ scrollActive: false });
+      setScrollActive(false);
     }
   };
 
@@ -83,9 +81,9 @@ const Navcategory = () => {
           </ul>
         </div>
         <button className="itemCategory">
-          {NAVLIST.map(({ id, name }) => (
-            <span className="categoryBtn" key={id}>
-              {name}
+          {NAVLIST.map((item) => (
+            <span className="categoryBtn" key={item.id}>
+              {item.name}
             </span>
           ))}
         </button>
@@ -101,8 +99,8 @@ const Navcategory = () => {
 export default Navcategory;
 
 const NAVLIST = [
-  { id: '1', name: '신상품', className: 'newProduct' },
-  { id: '2', name: '베스트', className: 'bestProduct' },
-  { id: '3', name: '알뜰쇼핑', className: 'saleProduct' },
-  { id: '4', name: '특가/헤택', className: 'eventProduct' },
+  { id: '1', name: '신상품' },
+  { id: '2', name: '베스트' },
+  { id: '3', name: '알뜰쇼핑' },
+  { id: '4', name: '특가/헤택' },
 ];
