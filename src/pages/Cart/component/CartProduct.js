@@ -1,8 +1,8 @@
-import CartProductList from './CartProductList';
+import { Fragment } from 'react';
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
+import CartProductList from './CartProductList';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './CartProduct.scss';
-import Cart from '../Cart';
 
 const CartProduct = ({ cartList, setCartList }) => {
   return (
@@ -16,7 +16,7 @@ const CartProduct = ({ cartList, setCartList }) => {
           <span className="checkedQuantity">0</span>
           <span className="slash">/</span>
           {/* 전체 수량 나오게끔 연결해야 함 */}
-          <span className="wholeQuantity">4</span>
+          <span className="wholeQuantity">{cartList.length}</span>
         </div>
         <div className="stick">|</div>
         <div className="deleteBtnSection">
@@ -24,19 +24,19 @@ const CartProduct = ({ cartList, setCartList }) => {
         </div>
       </div>
       <hr className="cartLineTop" />
-      {/* 장바구니에 담긴 상품이 없으면 여기부터 안보이게 하기 */}
-      <div className="cartTitleSection">
-        <AiOutlineShoppingCart className="cartIcon" />
-        <span className="wholeProduct">전체상품</span>
-      </div>
-      <CartProductList cartList={cartList} setCartList={setCartList} />
-      {/* {cartList.length === 0 ? (
+      {cartList.length === 0 ? (
         <div className="emptyBaseketSection">
           <p className="emptyBaseketInfo">장바구니에 담긴 상품이 없습니다.</p>
         </div>
       ) : (
-        // <CartProductList />
-      )} */}
+        <Fragment>
+          <div className="cartTitleSection">
+            <AiOutlineShoppingCart className="cartIcon" />
+            <span className="wholeProduct">전체상품</span>
+          </div>
+          <CartProductList cartList={cartList} setCartList={setCartList} />
+        </Fragment>
+      )}
 
       <hr className="cartLineUnder" />
     </div>
