@@ -1,10 +1,11 @@
 .productCard {
   width: 249px;
   position: relative;
-
+  margin-bottom: 10px;
   .productImg {
     height: 320px;
     width: 249px;
+    background-color: #dddddd;
   }
 
   .shoppingCartBtn {

@@ -6,7 +6,7 @@ import './ProductCard.scss';
 
 const ProductCard = ({ product }) => {
   const [shoppingModal, setShoppingModal] = useState();
-  const { image_url, name, price } = product;
+  const { thumbnail_image, name, price } = product;
   const navigate = useNavigate();
   const showProduct = (id) => {
     navigate(`/productdetail/${id}`);
@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
     <div className="productCard">
       <img
         className="productImg"
-        src={image_url}
+        src={thumbnail_image}
         alt="productImg"
         onClick={() => showProduct(product.id)}
       />

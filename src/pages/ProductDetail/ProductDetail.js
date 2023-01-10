@@ -8,7 +8,7 @@ import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState([]);
-  const { name, price, image_url } = productDetail;
+  const { name, price, thumbnail_image } = productDetail;
   const params = useParams();
   const productId = params.id;
 
@@ -21,7 +21,7 @@ const ProductDetail = () => {
   return (
     <div className="productDetail">
       <div className="productDetailTop">
-        <img src={image_url} className="productDetailImg" />
+        <img src={thumbnail_image} className="productDetailImg" />
         <section className="productDetailInfo">
           <div className="productDetailName">
             <div className="productDetailNameTop">샛별배송</div>
