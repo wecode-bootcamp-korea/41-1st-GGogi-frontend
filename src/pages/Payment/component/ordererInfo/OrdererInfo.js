@@ -15,10 +15,11 @@ const OrdererInfo = () => {
       <h2 className="ordererInfoTitle">주문자 정보</h2>
       <div className="ordererInfoSection">
         {ordererInfoList.map((item) => {
+          const { id, title, content } = item;
           return (
-            <div key={item.id} className="ordererInfoRow">
-              <span className="infoTitle">{item.title}</span>
-              <span className="infoContent">{item.content}</span>
+            <div key={id} className="ordererInfoRow">
+              <span className="infoTitle">{title}</span>
+              <span className="infoContent">{content}</span>
             </div>
           );
         })}
