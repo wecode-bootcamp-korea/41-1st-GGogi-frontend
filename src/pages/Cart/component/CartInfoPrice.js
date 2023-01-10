@@ -1,7 +1,10 @@
 import React from 'react';
 import './CartInfoPrice.scss';
 
-const CartInfoPrice = () => {
+const CartInfoPrice = ({ cartList, setCartList }) => {
+  cartList.map((cart) => {
+    console.log(cart);
+  });
   //[Todo] cart 정보 가져와서 합산해야 함
   const CART_PRICEINFO = [
     {

@@ -6,6 +6,7 @@ import './Cart.scss';
 const Cart = () => {
   const [cartList, setCartList] = useState([]);
   const [address, setAddress] = useState();
+
   useEffect(() => {
     fetch('http://10.58.52.62:3000/cart', {
       method: 'GET',

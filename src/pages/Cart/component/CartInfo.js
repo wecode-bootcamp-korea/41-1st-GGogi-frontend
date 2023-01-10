@@ -25,7 +25,7 @@ const CartInfo = ({ cartList, setCartList, address }) => {
   return (
     <div className="cartInfo">
       <CartInfoAddress address={address} />
-      <CartInfoPrice />
+      <CartInfoPrice cartList={cartList} setCartList={setCartList} />
       {/* 주문하기 누르면 데이터가 백엔드로 전달되도록 해야 함 */}
       <button className="orderBtn">주문하기</button>
       <div className="cartInfoAside">

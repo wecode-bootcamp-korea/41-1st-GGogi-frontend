@@ -4,6 +4,7 @@ import PlusMinusBtn from './../../../components/PlusMinusBtn/PlusMinusBtn';
 import './CartProductList.scss';
 
 const CartProductList = ({ cartList, setCartList }) => {
+  const [quantity, setQuantity] = useState(0);
   console.log(cartList);
   return (
     <div className="cartProductList">
@@ -23,7 +24,7 @@ const CartProductList = ({ cartList, setCartList }) => {
             <p className="productName">{productName}</p>
             {/* [Todo] 버튼 컴포넌트 merge되면 사용 예정 */}
             <PlusMinusBtn quantity={quantity} />
-            <span className="price">{price}원</span>
+            <span className="price">{price * quantity}원</span>
             <button className="deleteBtn">X</button>
           </div>
         );
