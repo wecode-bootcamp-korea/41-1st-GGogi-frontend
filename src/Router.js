@@ -10,7 +10,6 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Cart from './pages/Cart/Cart';
 
 import Payment from './pages/Payment/Payment';
-import Footer from './components/Footer/Footer';
 
 import MyPage from './pages/MyPage/MyPage';
 
@@ -27,8 +26,6 @@ const Router = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/order/checkout" element={<Payment />} />
-
-
       </Routes>
       <Footer />
     </BrowserRouter>

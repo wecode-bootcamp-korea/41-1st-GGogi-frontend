@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navloginsignup.scss';
 
 const Navloginsignup = () => {
+  const [userLoginName, setuserLoginName] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://10.58.52.62:3000/users/info`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Authorization: localStorage.getItem('Token'),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setuserLoginName(data.data[0]));
+  }, []);
+
+  const { name } = userLoginName;
+
   const navigate = useNavigate();
 
   const goToSignUp = () => navigate('./signup');
@@ -15,7 +31,7 @@ const Navloginsignup = () => {
     <div className="loginSignup">
       {Token && (
         <button className="signup" onClick={goToMypage}>
-          히평안님
+          {name}님
         </button>
       )}
       {Token == undefined && (

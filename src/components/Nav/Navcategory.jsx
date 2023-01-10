@@ -70,7 +70,9 @@ const Navcategory = () => {
                           className="subCategoryul"
                           onMouseLeave={handleOff}
                         >
-                          <li className="subCategoryli">{sub.name}</li>
+                          <Link to="/" className="subCategoryli">
+                            {sub.name}
+                          </Link>
                         </ul>
                       );
                     })}
