@@ -20,7 +20,6 @@ const MypageOrder = ({ orderList }) => {
       .then((response) => response.json())
       .then((userAddress) => setUserAddressData(userAddress.data[0]));
   };
-
   return (
     <div className="mypageOrder">
       <div className="ordersHaader">
@@ -37,34 +36,41 @@ const MypageOrder = ({ orderList }) => {
         <div className="staticHeadItem">주문내역 상세보기 ></div>
       </div>
       <div>
-        {ORDERINFO.map((item) => {
-          return (
-            <div key={item.id} className="getCartData">
-              <div className="cartItemListDiv">
-                <img className="orderImg" src={item.img} />
-                <div>
+        {orderList &&
+          orderList.map(
+            (
+              { orderNum, productId, orderStatus, productName, thumbnailImage },
+              idx
+            ) => {
+              return (
+                <div key={productId} className="getCartData">
                   <div className="cartItemListDiv">
-                    <div className="orderFontSize">상품명 : </div>
-                    <div className="getCartItem">{item.title}</div>
+                    <img className="orderImg" src={thumbnailImage} />
+
+                    <div>
+                      <div className="cartItemListDiv">
+                        <div className="orderFontSize">상품명 : </div>
+                        <div className="getCartItem">{productName}</div>
+                      </div>
+                      <div className="cartItemListDiv">
+                        <div className="orderFontSize">주문번호 : </div>
+                        <div className="getCartItem">{orderNum}</div>
+                      </div>
+                      <div className="cartItemListDiv">
+                        <div className="orderFontSize">결제방법 : </div>
+                        <div className="getCartItem">적립금 차감</div>
+                      </div>
+                      <div className="cartItemListDiv">
+                        <div className="orderFontSize">결제금액 : </div>
+                        <div className="getCartItem">29,900원</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="cartItemListDiv">
-                    <div className="orderFontSize">주문번호 : </div>
-                    <div className="getCartItem">{item.ordernum}</div>
-                  </div>
-                  <div className="cartItemListDiv">
-                    <div className="orderFontSize">결제방법 : </div>
-                    <div className="getCartItem">{item.howorder}</div>
-                  </div>
-                  <div className="cartItemListDiv">
-                    <div className="orderFontSize">결제금액 : </div>
-                    <div className="getCartItem">{item.price}</div>
-                  </div>
+                  <div className="orderDone">{orderStatus}</div>
                 </div>
-              </div>
-              <div className="orderDone">결제완료</div>
-            </div>
-          );
-        })}
+              );
+            }
+          )}
       </div>
     </div>
   );
