@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ProductCardMini from '../../../components/ProductCardMini/ProductCardMini';
 import './MainCardMini.scss';
 
 const MainCardMini = () => {
+  const [mainCardMini, setMainCardMini] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://10.58.52.62:3000/products`)
+      .then((response) => response.json())
+      .then((result) => setMainCardMini(result));
+  }, []);
+
   return (
     <div className="mainCardMini">
       <div className="mainCardMiniInfo">
@@ -20,10 +29,13 @@ const MainCardMini = () => {
         </div>
       </div>
       <div className="mainCardList">
-        <div className="mainCardListItem">1</div>
-        <div className="mainCardListItem">2</div>
-        <div className="mainCardListItem">3</div>
-        <div className="mainCardListItem">4</div>
+        {mainCardMini.map((mainCardMini) => (
+          <ProductCardMini
+            key={mainCardMini.id}
+            product={mainCardMini}
+            className="mainCardListItem"
+          />
+        ))}
       </div>
       <div className="mainCardListAll">
         <button className="mainCardListBtn">전체보기</button>
