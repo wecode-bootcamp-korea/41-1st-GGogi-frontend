@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.mypageCategory {
+  .myGgoginame {
+    padding: 5px 0 35px 0;
+    width: 200px;
+    color: #333333;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .helpBanner {
+    @include flexColumn(center, start);
+    margin-top: 20px;
+    padding: 0 20px;
+    width: 200px;
+    height: 60px;
+    background-color: #fafafa;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+
+    .needHelp {
+      padding: 5px 0;
+      color: #333333;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .oneOnOne {
+      padding: 5px 0;
+      font-size: 12px;
+    }
+  }
+}
