@@ -3,19 +3,20 @@ import PlusMinusBtn from '../PlusMinusBtn/PlusMinusBtn';
 import './ShoppingModal.scss';
 
 const ShoppingModal = ({ product, isShoppingModal }) => {
+  const { name, price } = product;
   return (
     <div className="shoppingModal">
       <div className="shoppingModalTop">
-        <div className="shoppingModalName">{product.name}</div>
+        <div className="shoppingModalName">{name}</div>
         <div className="shoppingModalCount">
-          <div className="shoppingModalPrice">{product.price}원</div>
+          <div className="shoppingModalPrice">{price}원</div>
           <PlusMinusBtn />
         </div>
       </div>
       <div className="shoppingModalMiddle">
         <div className="shoppingModalTotal">
           <span>합계</span>
-          <div className="modalTotalPrice">{product.price}원</div>
+          <div className="modalTotalPrice">{price}원</div>
         </div>
       </div>
       <div className="shoppingModalBottom">

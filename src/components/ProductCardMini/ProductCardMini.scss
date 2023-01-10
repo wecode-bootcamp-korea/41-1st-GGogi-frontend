@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+.productCardMini {
+  width: 500px;
+  height: 96px;
+  @include flexRow(space-between, center);
+
+  .productCardMiniImg {
+    width: 74px;
+    height: 74px;
+  }
+
+  .productCardMiniMiddle {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 72px;
+    width: 311px;
+
+    .productCardMinititle {
+      height: 32px;
+      font-size: 16px;
+    }
+
+    .productCardMiniprice {
+      height: 25px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+
+  .productCardMiniCart {
+    height: 36px;
+    width: 104px;
+    border: 1px solid #dddddd;
+    margin-left: 18px;
+    border-radius: 4px;
+    color: #333333;
+
+    .productCart2Btn {
+      height: 36px;
+      width: 104px;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}
