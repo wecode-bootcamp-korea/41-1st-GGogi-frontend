@@ -1,0 +1,124 @@
+@import './../../../../styles/variables.scss';
+
+.howToPay {
+  position: relative;
+
+  .paymentAside {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    height: 500px;
+  }
+
+  .paymentAsideSticky {
+    position: sticky;
+    top: 0px;
+  }
+
+  .howToPaySection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 1050px;
+
+    .howToPayWrapper {
+      width: 708px;
+      margin-top: 80px;
+
+      .titleSection {
+        height: 40px;
+        border-bottom: 1px solid;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .payContentRow {
+        display: grid;
+        grid-template-columns: 160px 520px;
+        grid-column-gap: 20px;
+        align-items: center;
+        padding-top: 20px;
+
+        .payTitle {
+          text-indent: 10px;
+          font-weight: 500;
+        }
+
+        .useCouponBtn {
+          width: 520px;
+          height: 44px;
+          border: 1px solid #dddddd;
+          border-radius: 5px;
+          color: #cccccc;
+          cursor: pointer;
+        }
+        .usePointSection {
+          position: relative;
+
+          .usePointInput {
+            width: 150px;
+            height: 44px;
+            padding-left: 20px;
+            background-color: #efefef;
+            border: none;
+            border-radius: 5px;
+            color: $border-color;
+            font-size: 16px;
+          }
+
+          .allUseBtn {
+            width: 80px;
+            height: 44px;
+            margin-left: 10px;
+            background-color: white;
+            border: 1px solid $border-color;
+            border-radius: 4px;
+            color: #c9c9c9;
+            cursor: pointer;
+          }
+        }
+        .pointInfo {
+          position: absolute;
+          top: 70px;
+
+          .availablePointInfo {
+            margin-bottom: 10px;
+          }
+
+          .availablePoint {
+            font-weight: 800;
+          }
+
+          .howToSeePointHistory {
+            color: $border-color;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .howToPayWrapper:last-child {
+      margin-top: 140px;
+
+      .paybtn {
+        width: 140px;
+        height: 48px;
+        margin-right: 5px;
+        background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .paymentInfo {
+        text-indent: 10px;
+        color: $border-color;
+        font-size: 12px;
+
+        &:first-of-type {
+          margin: 20px 0 10px;
+        }
+      }
+    }
+  }
+}
