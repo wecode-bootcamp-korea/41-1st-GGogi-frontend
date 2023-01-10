@@ -49,12 +49,13 @@ const Category = () => {
           className={showCategoryList ? 'categoryListUl' : 'categoryListUlNone'}
         >
           {categoryList.map((item) => {
+            const { category_id, name, quantity } = item;
             return (
-              <li key={item.category_id} className="categoryItem">
+              <li key={category_id} className="categoryItem">
                 <div className="categoryItemSection">
                   <BsCheckCircle className="checkedIcon" />
-                  <span className="categoryName">{item.name}</span>
-                  <span className="categoryQuantity">{item.quantity}</span>
+                  <span className="categoryName">{name}</span>
+                  <span className="categoryQuantity">{quantity}</span>
                 </div>
               </li>
             );
