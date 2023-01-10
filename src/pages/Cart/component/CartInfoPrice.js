@@ -1,13 +1,13 @@
 import React from 'react';
 import './CartInfoPrice.scss';
 
-const CartInfoPrice = ({ cartList, setCartList }) => {
+const CartInfoPrice = ({ cartList, setCartList, calTotalPrice }) => {
   //[Todo] cart 정보 가져와서 합산해야 함
   const CART_PRICEINFO = [
     {
       id: 1,
       name: '상품금액',
-      price: '46,360',
+      price: calTotalPrice,
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const CartInfoPrice = ({ cartList, setCartList }) => {
     {
       id: 3,
       name: '결제예정금액',
-      price: '46,360',
+      price: calTotalPrice,
     },
   ];
 

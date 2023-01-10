@@ -30,6 +30,31 @@ const CartProductList = ({
   };
   console.log(cartList);
 
+  const handleAdd = (cartId) => {
+    const updateQty = cartList.map((cart) => {
+      if (cart.cartId === cartId) {
+        return { ...cart, quantity: cart.quantity + 1 };
+      } else return cart;
+    });
+    setCartList(updateQty);
+  };
+
+  const handleSubtrac = (cartId) => {
+    const updateQty = cartList.map((cart) => {
+      if (cart.cartId === cartId && cart.quantity > 1) {
+        return { ...cart, quantity: cart.quantity - 1 };
+      } else return cart;
+    });
+    setCartList(updateQty);
+  };
+
+  // let totalPriceArr = [];
+  // for (let i = 0; i < cartList.length; i++) {
+  //   totalPriceArr.push(cartList[i].quantity * cartList[i].price);
+  // }
+  // const calTotalPrice = totalPriceArr.reduce((a, b) => a + b);
+  // console.log(calTotalPrice);
+
   return (
     <div className="cartProductList">
       {cartList.map((cart) => {
@@ -48,20 +73,20 @@ const CartProductList = ({
             />
             <p className="productName">{productName}</p>
             <div className="plusMinusBtn">
-              <button className="modalBtn" alt="minus">
+              <button
+                className="modalBtn"
+                alt="minus"
+                onClick={() => handleSubtrac(cartId)}
+              >
                 -
               </button>
               <div className="plusMinusTotal">{quantity}</div>
-              <button className="modalBtn" alt="plus">
+              <button className="modalBtn" onClick={() => handleAdd(cartId)}>
                 +
               </button>
             </div>
             <span className="price">{price * quantity}원</span>
-            <button
-              className="deleteBtn"
-              id={cartId}
-              onClick={() => handleRemove(cartId)}
-            >
+            <button className="deleteBtn" onClick={() => handleRemove(cartId)}>
               X
             </button>
           </div>

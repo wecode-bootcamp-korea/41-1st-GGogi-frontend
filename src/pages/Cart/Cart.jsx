@@ -19,6 +19,13 @@ const Cart = () => {
       });
   }, []);
 
+  let totalPriceArr = [];
+  if (cartList.length === 0) return;
+  for (let i = 0; i < cartList.length; i++) {
+    totalPriceArr.push(cartList[i].quantity * cartList[i].price);
+  }
+  const calTotalPrice = totalPriceArr.reduce((a, b) => a + b);
+
   // useEffect(() => {
   //   fetch('http://10.58.52.62:3000/carts', {
   //     method: 'GET',
@@ -66,6 +73,7 @@ const Cart = () => {
           cartList={cartList}
           setCartList={setCartList}
           handleOrderBtn={handleOrderBtn}
+          calTotalPrice={calTotalPrice}
         />
       </div>
     </div>
