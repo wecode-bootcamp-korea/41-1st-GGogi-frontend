@@ -125,13 +125,14 @@ const SignUp = () => {
       <div className="signUpInputSection">
         <form>
           {INPUT_DATA.map((item) => {
+            const { id, title, name, type, placeholder } = item;
             return (
               <SignUpItem
-                key={item.id}
-                title={item.title}
-                name={item.name}
-                type={item.type}
-                placeholder={item.placeholder}
+                key={id}
+                title={title}
+                name={name}
+                type={type}
+                placeholder={placeholder}
                 handleUserInfo={handleUserInfo}
                 onClickCheckEmail={onClickCheckEmail}
               />
