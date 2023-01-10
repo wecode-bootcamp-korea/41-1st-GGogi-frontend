@@ -1,13 +1,20 @@
 import React from 'react';
-import ProductCard from '../../../components/ProductCard/ProductCard';
+import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import './MainCard.scss';
 
 const MainCard = () => {
   return (
     <div className="mainCard">
-      <div>최대 80% 선물 빅세일</div>
-      <div>
-        <ProductCard />
+      <div className="mainCardTitle">이 상품 어때요?</div>
+      <div className="mainCardSlide">
+        <div className="mainCardSlideItem">hi</div>
+        <div className="mainCardSlideItem">hi</div>
+        <div className="mainCardSlideItem">hi</div>
+        <div className="mainCardSlideItem">hi</div>
+      </div>
+      <div className="mainCardSlideBtn">
+        <RiArrowLeftSLine className="mainCardSlideBtnLeft" />
+        <RiArrowRightSLine className="mainCardSlideBtnRight" />
       </div>
     </div>
   );

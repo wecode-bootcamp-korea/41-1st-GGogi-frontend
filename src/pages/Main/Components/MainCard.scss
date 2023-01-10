@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+.mainCard {
+  height: 610px;
+  width: 1050px;
+  .mainCardTitle {
+    @include flexRow(center, center);
+    width: 1050px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32.2px;
+  }
+  .mainCardSlide {
+    @include flexRow(space-between, center);
+    height: 455px;
+    width: 1050px;
+
+    .mainCardSlideItem {
+      width: 249px;
+      height: 432px;
+      border: 1px solid #dddddd;
+    }
+  }
+  .mainCardSlideBtn {
+    @include flexRow(space-between, center);
+    width: 1050px;
+    cursor: pointer;
+    position: fixed;
+    top: 45%;
+    .mainCardSlideBtnLeft {
+      height: 40px;
+      width: 40px;
+      border: 1px solid #dddddd;
+      border-radius: 100%;
+    }
+    .mainCardSlideBtnRight {
+      height: 40px;
+      width: 40px;
+      border: 1px solid #dddddd;
+      border-radius: 100%;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
+import { BsCheckCircleFill } from 'react-icons/bs';
 import UserAgreementCheck from './UserAgreementCheck';
 import './UserAgreement.scss';
 

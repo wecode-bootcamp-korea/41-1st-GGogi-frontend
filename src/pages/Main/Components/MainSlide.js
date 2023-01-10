@@ -1,51 +1,59 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import ProductCard from '../../../components/ProductCard/ProductCard';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './MainSlide.scss';
 
-const MainSlide = () => {
-  const slideRef = useRef();
-  const [count, setCount] = useState(1);
-  const [slideList, setSlideList] = useState([]);
+export const ProductsMain = () => {
+  const [productData, setProductData] = useState([]);
+  const [px, setPx] = useState(0);
 
   useEffect(() => {
-    const interval = setTimeout(() => {
-      setCount(() => {
-        if (count < slideList.length) {
-          setCount(count + 1);
-        } else {
-          setCount(1);
-        }
+    fetch('#')
+      .then((res) => res.json())
+      .then((result) => {
+        setProductData(result);
       });
+  }, []);
 
-      handleSlider(count);
+  const overFlowValue =
+    productData.length < 5 ? 0 : (productData.length - 5) * 265;
+  const CARDWIDTH = 265;
 
-      return () => clearTimeout(interval);
-    }, 6000);
-  });
-  
-  const handleSlider = count => {
-    if (count === 5) {
-      slideRef.current.style.transform = 'translateX(0)';
-    } else {
-      slideRef.current.style.transform = `translateX(-${
-        window.innerWidth * count
-      }px)`;
+  const handleClickLeft = () => {
+    if (px <= -overFlowValue) {
+      setPx((prev) => prev + CARDWIDTH);
     }
   };
-  
+
+  const handleClickRight = () => {
+    if (px >= -overFlowValue) {
+      setPx((prev) => prev - CARDWIDTH);
+    }
+  };
+
   return (
-    <main className="main">
-      <div className="mainSlide">
-        <Slide
-          slideRef={slideRef}
-          count={count}
-          slideList={slideList}
-          handleCount={handleCount}
-          handleSlider={handleSlider}
-        />
+    <div className="productsMain">
+      <p className="productsName">{productName}</p>
+      <FiChevronLeft
+        size="25px"
+        className="carouselBtn"
+        onClick={handleClickLeft}
+      />
+      <FiChevronRight
+        size="25px"
+        className="carouselBtn"
+        onClick={handleClickRight}
+      />
+      <div className="carouselContainer">
+        <div
+          className="productLists"
+          style={{ transform: `translate(${px}px)` }}
+        >
+          {productData.map(({ product }) => (
+            <ProductCard key={product.id} />
+          ))}
+        </div>
       </div>
-    </main>
+    </div>
   );
 };
-};
-
-export default MainSlide;

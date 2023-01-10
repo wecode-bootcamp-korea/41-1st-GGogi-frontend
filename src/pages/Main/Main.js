@@ -1,11 +1,11 @@
 import React from 'react';
-import MainSlide from './Components/MainSlide';
 import './Main.scss';
+import MainCard from './Components/MainCard';
 
 const Main = () => {
   return (
     <div className="main">
-      <MainSlide />
+      <MainCard />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
+import { BsCheckCircleFill } from 'react-icons/bs';
 import { USERAGREEMENT_LIST } from './UserAgreementList';
 import './UserAgreementCheck.scss';
 
