@@ -28,6 +28,7 @@ const Router = () => {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/order/checkout" element={<Payment />} />
 
+
       </Routes>
       <Footer />
     </BrowserRouter>
