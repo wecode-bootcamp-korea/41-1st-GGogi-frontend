@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
@@ -15,9 +15,11 @@ const Login = () => {
 
   const { id, pwd } = inputValues;
 
+  const navigate = useNavigate();
+
   const onClickLogin = (e) => {
     e.preventDefault();
-    fetch('http://10.58.52.143:3000/users/login', {
+    fetch('http://10.58.52.62:3000/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
@@ -27,7 +29,14 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        localStorage.setItem('Token', result.accessToken);
+        if (result.message === 'USER_IS_NOT_VALID') {
+          alert('이메일을 다시 확인해주세요.');
+        } else if (result.message === 'USER_IS_NOT_MATCH') {
+          alert('비밀번호를 다시 확인해주세요.');
+        } else {
+          localStorage.setItem('Token', result.accessToken);
+          navigate('/');
+        }
       });
   };
 

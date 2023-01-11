@@ -1,0 +1,163 @@
+@import '../../../styles/variables.scss';
+
+@import '../../../styles/variables.scss';
+
+.mypageAddress {
+  width: 820px;
+  height: 657px;
+
+  .addressHaader {
+    @include flexRow(space-between, center);
+    border-bottom: 2px solid black;
+
+    .leftAddressHaader {
+      margin-top: 10px;
+      padding: 0 0 35px 0;
+
+      .addressManagement {
+        height: 75px;
+        font-size: 26px;
+      }
+      .addressManagementInfo {
+        position: relative;
+        margin-left: 10px;
+        bottom: 3px;
+        height: 20px;
+        color: #999999;
+        font-size: 14px;
+      }
+    }
+
+    .rightAddressHaader {
+      height: 24px;
+      font-size: 16px;
+    }
+  }
+
+  .addressModify {
+    .addressModifyCategory {
+      display: flex;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid black;
+      padding: 20px 0;
+    }
+
+    .addressCategory:first-child {
+      font-size: 14px;
+      flex-basis: 60px;
+      font-weight: 500;
+    }
+
+    .addressCategory:nth-child(2) {
+      font-size: 16px;
+      font-weight: 500;
+      flex: 1 1 0;
+    }
+
+    .addressCategory:nth-child(3) {
+      font-size: 14px;
+      flex-basis: 120px;
+      font-weight: 500;
+    }
+
+    .addressCategory:nth-child(4) {
+      font-size: 14px;
+      flex-basis: 100px;
+      font-weight: 500;
+    }
+
+    .addressCategory:nth-child(5) {
+      font-size: 14px;
+      flex-basis: 100px;
+      font-weight: 500;
+    }
+
+    .addressCategory:nth-child(6) {
+      font-size: 14px;
+      flex-basis: 60px;
+    }
+  }
+
+  .userAddressInfo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+    .inputRemoveBorderCss {
+      border: none;
+      color: black;
+    }
+
+    .inputCreateBorderCss {
+      border: 1px solid rgb(0, 0, 0, 0.2);
+      height: 50px;
+    }
+
+    .blockpaddingmargin {
+      margin: 20px 0;
+    }
+
+    .addressCheck {
+      margin: 0 18px;
+      width: 24px;
+      height: 24px;
+      background-color: $basic-color;
+      border-radius: 100%;
+
+      .checkPosition {
+        font-weight: bold;
+        color: white;
+        font-size: 14px;
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .modifyAddress {
+      text-align: center;
+      font-size: 16px;
+      flex: 1 1 0;
+
+      .nowAddress {
+        display: block;
+        width: 74px;
+        height: 22px;
+        margin-bottom: 7px;
+        border-radius: 11px;
+        background-color: rgb(247, 247, 247);
+        font-weight: 700;
+        font-size: 12px;
+        color: rgb(102, 102, 102);
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: center;
+      }
+    }
+
+    .userAddressName {
+      font-size: 14px;
+      flex-basis: 120px;
+    }
+
+    .userAddressPhoneNumber {
+      font-size: 14px;
+      flex-basis: 100px;
+    }
+
+    .postDetail {
+      color: $basic-color;
+      font-weight: bold;
+      font-size: 14px;
+      flex-basis: 100px;
+    }
+
+    .modifypencil {
+      color: rgb(0, 0, 0, 0.2);
+      font-size: 20px;
+      flex-basis: 60px;
+    }
+  }
+}

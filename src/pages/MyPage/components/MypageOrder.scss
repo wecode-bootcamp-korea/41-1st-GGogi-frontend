@@ -1,0 +1,101 @@
+@import '../../../styles/variables.scss';
+
+.mypageOrder {
+  margin: auto 0;
+  width: 820px;
+  height: 657px;
+
+  .ordersHaader {
+    @include flexRow(space-between, center);
+    border-bottom: 2px solid black;
+
+    .orderHaader {
+      margin-top: 10px;
+      padding-bottom: 35px;
+
+      .orderManagement {
+        height: 75px;
+        font-size: 26px;
+      }
+
+      .orderManagementInfo {
+        position: relative;
+        margin-left: 10px;
+        bottom: 3px;
+        height: 20px;
+        color: #999999;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .staticHeader {
+    @include flexRow(space-between, center);
+    padding-bottom: 10px;
+    margin: 50px 20px 0 20px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+    .staticHead {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.31;
+      color: rgb(51, 51, 51);
+    }
+
+    .staticHeadItem {
+      padding-right: 10px;
+      line-height: 1.33;
+      color: rgb(51, 51, 51);
+      font-size: 12px;
+    }
+  }
+
+  .getCartData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 0px 16px;
+
+    .orderImg {
+      margin-right: 5px;
+      width: 60px;
+      height: 78px;
+    }
+
+    .cartItemListDiv {
+      display: flex;
+      padding-top: 6px;
+      margin-left: 20px;
+      flex-direction: row;
+      color: rgb(0, 0, 0);
+      line-height: 20px;
+
+      .orderFontSize {
+        position: relative;
+        bottom: 10px;
+        width: 50px;
+        line-height: 1.58;
+        margin-right: 10px;
+        font-size: 12px;
+        color: rgb(51, 51, 51);
+      }
+
+      .getCartItem {
+        position: relative;
+        bottom: 12px;
+        flex: 1 1 0%;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(51, 51, 51);
+        line-height: 1.36;
+      }
+    }
+
+    .orderDone {
+      position: relative;
+      top: 25px;
+      margin-right: 140px;
+      line-height: 50px;
+    }
+  }
+}

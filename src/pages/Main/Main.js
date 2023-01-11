@@ -3,16 +3,11 @@ import Category from '../../components/Category/Category';
 import ShoppingModal from '../../components/ShoppingModal/ShoppingModal';
 import ProductCardList from '../../components/ProductCard/ProductCardList';
 import './Main.scss';
+import MainCard from './Components/MainCard';
+import MainCardMini from './Components/MainCardMini';
+import MainScroll from './MainScroll';
 
 const Main = () => {
-  const [productList, setProductList] = useState([]);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((result) => result.json())
-      .then((data) => setProductList(data));
-  }, []);
-
   return (
     <Fragment>
       <div className="main">
@@ -21,6 +16,11 @@ const Main = () => {
       </div>
       <Category />
     </Fragment>
+    <div className="main">
+      <MainCardMini />
+      <MainCard />
+      <MainScroll />
+    </div>
   );
 };
 

@@ -1,0 +1,26 @@
+.showOrderList {
+  display: grid;
+  grid-template-columns: 60px 724px 100px 126px;
+  grid-column-gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: 400;
+
+  .orderProductImage {
+    width: 60px;
+    height: 78px;
+  }
+
+  .orderProductName {
+    text-indent: 10px;
+  }
+
+  .orderItemPrice {
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .orderQuantity {
+    text-align: center;
+  }
+}

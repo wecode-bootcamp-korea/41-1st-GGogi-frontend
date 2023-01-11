@@ -1,0 +1,68 @@
+@import '../../../styles/variables.scss';
+
+.mainCardMini {
+  width: 1050px;
+  height: 760px;
+
+  .mainCardMiniInfo {
+    @include flexRow(space-between, center);
+    width: 1050px;
+    height: 308px;
+    margin-bottom: 20px;
+
+    .mainCardMiniImg {
+      height: 308px;
+      width: 615px;
+    }
+
+    .mainCardMiniContent {
+      width: 400px;
+      height: 308px;
+
+      .mainCardMiniInfoTitle {
+        height: 40px;
+        width: 400px;
+        padding-left: 23px;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 40px;
+      }
+
+      .mainCardMiniInfoContent {
+        height: 179px;
+        width: 399px;
+        padding-left: 23px;
+        line-height: 26px;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+        color: #4c4c4c;
+      }
+    }
+  }
+
+  .mainCardList {
+    @include flexRow(space-between, center);
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    .mainCardListItem {
+      width: 507px;
+      height: 96px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .mainCardListAll {
+    @include flexRow(center, center);
+    width: 1050px;
+
+    .mainCardListBtn {
+      width: 516px;
+      height: 56px;
+      border: 1px solid #dddddd;
+      border-radius: 3px;
+      background-color: white;
+      font-size: 16px;
+    }
+  }
+}

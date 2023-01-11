@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+.productDetailInfo {
+  .table {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 19px;
+
+    .tableRow {
+      @include flexRow(space-between, flex-start);
+      width: 560px;
+      padding: 10px 0;
+
+      .tableHead {
+        width: 128px;
+        font-size: 14px;
+        color: #666;
+      }
+      .tableBody {
+        width: 405px;
+        color: #333333;
+      }
+    }
+  }
+}

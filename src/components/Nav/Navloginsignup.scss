@@ -1,17 +1,23 @@
 .loginSignup {
-  width: 950px;
+  width: 1050px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   color: rgb(0, 0, 0, 0.7);
-  margin: 10px auto 12.5px auto;
+  margin: 5px auto 10px auto;
+
+  button {
+    background-color: white;
+    border: none;
+  }
 
   .loginbtn {
     border-right: 1px solid rgb(0, 0, 0, 0.1);
     padding-right: 10px;
     margin-right: 10px;
+    cursor: pointer;
   }
 
   .signup {
@@ -19,9 +25,10 @@
     border-right: 1px solid rgb(0, 0, 0, 0.1);
     padding-right: 10px;
     margin-right: 10px;
+    cursor: pointer;
   }
 
   .inquiry {
-    margin-right: 23px;
+    cursor: pointer;
   }
 }

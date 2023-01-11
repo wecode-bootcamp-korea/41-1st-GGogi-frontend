@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+.productList {
+  width: 1050px;
+  margin: 0 auto;
+  padding-top: 30px;
+  .productList {
+    @include flexRow(space-between, center);
+    flex-wrap: wrap;
+    width: 1050px;
+  }
+}
