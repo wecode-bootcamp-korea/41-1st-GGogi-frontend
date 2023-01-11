@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// [TODO] 체크 아이콘 컴포넌트 merge 되면 사용하기
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import { GrRotateRight } from 'react-icons/gr';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -15,17 +16,6 @@ const Category = () => {
         setCategoryList(res);
       });
   }, []);
-  const changeArrowIcon = showCategoryList ? (
-    <IoIosArrowDown
-      className="arrowIcon"
-      onClick={setCategoryList(!showCategoryList)}
-    />
-  ) : (
-    <IoIosArrowUp
-      className="arrowIcon"
-      onClick={setCategoryList(!showCategoryList)}
-    />
-  );
 
   return (
     <div className="category">
@@ -39,7 +29,19 @@ const Category = () => {
       <div className="categoryListWrapper">
         <div className="categoryType">
           <span className="categoryTitle">카테고리</span>
-          <div className="iconSection">{changeArrowIcon}</div>
+          <div className="iconSection">
+            {showCategoryList ? (
+              <IoIosArrowDown
+                className="arrowIcon"
+                onClick={() => setShowCategoryList(!showCategoryList)}
+              />
+            ) : (
+              <IoIosArrowUp
+                className="arrowIcon"
+                onClick={() => setShowCategoryList(!showCategoryList)}
+              />
+            )}
+          </div>
         </div>
         <ul
           className={showCategoryList ? 'categoryListUl' : 'categoryListUlNone'}

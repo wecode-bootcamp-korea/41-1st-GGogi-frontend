@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import Category from '../../components/Category/Category';
 import ShoppingModal from '../../components/ShoppingModal/ShoppingModal';
 import ProductCardList from '../../components/ProductCard/ProductCardList';
 import './Main.scss';
-import Category from '../../components/Category/Category';
 
 const Main = () => {
   const [productList, setProductList] = useState([]);
