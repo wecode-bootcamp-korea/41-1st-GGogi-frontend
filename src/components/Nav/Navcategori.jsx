@@ -69,7 +69,7 @@ const Navcategori = () => {
                           className="subCategoriul"
                           onMouseLeave={handleOff}
                         >
-                          <Link to={`/categoris?categoris=${sub.name}`}>
+                          <Link to={`/categoris?categoris=${sub.id}`}>
                             <div className="subName">{sub.name}</div>
                           </Link>
                         </ul>

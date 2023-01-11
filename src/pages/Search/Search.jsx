@@ -10,7 +10,7 @@ const Search = () => {
 
   useEffect(() => {
     const searchLocation = searchParams.get('keyword') || '';
-    fetch(`http://10.10.10.10:3000/search?keyword=${searchLocation}`, {
+    fetch(`http://10.58.52.62:3000/search?keyword=${searchLocation}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
     })
@@ -19,11 +19,11 @@ const Search = () => {
     if (searchItem.length < 1) {
       setSearchError(searchLocation);
     }
-  });
+  }, [searchItem.length, searchParams]);
 
   return (
     <div className="searchPage">
-      {searchError && (
+      {searchItem.length < 1 && (
         <div className="searchErrorMessage">
           <span className="notFindSearchItem">"{searchError}"</span>에 대한
           검색결과
@@ -40,8 +40,8 @@ const Search = () => {
           </div>
         </div>
       )}
-      {searchItem.map((item) => (
-        <ProductCard key={item} productList={item} />
+      {searchItem.map((product) => (
+        <ProductCard product={product} />
       ))}
     </div>
   );
