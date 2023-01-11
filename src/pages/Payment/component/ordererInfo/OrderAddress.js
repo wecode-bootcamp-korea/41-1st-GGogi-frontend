@@ -7,7 +7,7 @@ const OrderAddress = () => {
   const [showMsg, setShowMsg] = useState(false);
 
   const onClickShowMsg = () => {
-    setShowMsg(!showMsg);
+    setShowMsg((prev) => !prev);
   };
 
   const onClickCloseMsg = () => {
@@ -29,7 +29,7 @@ const OrderAddress = () => {
           배송지 변경 안내 <BsQuestionCircle className="questionIcon" />
         </span>
       </div>
-      {showMsg ? showAddressInfoMsg : null}
+      {showMsg && showAddressInfoMsg}
       <div className="orderAddressSection">
         <span className="addressTitle">배송지</span>
         <div className="addressInfo">
