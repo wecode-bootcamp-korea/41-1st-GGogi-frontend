@@ -1,8 +1,10 @@
+import React, { useEffect, useState } from 'react';
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
 const MyPageUserInterface = ({ name, point }) => {
   const pointStr = Number(point);
+  const [state, setState] = useState([]);
   const pointDeleteDot = Math.floor(pointStr);
 
   const USERBIGDATA = [
@@ -78,7 +80,7 @@ const MyPageUserInterface = ({ name, point }) => {
               <div className="kurlyBtnColors">
                 컬리 퍼플 박스
                 <span className="spanArrowColor">
-                  <i className="fa-solid fa-angle-right"></i>
+                  <i className="fa-solid fa-angle-right" />
                 </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>
@@ -89,7 +91,7 @@ const MyPageUserInterface = ({ name, point }) => {
               <div className="kurlyBtnColors">
                 컬리 패스
                 <span className="spanArrowColor">
-                  <i className="fa-solid fa-angle-right"></i>
+                  <i className="fa-solid fa-angle-right" />
                 </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>
