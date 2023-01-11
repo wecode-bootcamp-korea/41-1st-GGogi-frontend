@@ -25,11 +25,12 @@ const Cart = () => {
 
   const calTotalPrice = () => {
     let totalPriceArr = [];
-    if (cartList.length === 0) return;
-    for (let i = 0; i < cartList.length; i++) {
-      totalPriceArr.push(cartList[i].quantity * cartList[i].price);
-    }
-    return totalPriceArr.reduce((a, b) => a + b);
+    if (cartList) {
+      for (let i = 0; i < cartList.length; i++) {
+        totalPriceArr.push(cartList[i].quantity * cartList[i].price);
+      }
+      return totalPriceArr.reduce((a, b) => a + b, 0);
+    } else return 0;
   };
 
   const convertPrice = (price) => {

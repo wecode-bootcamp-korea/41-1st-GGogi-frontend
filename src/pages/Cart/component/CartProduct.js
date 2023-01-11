@@ -20,9 +20,13 @@ const CartProduct = ({
         <BsCheckCircle className="uncheckIcon" /> */}
         <span className="wholeCheckWord">전체선택</span>
         <div className="checkCountSection">
-          <span className="checkedQuantity">{selectedItemIdArr.length}</span>
+          <span className="checkedQuantity">
+            {selectedItemIdArr && selectedItemIdArr.length}
+          </span>
           <span className="slash"> / </span>
-          <span className="wholeQuantity">{cartList.length}</span>
+          <span className="wholeQuantity">
+            {selectedItemIdArr && selectedItemIdArr.length}
+          </span>
         </div>
         <div className="stick">|</div>
         <div className="deleteBtnSection">
@@ -30,7 +34,7 @@ const CartProduct = ({
         </div>
       </div>
       <hr className="cartLineTop" />
-      {cartList.length === 0 ? (
+      {!cartList?.length ? (
         <div className="emptyBaseketSection">
           <p className="emptyBaseketInfo">장바구니에 담긴 상품이 없습니다.</p>
         </div>

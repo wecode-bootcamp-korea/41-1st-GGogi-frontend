@@ -28,44 +28,39 @@ const CartProductList = ({
         'Content-Type': 'application/json',
       },
     }).then((result) => console.log(result));
-    // .then((result) => {
-    //   if (result.message === 'DELETE_ITEM_SUCCEE') {
-    //     handleRemove(deleteItem);
-    //   }
-    // });
   };
   console.log(deleteItem);
 
-  const handleRemove = (id) => {
-    setCartList(cartList.filter((el) => el.cartId !== id));
-    localStorage.setItem('cartList', JSON.stringify(cartList));
+  // const handleRemove = (id) => {
+  //   setCartList(cartList.filter((el) => el.cartId !== id));
+  //   localStorage.setItem('cartList', JSON.stringify(cartList));
 
-    fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
-      method: 'DELETE',
-      headers: {
-        authorization: localStorage.getItem('Token'),
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cartId: deleteItem,
-      }),
-    }).then((result) => console.log(result));
-    // .then((result) => {
-    //   if (result.message === 'DELETE_ITEM_SUCCEE') {
-    //     handleRemove(deleteItem);
-    //   }
-    // });
+  //   fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
+  //     method: 'DELETE',
+  //     headers: {
+  //       authorization: localStorage.getItem('Token'),
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       cartId: deleteItem,
+  //     }),
+  //   }).then((result) => console.log(result));
+  // .then((result) => {
+  //   if (result.message === 'DELETE_ITEM_SUCCEE') {
+  //     handleRemove(deleteItem);
+  //   }
+  // });
 
-    // fetch('http://10.58.52.62:3000/cart/deleteItem', {
-    //     method: 'DELETE',
-    //     headers: {
-    //       Authorization: localStorage.getItem('Token'),
-    //     },
-    //     body: JSON.stringify({
-    //       productId: id,
-    //     }),
-    // id와 같지 않은 것들을 새로 담아주기
-  };
+  // fetch('http://10.58.52.62:3000/cart/deleteItem', {
+  //     method: 'DELETE',
+  //     headers: {
+  //       Authorization: localStorage.getItem('Token'),
+  //     },
+  //     body: JSON.stringify({
+  //       productId: id,
+  //     }),
+  // id와 같지 않은 것들을 새로 담아주기
+  // };
   console.log(cartList);
 
   const handleAdd = (cartId) => {
@@ -86,16 +81,9 @@ const CartProductList = ({
     setCartList(updateQty);
   };
 
-  // let totalPriceArr = [];
-  // for (let i = 0; i < cartList.length; i++) {
-  //   totalPriceArr.push(cartList[i].quantity * cartList[i].price);
-  // }
-  // const calTotalPrice = totalPriceArr.reduce((a, b) => a + b);
-  // console.log(calTotalPrice);
-
   return (
     <div className="cartProductList">
-      {cartList.map((cart) => {
+      {cartList?.map((cart) => {
         const { cartId, price, productName, quantity, thumbnailImage } = cart;
         return (
           <div key={cartId} className="productList">
