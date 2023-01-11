@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+.mainScroll {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  margin: auto;
+  margin-bottom: 80px;
+  overflow: hidden;
+
+  .mainScrollBox {
+    display: flex;
+    width: 5760px;
+    height: 100%;
+
+    .mainScrollImg {
+      width: 5760px;
+      height: 100%;
+    }
+  }
+
+  .mainScrollBtn {
+    @include flexRow(space-between, center);
+    width: 1050px;
+    height: 64px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+
+    .mainScrollBtnRight {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      padding: 10px;
+      cursor: pointer;
+      right: 0;
+    }
+
+    .mainScrollBtnLeft {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      padding: 10px;
+      cursor: pointer;
+      left: 0;
+    }
+
+    .mainScrollBtnRight {
+    }
+  }
+}
