@@ -14,7 +14,7 @@ const CartProductList = ({
   const [deleteItem, setDeleteItem] = useState('');
 
   //1. deleteItem 변수 저장하기 V
-  //2. 클릭했을 때 useEffcet로 fetch Delete 전송
+  //2. 클릭했을 때 useEffcet로 fetch Delete 전송 V
   //3. 결과가 좋으면 그때 삭제 기능 발동!
 
   const handleDeleteItem = (id) => {
@@ -27,41 +27,13 @@ const CartProductList = ({
         authorization: localStorage.getItem('Token'),
         'Content-Type': 'application/json',
       },
-    }).then((result) => console.log(result));
+    }).then(handleRemove(id));
   };
-  console.log(deleteItem);
 
-  // const handleRemove = (id) => {
-  //   setCartList(cartList.filter((el) => el.cartId !== id));
-  //   localStorage.setItem('cartList', JSON.stringify(cartList));
-
-  //   fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
-  //     method: 'DELETE',
-  //     headers: {
-  //       authorization: localStorage.getItem('Token'),
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       cartId: deleteItem,
-  //     }),
-  //   }).then((result) => console.log(result));
-  // .then((result) => {
-  //   if (result.message === 'DELETE_ITEM_SUCCEE') {
-  //     handleRemove(deleteItem);
-  //   }
-  // });
-
-  // fetch('http://10.58.52.62:3000/cart/deleteItem', {
-  //     method: 'DELETE',
-  //     headers: {
-  //       Authorization: localStorage.getItem('Token'),
-  //     },
-  //     body: JSON.stringify({
-  //       productId: id,
-  //     }),
-  // id와 같지 않은 것들을 새로 담아주기
-  // };
-  console.log(cartList);
+  const handleRemove = (id) => {
+    setCartList(cartList.filter((el) => el.cartId !== id));
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+  };
 
   const handleAdd = (cartId) => {
     const updateQty = cartList.map((cart) => {

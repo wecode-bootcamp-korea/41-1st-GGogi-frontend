@@ -23,6 +23,7 @@ const Cart = () => {
       });
   }, []);
 
+  console.log(cartList);
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartList) {
