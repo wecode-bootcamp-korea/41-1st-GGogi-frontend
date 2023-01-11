@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Navcategory.scss';
+import './Navcategori.scss';
 
-const Navcategory = () => {
-  const [categoryData, setCategoryData] = useState([]);
-  const [subCategoryId, setSubCategoryId] = useState('');
-  const [categoeyPoint, setCategoryPoint] = useState(false);
-  const [subCategory, setSubCategory] = useState(true);
+const Navcategori = () => {
+  const [categoriData, setCategoriData] = useState([]);
+  const [subCategoriId, setSubCategoriId] = useState('');
+  const [categoeyPoint, setCategoriPoint] = useState(false);
+  const [subCategori, setSubCategori] = useState(true);
   const [scrollY, setScrollY] = useState(0);
   const [scrollActive, setScrollActive] = useState(false);
-  const [scrollSubActive, setScrollSubActive] = useState(true);
 
   const handleClick = (e) => {
-    setSubCategoryId(e.target.id);
-    setCategoryPoint(true);
+    setSubCategoriId(e.target.id);
+    setCategoriPoint(true);
   };
 
   const scrollFixed = () => {
@@ -26,7 +25,7 @@ const Navcategory = () => {
     }
   };
 
-  const handleOff = (e) => setSubCategory(!subCategory);
+  const handleOff = (e) => setSubCategori(!subCategori);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -39,39 +38,39 @@ const Navcategory = () => {
   });
 
   useEffect(() => {
-    fetch('/data/categoryProductData.json')
+    fetch('/data/categoriProductData.json')
       .then((response) => response.json())
-      .then((data) => setCategoryData(data));
+      .then((data) => setCategoriData(data));
   }, []);
 
   return (
-    <div className={scrollActive ? ' navCategoryfixed' : 'navCategory'}>
-      <div className="categoryStyle">
-        <div className="sideCategory">
-          <button className="category">
+    <div className={scrollActive ? ' navCategorifixed' : 'navCategori'}>
+      <div className="categoriStyle">
+        <div className="sideCategori">
+          <button className="categori">
             <i className="fa-solid fa-bars"></i>
             카테고리
           </button>
-          <ul className="middleCategory">
-            {categoryData.map((item, idx) => (
+          <ul className="middleCategori">
+            {categoriData.map((item, idx) => (
               <li
                 key={item.id}
                 id={item.id}
-                className="meatCategory"
+                className="meatCategori"
                 onMouseEnter={handleClick}
               >
-                <div className="MeatCategoryTitle">{item.title}</div>
-                {idx + 1 === Number(subCategoryId) && categoeyPoint && (
-                  <div className="subCategorydiv">
-                    {categoryData[subCategoryId - 1].item.map((sub) => {
+                <div className="MeatCategoriTitle">{item.title}</div>
+                {idx + 1 === Number(subCategoriId) && categoeyPoint && (
+                  <div className="subCategoridiv">
+                    {categoriData[subCategoriId - 1].item.map((sub) => {
                       return (
                         <ul
                           key={sub.id}
-                          className="subCategoryul"
+                          className="subCategoriul"
                           onMouseLeave={handleOff}
                         >
-                          <Link to="/" className="subCategoryli">
-                            {sub.name}
+                          <Link to={`/categoris?categoris=${sub.name}`}>
+                            <div className="subName">{sub.name}</div>
                           </Link>
                         </ul>
                       );
@@ -82,9 +81,9 @@ const Navcategory = () => {
             ))}
           </ul>
         </div>
-        <button className="itemCategory">
+        <button className="itemCategori">
           {NAVLIST.map((item) => (
-            <span className="categoryBtn" key={item.id}>
+            <span className="categoriBtn" key={item.id}>
               {item.name}
             </span>
           ))}
@@ -98,7 +97,7 @@ const Navcategory = () => {
   );
 };
 
-export default Navcategory;
+export default Navcategori;
 
 const NAVLIST = [
   { id: '1', name: '신상품' },

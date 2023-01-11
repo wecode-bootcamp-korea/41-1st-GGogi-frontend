@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+@import '../../styles/common.scss';
+
+.searchPage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  .searchErrorMessage {
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: 550;
+
+    .notFindSearchItem {
+      color: $basic-color;
+    }
+
+    .notFindMassage {
+      @include flexColumn(center, center);
+      margin-top: 100px;
+
+      .notFindGlassIcon {
+        color: rgb(0, 0, 0, 0.1);
+        font-size: 48px;
+      }
+
+      .notFindSearch {
+        margin-top: 20px;
+        color: rgb(0, 0, 0, 0.3);
+        font-size: 16px;
+      }
+    }
+  }
+}

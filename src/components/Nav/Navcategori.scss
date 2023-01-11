@@ -1,14 +1,16 @@
 @import '../../styles/variables.scss';
+@import '../../styles/common.scss';
 
-.navCategoryfixed {
+.navCategorifixed {
   position: fixed;
   left: 0;
   right: 0;
   top: 0px;
   background-color: white;
   z-index: 10;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 
-  .categoryStyle {
+  .categoriStyle {
     @include flexRow(space-between, center);
     margin: 0 auto;
     width: 1050px;
@@ -21,7 +23,7 @@
     border: none;
   }
 
-  .category {
+  .categori {
     position: relative;
     margin-left: -20px;
     bottom: 1px;
@@ -30,37 +32,37 @@
     cursor: pointer;
   }
 
-  .categoryBtn:nth-child(1):hover {
+  .categoriBtn:nth-child(1):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(2):hover {
+  .categoriBtn:nth-child(2):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(3):hover {
+  .categoriBtn:nth-child(3):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(4):hover {
-    color: $basic-color;
-  }
-
-  .category:hover {
+  .categoriBtn:nth-child(4):hover {
     color: $basic-color;
   }
 
-  .itemCategory span {
+  .categori:hover {
+    color: $basic-color;
+  }
+
+  .itemCategori span {
     padding: 0 50px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
   }
 
-  .sideCategory {
+  .sideCategori {
     display: inline-block;
     position: relative;
     margin-left: 32px;
   }
 
-  .sideCategory > ul {
+  .sideCategori > ul {
     position: absolute;
     top: 42.5px;
     left: -20px;
@@ -69,7 +71,7 @@
     border: none;
   }
 
-  .meatCategory {
+  .meatCategori {
     padding: 20px;
     border: 1px solid rgb(0, 0, 0, 0.1);
     color: rgb(0, 0, 0, 0.6);
@@ -95,15 +97,10 @@
   }
 }
 
-.navCategory {
-  left: 0;
-  right: 0;
-  top: 80px;
-  z-index: 9999;
-  top: 0px;
+.navCategori {
   background-color: white;
 
-  .categoryStyle {
+  .categoriStyle {
     @include flexRow(space-between, center);
     margin: 0 auto;
     width: 1050px;
@@ -116,7 +113,7 @@
     border: none;
   }
 
-  .category {
+  .categori {
     position: relative;
     margin-left: -20px;
     bottom: 1px;
@@ -125,37 +122,37 @@
     cursor: pointer;
   }
 
-  .categoryBtn:nth-child(1):hover {
+  .categoriBtn:nth-child(1):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(2):hover {
+  .categoriBtn:nth-child(2):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(3):hover {
+  .categoriBtn:nth-child(3):hover {
     color: $basic-color;
   }
-  .categoryBtn:nth-child(4):hover {
-    color: $basic-color;
-  }
-
-  .category:hover {
+  .categoriBtn:nth-child(4):hover {
     color: $basic-color;
   }
 
-  .itemCategory span {
+  .categori:hover {
+    color: $basic-color;
+  }
+
+  .itemCategori span {
     padding: 0 50px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
   }
 
-  .sideCategory {
+  .sideCategori {
     display: inline-block;
     position: relative;
     margin-left: 32px;
   }
 
-  .sideCategory > ul {
+  .sideCategori > ul {
     position: absolute;
     top: 42.5px;
     left: -20px;
@@ -183,11 +180,11 @@
   }
 }
 
-.meatCategory:hover {
+.meatCategori:hover {
   background-color: rgb(245, 244, 244);
 }
 
-.subCategorydiv:nth-child(2) {
+.subCategoridiv:nth-child(2) {
   position: absolute;
   width: 200px;
   height: 290px;
@@ -196,16 +193,20 @@
   background-color: rgb(245, 244, 244);
 }
 
-.subCategoryli {
+.subCategoriul a {
+  padding: 15px;
+}
+
+.subCategorili {
   margin: 10px;
   padding: 21px;
 }
 
-.subCategoryli:hover {
+.subCategorili:hover {
   color: $basic-color;
 }
 
-.category {
+.categori {
   padding: 15px;
   color: black;
   background-color: white;
@@ -214,12 +215,13 @@
   cursor: pointer;
 }
 
-.middleCategory {
+.middleCategori {
   display: none;
-  margin-top: 15px;
+  margin-top: 13px;
+  z-index: 1;
 }
 
-.meatCategory {
+.meatCategori {
   padding: 20px;
   color: rgb(0, 0, 0, 0.6);
   font-weight: bold;
@@ -227,6 +229,14 @@
   cursor: pointer;
 }
 
-.sideCategory:hover .middleCategory {
+.sideCategori:hover .middleCategori {
   display: inline-block;
+}
+
+.subName {
+  padding: 5px;
+  color: rgb(0, 0, 0, 0.6);
+}
+.subName:hover {
+  color: $basic-color;
 }
