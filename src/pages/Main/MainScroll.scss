@@ -1,0 +1,58 @@
+.mainScroll {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  margin: auto;
+  margin-bottom: 80px;
+  overflow: hidden;
+
+  .mainScrollBox {
+    display: flex;
+    width: 5760px;
+    height: 100%;
+
+    div {
+      width: 1920px;
+      height: 100%;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+
+    .mainScrollImg {
+      width: 1920px;
+      height: 100%;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+  }
+  .mainScrollBtn {
+    width: 1920px;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    height: 64px;
+    transform: translate(-50%);
+    color: #fff;
+    text-align: center;
+
+    .left-btn,
+    .right-btn {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      padding: 10px;
+      background-color: #000;
+      cursor: pointer;
+    }
+
+    .mainScrollBtnLeft {
+      left: 0;
+    }
+
+    .mainScrollBtnRight {
+      right: 0;
+    }
+  }
+}

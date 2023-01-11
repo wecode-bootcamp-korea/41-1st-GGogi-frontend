@@ -8,16 +8,15 @@ const MainCard = () => {
   const [productCard, setProductCard] = useState([]);
   const [searchProductCard, setSearchProductCard] = useSearchParams();
   const offset = searchProductCard.get('offset');
-  const limit = searchProductCard.get('limit');
 
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/products?_start=${offset}&_limit=${limit}`)
+    fetch(`http://10.58.52.62:3000/products?offset=${offset}&limit=4`)
       .then((response) => response.json())
       .then((result) => setProductCard(result));
-  }, [offset, limit]);
+  }, [offset]);
 
   const movePage = (pageNumber) => {
-    searchProductCard.set('offset', (pageNumber - 1) * 10);
+    searchProductCard.set('offset', (pageNumber - 1) * 4);
     setSearchProductCard(searchProductCard);
   };
 
