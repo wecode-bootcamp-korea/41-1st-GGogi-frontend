@@ -3,6 +3,7 @@
 .mainCardMini {
   width: 1050px;
   height: 760px;
+  background-color: greenyellow;
 
   .mainCardMiniInfo {
     @include flexRow(space-between, center);
