@@ -12,7 +12,7 @@ const CartInfoPrice = ({
     {
       id: 1,
       name: '상품금액',
-      price: calTotalPrice && convertPrice(calTotalPrice),
+      price: calTotalPrice() && convertPrice(calTotalPrice()),
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const CartInfoPrice = ({
     {
       id: 3,
       name: '결제예정금액',
-      price: calTotalPrice && convertPrice(calTotalPrice),
+      price: calTotalPrice() && convertPrice(calTotalPrice()),
     },
   ];
 

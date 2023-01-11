@@ -8,43 +8,44 @@ const Cart = () => {
   const [selectedItemIdArr, setSelectedItemIdArr] = useState([]);
   const [address, setAddress] = useState();
 
+  // useEffect(() => {
+  //   fetch('/data/cartList.json', {
+  //     method: 'GET',
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log('data:', data);
+  //       setCartList(data);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('/data/cartList.json', {
+    fetch('http://10.58.52.62:3000/carts', {
       method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('Token'),
+      },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log('data:', data);
-        setCartList(data);
+        const { address, cartList } = data;
+        setAddress(address);
+        setCartList(cartList);
       });
   }, []);
 
-  let totalPriceArr = [];
-  if (cartList.length === 0) return;
-  for (let i = 0; i < cartList.length; i++) {
-    totalPriceArr.push(cartList[i].quantity * cartList[i].price);
-  }
-  const calTotalPrice = totalPriceArr.reduce((a, b) => a + b);
+  const calTotalPrice = () => {
+    let totalPriceArr = [];
+    if (cartList.length === 0) return;
+    for (let i = 0; i < cartList.length; i++) {
+      totalPriceArr.push(cartList[i].quantity * cartList[i].price);
+    }
+    return totalPriceArr.reduce((a, b) => a + b);
+  };
 
   const convertPrice = (price) => {
     return price.toLocaleString();
   };
-
-  // useEffect(() => {
-  //   fetch('http://10.58.52.62:3000/carts', {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: localStorage.getItem('Token'),
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const { address, cartList } = data;
-  //       setAddress(address);
-  //       setCartList(cartList);
-  //     });
-  // }, []);
-
   // 주문하기 버튼 OnClick
   const handleOrderBtn = (e) => {
     e.preventDefault();

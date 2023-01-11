@@ -1,4 +1,5 @@
 import CheckBtn from '../../../components/CheckBtn/CheckBtn';
+import { useEffect, useState } from 'react';
 import './CartProductList.scss';
 
 const CartProductList = ({
@@ -8,16 +9,72 @@ const CartProductList = ({
   handleCheckBtn,
   convertPrice,
 }) => {
-  const handleRemove = (id) => {
-    console.log(id); //el.cartId !== id
-    fetch('/data/cartList.json', {
+  // useEffect(()=>{},[deleteItem])
+
+  const [deleteItem, setDeleteItem] = useState('');
+
+  //1. deleteItem 변수 저장하기 V
+  //2. 클릭했을 때 useEffcet로 fetch Delete 전송
+  //3. 결과가 좋으면 그때 삭제 기능 발동!
+
+  const handleDeleteItem = (id) => {
+    // setDeleteItem(id);
+    console.log(id);
+
+    fetch(`http://10.58.52.62:3000/carts/deleteItem?cartId=${id}`, {
       method: 'DELETE',
-      // headers: {
-      //   Authorization: userToken,
-      // },
-      body: JSON.stringify({ productId: id }),
-    });
+      headers: {
+        authorization: localStorage.getItem('Token'),
+        'Content-Type': 'application/json',
+      },
+    }).then((result) => console.log(result));
+    // .then((result) => {
+    //   if (result.message === 'DELETE_ITEM_SUCCEE') {
+    //     handleRemove(deleteItem);
+    //   }
+    // });
+  };
+  console.log(deleteItem);
+
+  // useEffect(() => {
+  //   if (deleteItem === '') return;
+  //   fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
+  //     method: 'DELETE',
+  //     headers: {
+  //       authorization: localStorage.getItem('Token'),
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       cartId: deleteItem,
+  //     }),
+  //   })
+  //     .then((result) => console.log(result))
+  //     .then((result) => {
+  //       if (result.message === 'DELETE_ITEM_SUCCEE') {
+  //         handleRemove(deleteItem);
+  //       }
+  //     });
+  // }, [deleteItem]);
+
+  const handleRemove = (id) => {
     setCartList(cartList.filter((el) => el.cartId !== id));
+    localStorage.setItem('cartList', JSON.stringify(cartList));
+
+    fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: localStorage.getItem('Token'),
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        cartId: deleteItem,
+      }),
+    }).then((result) => console.log(result));
+    // .then((result) => {
+    //   if (result.message === 'DELETE_ITEM_SUCCEE') {
+    //     handleRemove(deleteItem);
+    //   }
+    // });
 
     // fetch('http://10.58.52.62:3000/cart/deleteItem', {
     //     method: 'DELETE',
@@ -89,7 +146,10 @@ const CartProductList = ({
             <span className="price">
               {price * quantity && convertPrice(price * quantity)}원
             </span>
-            <button className="deleteBtn" onClick={() => handleRemove(cartId)}>
+            <button
+              className="deleteBtn"
+              onClick={() => handleDeleteItem(cartId)}
+            >
               X
             </button>
           </div>
