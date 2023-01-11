@@ -3,7 +3,7 @@ import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
 const MyPageUserInterface = ({ name, point }) => {
-  const [state, setState] = useState([]);
+  const [mypageUserData, setMypageUserData] = useState([]);
   const pointStr = Number(point);
   const pointDeleteDot = Math.floor(pointStr);
 
@@ -27,7 +27,7 @@ const MyPageUserInterface = ({ name, point }) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setState(data.data[0]));
+      .then((data) => setMypageUserData(data.data[0]));
   }, []);
 
   return (
