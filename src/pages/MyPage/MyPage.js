@@ -8,10 +8,10 @@ import './MyPage.scss';
 
 const MyPage = () => {
   const [renderPage, setRenderPage] = useState('MypageOrder');
-  const [state, setState] = useState([]);
+  const [userCartProduct, setUserCartProduct] = useState([]);
 
   useEffect(() => {
-    fetch(`http://10.58.52.116:3000/users/info`, {
+    fetch(`http://10.58.52.62:3000/users/info`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -19,14 +19,13 @@ const MyPage = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setState(data.data));
+      .then((data) => setUserCartProduct(data.data[0]));
   }, []);
-
-  const { name, orderList, point } = state;
 
   const renderFunction = (e) => {
     setRenderPage(e.target.name);
   };
+  const { name, orderList, point } = userCartProduct;
 
   const selectComponent = {
     MypageOrder: <MypageOrder orderList={orderList} />,

@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
 
 const MyPageUserInterface = ({ name, point }) => {
+  const [mypageUserData, setMypageUserData] = useState([]);
   const pointStr = Number(point);
   const [state, setState] = useState([]);
   const pointDeleteDot = Math.floor(pointStr);
@@ -19,7 +22,7 @@ const MyPageUserInterface = ({ name, point }) => {
   ];
 
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/users/mypage`, {
+    fetch(`http://10.58.52.62:3000/users/info`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -27,7 +30,7 @@ const MyPageUserInterface = ({ name, point }) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setState(data.data[0]));
+      .then((data) => setMypageUserData(data.data[0]));
   }, []);
 
   return (
