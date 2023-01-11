@@ -12,7 +12,7 @@ import Payment from './pages/Payment/Payment';
 import MyPage from './pages/MyPage/MyPage';
 
 const Router = () => {
-  const [cart, setCart] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
   return (
     <BrowserRouter>
@@ -23,7 +23,10 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route
+          path="/cart"
+          element={<Cart cartList={cartList} setCartList={setCartList} />}
+        />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/order/checkout" element={<Payment />} />
       </Routes>

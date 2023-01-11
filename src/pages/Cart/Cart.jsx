@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CartProduct from './component/CartProduct';
 import CartInfo from './component/CartInfo';
 import './Cart.scss';
 
-const Cart = () => {
-  const [cartList, setCartList] = useState([]);
+const Cart = ({ cartList, setCartList }) => {
   const [selectedItemIdArr, setSelectedItemIdArr] = useState([]);
+  const [orderList, setOrderList] = useState([]);
   const [address, setAddress] = useState();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/carts', {
@@ -38,30 +41,51 @@ const Cart = () => {
     return price.toLocaleString();
   };
 
+  // 보낼 값 계산하기
+  let orderProductList = [];
+  const orderProduct = () => {
+    for (let i = 0; i < selectedItemIdArr.length; i++) {
+      orderProductList.push(
+        cartList.find((el) => el.cartId === selectedItemIdArr[i])
+      );
+    }
+    return orderProduct;
+  };
+
   // 주문하기 버튼 OnClick
   const handleOrderBtn = (e) => {
     e.preventDefault();
+    orderProduct();
+    console.log(orderProductList);
+    orderProductList.map((el) => {
+      const { cartId, productId, quantity } = el;
+      console.log(cartId, productId, quantity);
+      fetch('http://10.58.52.62:3000/carts', {
+        method: 'PATCH',
+        headers: {
+          Authorization: localStorage.getItem('Token'),
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({
+          productId: productId,
+          cartId: cartId,
+          quantity: quantity,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.message === 'UPDATE_ITEM_QUANTITY_SUCCESS') {
+            navigate('/order/checkout');
+          }
+        });
+    });
+
     // 주문 필요한 상품 백엔드로 송신
+
     console.log(selectedItemIdArr);
   };
-
   // 버튼을 눌렀을 때 전송해야 할 데이터 담기
   // const onClickSignUp = (e) => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.52.62:3000/users/signup', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  //     body: JSON.stringify({
-  //       email: email,
-  //       name: name,
-  //       password: pwd,
-  //       address: address,
-  //       phone: phone,
-  //       birthdate: birthdate,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result)=>console.log(result))
 
   const handleCheckBtn = (cartId) => {
     const hasSelectedCartId = selectedItemIdArr.includes(cartId);
