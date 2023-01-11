@@ -8,7 +8,6 @@ import './MyPage.scss';
 
 const MyPage = () => {
   const [renderPage, setRenderPage] = useState('MypageOrder');
-  const [state, setState] = useState([]);
   const [userCartProduct, setUserCartProduct] = useState([]);
 
   useEffect(() => {
@@ -20,13 +19,13 @@ const MyPage = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setState(data.data[0]));
+      .then((data) => setUserCartProduct(data.data[0]));
   }, []);
 
   const renderFunction = (e) => {
     setRenderPage(e.target.name);
   };
-  const { name, orderList, point } = state;
+  const { name, orderList, point } = userCartProduct;
 
   const selectComponent = {
     MypageOrder: <MypageOrder orderList={orderList} />,
