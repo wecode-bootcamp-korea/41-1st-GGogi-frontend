@@ -10,6 +10,7 @@ import Cart from './pages/Cart/Cart';
 import Search from './pages/Search/Search';
 import Payment from './pages/Payment/Payment';
 import Categories from './pages/Categories/Categories';
+import Payment from './pages/Payment/Payment';
 import MyPage from './pages/MyPage/MyPage';
 
 const Router = () => {
