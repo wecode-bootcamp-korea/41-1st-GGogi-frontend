@@ -16,6 +16,7 @@
     .productDetailInfo {
       width: 500px;
       height: auto;
+
       .productDetailName {
         .productDetailNameTop {
           width: 500px;
@@ -26,6 +27,7 @@
           line-height: 19px;
           color: #999999;
         }
+
         .productDetailNameMiddle {
           width: 500px;
           @include flexRow(space-between, center);
