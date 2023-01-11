@@ -1,24 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './PaymentAmount.scss';
 
-const PaymentAmount = () => {
-  const [paymentAmountList, setPaymentAmountList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/paymentAmountData.json')
-      .then((result) => result.json())
-      .then((data) => setPaymentAmountList(data));
-  }, []);
-
+const PaymentAmount = ({ convertPrice, calTotalPrice, payAllPoint }) => {
+  const PAYMENT_AMOUNT = [
+    {
+      id: 1,
+      title: '주문금액',
+      price: calTotalPrice() ? convertPrice(calTotalPrice()) : 0,
+    },
+    {
+      id: 2,
+      title: '배송비',
+      price: 0,
+    },
+    {
+      id: 3,
+      title: '쿠폰할인',
+      price: 0,
+    },
+    {
+      id: 4,
+      title: '최종결제금액',
+      price: payAllPoint() ? convertPrice(payAllPoint()) : 0,
+    },
+  ];
   return (
     <div className="paymentAmount">
       <h2 className="paymentAmountTitle"> 결제 금액</h2>
       <div className="paymentAmountInfo">
-        {paymentAmountList.map((item) => {
+        {PAYMENT_AMOUNT.map((item) => {
+          const { id, title, price } = item;
           return (
-            <div className="paymentAmountItem" key={item.id}>
-              <span className="AmountTitle">{item.title}</span>
-              <span className="paymentAmountNum">{item.price}원</span>
+            <div className="paymentAmountItem" key={id}>
+              <span className="AmountTitle">{title}</span>
+              <span className="paymentAmountNum">{price}원</span>
             </div>
           );
         })}

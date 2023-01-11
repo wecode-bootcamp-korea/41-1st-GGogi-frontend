@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import OrderProduct from './component/orderList/OrderProduct';
 import OrdererInfo from './component/ordererInfo/OrdererInfo';
 import OrderAddress from './component/ordererInfo/OrderAddress';
@@ -7,14 +7,87 @@ import PersonalInfo from './component/personalInfo/PersonalInfo';
 import './Payment.scss';
 
 const Payment = () => {
+  const [cartProducts, setCartProducts] = useState([]);
+  const [userAddress, setUserAddress] = useState();
+  const [userEmail, setUserEmail] = useState();
+  const [userName, setUserName] = useState();
+  const [userPhone, setUserPhone] = useState();
+  const [userPoint, setUserPoint] = useState();
+  // 총 결제 금액 state에 담기 => 결제 시 보내야함
+  useEffect(() => {
+    fetch('http://10.58.52.62:3000/orders', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('Token'),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const {
+          cartProducts,
+          userAddress,
+          userEmail,
+          userName,
+          userPhone,
+          userPoint,
+        } = data;
+        setCartProducts(cartProducts);
+        setUserAddress(userAddress);
+        setUserEmail(userEmail);
+        setUserName(userName);
+        setUserPhone(userPhone);
+        setUserPoint(userPoint);
+      });
+  }, []);
+
+  const convertPrice = (price) => {
+    return price.toLocaleString();
+  };
+
+  const calTotalPrice = () => {
+    let totalPriceArr = [];
+    if (cartProducts) {
+      for (let i = 0; i < cartProducts.length; i++) {
+        totalPriceArr.push(cartProducts[i].quantity * cartProducts[i].price);
+      }
+      return totalPriceArr.reduce((a, b) => a + b, 0);
+    } else return 0;
+  };
+
+  // Total 금액 담아줘야함, cartProducts 에서 썸네일 빼야됨...
+  // fetch('http://10.58.52.62:3000/order', {
+  //   method: 'POST',
+  //   headers: {
+  //     Authorization: localStorage.getItem('Token'),
+  //   },
+  //   body: JSON.stringify({
+  //     name: 'yeri',
+  //     cartInfos: cartProducts,
+  //   }),
+  // })
+  //   .then((res) => res.json())
+  //   .then((res) => {
+  //     if (res.success) {
+  //       alert('저장 완료');
+  //     }
+  //   });
+
   return (
     <div className="payment">
       <h1 className="paymentTitle">주문서</h1>
       <div className="PaymentComponentSection">
-        <OrderProduct />
-        <OrdererInfo />
-        <OrderAddress />
-        <HowToPay />
+        <OrderProduct cartProducts={cartProducts} convertPrice={convertPrice} />
+        <OrdererInfo
+          userName={userName}
+          userPhone={userPhone}
+          userEmail={userEmail}
+        />
+        <OrderAddress userAddress={userAddress} />
+        <HowToPay
+          userPoint={userPoint}
+          convertPrice={convertPrice}
+          calTotalPrice={calTotalPrice}
+        />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
