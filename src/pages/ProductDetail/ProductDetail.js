@@ -21,7 +21,11 @@ const ProductDetail = () => {
   return (
     <div className="productDetail">
       <div className="productDetailTop">
-        <img src={thumbnail_image} className="productDetailImg" />
+        <img
+          src={thumbnail_image}
+          alt="thumbnailImg"
+          className="productDetailImg"
+        />
         <section className="productDetailInfo">
           <div className="productDetailName">
             <div className="productDetailNameTop">샛별배송</div>
