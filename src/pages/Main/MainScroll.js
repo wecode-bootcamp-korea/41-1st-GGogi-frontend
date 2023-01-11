@@ -27,7 +27,7 @@ function MainScroll() {
       >
         <img src={beef} alt="beefImg" className="mainScrollImg" />
         <img src={chicken1} alt="chickenImg" className="mainScrollImg" />
-        <div src={duck} className="mainScrollImg" />
+        <img src={duck} alt="ductImg" className="mainScrollImg" />
       </div>
 
       <div>
