@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.slideCard {
+  width: 100%;
+  height: 370px;
+  background-color: #dddddd;
+
+  .slideCardContent {
+    @include flexRow(space-between, center);
+    width: 1050px;
+    height: 370px;
+
+    .slideCardInfo {
+      .slideCardInfoTitle {
+      }
+      .slideCardInfoContent {
+      }
+      .slideCardInfoDate {
+      }
+    }
+  }
+  .slideCardImg {
+  }
+}

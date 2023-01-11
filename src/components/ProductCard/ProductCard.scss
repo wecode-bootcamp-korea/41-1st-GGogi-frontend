@@ -1,10 +1,11 @@
 .productCard {
   width: 249px;
   position: relative;
-
+  margin-bottom: 10px;
   .productImg {
     height: 320px;
     width: 249px;
+    background-color: #dddddd;
   }
 
   .shoppingCartBtn {
@@ -27,6 +28,7 @@
   .productInfo {
     height: 92.39px;
     padding: 14px 10px 0 0;
+    background-color: white;
 
     h3 {
       font-size: 16px;
