@@ -8,17 +8,6 @@ const Cart = () => {
   const [selectedItemIdArr, setSelectedItemIdArr] = useState([]);
   const [address, setAddress] = useState();
 
-  // useEffect(() => {
-  //   fetch('/data/cartList.json', {
-  //     method: 'GET',
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log('data:', data);
-  //       setCartList(data);
-  //     });
-  // }, []);
-
   useEffect(() => {
     fetch('http://10.58.52.62:3000/carts', {
       method: 'GET',
@@ -46,12 +35,31 @@ const Cart = () => {
   const convertPrice = (price) => {
     return price.toLocaleString();
   };
+
   // 주문하기 버튼 OnClick
   const handleOrderBtn = (e) => {
     e.preventDefault();
     // 주문 필요한 상품 백엔드로 송신
     console.log(selectedItemIdArr);
   };
+
+  // 버튼을 눌렀을 때 전송해야 할 데이터 담기
+  // const onClickSignUp = (e) => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.52.62:3000/users/signup', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  //     body: JSON.stringify({
+  //       email: email,
+  //       name: name,
+  //       password: pwd,
+  //       address: address,
+  //       phone: phone,
+  //       birthdate: birthdate,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((result)=>console.log(result))
 
   const handleCheckBtn = (cartId) => {
     const hasSelectedCartId = selectedItemIdArr.includes(cartId);

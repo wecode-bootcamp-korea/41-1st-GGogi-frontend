@@ -20,13 +20,9 @@ const CartProduct = ({
         <BsCheckCircle className="uncheckIcon" /> */}
         <span className="wholeCheckWord">전체선택</span>
         <div className="checkCountSection">
-          <span className="checkedQuantity">
-            {/* {selectedItemIdArr.length === 0 ? selectedItemIdArr.length : 0} */}
-          </span>
+          <span className="checkedQuantity">{selectedItemIdArr.length}</span>
           <span className="slash"> / </span>
-          <span className="wholeQuantity">
-            {/* {cartList.length === 0 ? cartList.length : 0} */}
-          </span>
+          <span className="wholeQuantity">{cartList.length}</span>
         </div>
         <div className="stick">|</div>
         <div className="deleteBtnSection">

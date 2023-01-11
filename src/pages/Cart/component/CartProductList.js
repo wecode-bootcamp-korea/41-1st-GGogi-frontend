@@ -36,26 +36,6 @@ const CartProductList = ({
   };
   console.log(deleteItem);
 
-  // useEffect(() => {
-  //   if (deleteItem === '') return;
-  //   fetch(`http://10.52.58.62:3000/carts/deleteItem?cartId=${deleteItem}`, {
-  //     method: 'DELETE',
-  //     headers: {
-  //       authorization: localStorage.getItem('Token'),
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       cartId: deleteItem,
-  //     }),
-  //   })
-  //     .then((result) => console.log(result))
-  //     .then((result) => {
-  //       if (result.message === 'DELETE_ITEM_SUCCEE') {
-  //         handleRemove(deleteItem);
-  //       }
-  //     });
-  // }, [deleteItem]);
-
   const handleRemove = (id) => {
     setCartList(cartList.filter((el) => el.cartId !== id));
     localStorage.setItem('cartList', JSON.stringify(cartList));

@@ -11,24 +11,6 @@ const CartInfo = ({
   calTotalPrice,
   convertPrice,
 }) => {
-  // 버튼을 눌렀을 때 전송해야 할 데이터 담기
-  // const onClickSignUp = (e) => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.52.62:3000/users/signup', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  //     body: JSON.stringify({
-  //       email: email,
-  //       name: name,
-  //       password: pwd,
-  //       address: address,
-  //       phone: phone,
-  //       birthdate: birthdate,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((result)=>console.log(result))
-
   return (
     <div className="cartInfo">
       <CartInfoAddress address={address} />
