@@ -15,20 +15,16 @@ const Category = () => {
         setCategoryList(res);
       });
   }, []);
-
-  const onClickShowList = () => {
-    setShowCategoryList(!showCategoryList);
-  };
-
   const changeArrowIcon = showCategoryList ? (
     <IoIosArrowDown
       className="arrowIcon"
-      onClick={() => {
-        onClickShowList();
-      }}
+      onClick={setCategoryList(!showCategoryList)}
     />
   ) : (
-    <IoIosArrowUp className="arrowIcon" onClick={onClickShowList} />
+    <IoIosArrowUp
+      className="arrowIcon"
+      onClick={setCategoryList(!showCategoryList)}
+    />
   );
 
   return (
