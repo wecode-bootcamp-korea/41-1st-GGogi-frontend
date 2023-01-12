@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "돼지삼겹살",
+    "price": "12900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459230-343d7d21-768b-47d8-a0dd-2c558d535cb9.png",
+    "part_tag_id": 1,
+    "weight_id": 1,
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "돼지앞다리",
+    "price": "12900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459253-e0170524-4c0a-4691-86b7-da8c1b373312.jpg",
+    "part_tag_id": 5,
+    "weight_id": 1,
+    "category_id": 1
+  },
+  {
+    "id": 3,
+    "name": "돼지목살",
+    "price": "9900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459263-837ff9df-e239-4bfb-a33c-ddfbef3d91fd.png",
+    "part_tag_id": 2,
+    "weight_id": 1,
+    "category_id": 1
+  },
+  {
+    "id": 4,
+    "name": "돼지갈비",
+    "price": "9900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459267-ab99b4d6-52d0-475d-9379-a947fef8111b.png",
+    "part_tag_id": 3,
+    "weight_id": 1,
+    "category_id": 1
+  },
+  {
+    "id": 5,
+    "name": "돼지항정살",
+    "price": "11900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459255-833150df-c695-4aad-b6df-58e53c4960da.png",
+    "part_tag_id": 4,
+    "weight_id": 1,
+    "category_id": 1
+  },
+  {
+    "id": 6,
+    "name": "소 양지살",
+    "price": "13900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459414-478369d0-6ab0-4ee6-bcf9-4443dfe20c0a.png",
+    "part_tag_id": 9,
+    "weight_id": 1,
+    "category_id": 2
+  },
+  {
+    "id": 7,
+    "name": "양숄더렉",
+    "price": "13900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459325-58906ad6-3505-409f-beb5-4f1f87a66176.png",
+    "part_tag_id": 23,
+    "weight_id": 1,
+    "category_id": 3
+  },
+  {
+    "id": 8,
+    "name": "양숄더렉",
+    "price": "13900.00",
+    "thumbnail_image": "",
+    "part_tag_id": 14,
+    "weight_id": 1,
+    "category_id": 4
+  },
+  {
+    "id": 9,
+    "name": "양숄더렉",
+    "price": "13900.00",
+    "thumbnail_image": "",
+    "part_tag_id": 14,
+    "weight_id": 1,
+    "category_id": 4
+  },
+  {
+    "id": 10,
+    "name": "오리슬라이스정육",
+    "price": "11900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459370-60a8c689-f213-4f94-b811-46b1c33f1962.png",
+    "part_tag_id": 14,
+    "weight_id": 1,
+    "category_id": 4
+  },
+  {
+    "id": 11,
+    "name": "닭가슴살",
+    "price": "3900.00",
+    "thumbnail_image": "https://user-images.githubusercontent.com/118211014/211459435-767a97be-af93-4246-a3d3-3ad787beb146.png",
+    "part_tag_id": 19,
+    "weight_id": 1,
+    "category_id": 5
+  }
+]

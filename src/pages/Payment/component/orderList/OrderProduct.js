@@ -6,7 +6,7 @@ import './OrderProduct.scss';
 const OrderProduct = ({ cartProducts }) => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
   const onClickArrowIcon = () => {
-    setClickArrowIcon(!clickArrowIcon);
+    setClickArrowIcon((prev) => !prev);
   };
 
   const showWhatYouOrder = (
