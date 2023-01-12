@@ -1,5 +1,7 @@
 @import '../../../styles/variables.scss';
 
+@import '../../../styles/variables.scss';
+
 .mypageAddress {
   width: 820px;
   height: 657px;
@@ -41,37 +43,37 @@
       padding: 20px 0;
     }
 
-    .addressSelect {
+    .addressCategory:first-child {
       font-size: 14px;
       flex-basis: 60px;
       font-weight: 500;
     }
 
-    .addressUser {
+    .addressCategory:nth-child(2) {
       font-size: 16px;
       font-weight: 500;
       flex: 1 1 0;
     }
 
-    .addressPlace {
+    .addressCategory:nth-child(3) {
       font-size: 14px;
       flex-basis: 120px;
       font-weight: 500;
     }
 
-    .addressPhone {
+    .addressCategory:nth-child(4) {
       font-size: 14px;
       flex-basis: 100px;
       font-weight: 500;
     }
 
-    .addressHow {
+    .addressCategory:nth-child(5) {
       font-size: 14px;
       flex-basis: 100px;
       font-weight: 500;
     }
 
-    .addressModifynd {
+    .addressCategory:nth-child(6) {
       font-size: 14px;
       flex-basis: 60px;
     }
@@ -83,6 +85,16 @@
     align-items: center;
     text-align: center;
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+    .inputRemoveBorderCss {
+      border: none;
+      color: black;
+    }
+
+    .inputCreateBorderCss {
+      border: 1px solid rgb(0, 0, 0, 0.2);
+      height: 50px;
+    }
 
     .blockpaddingmargin {
       margin: 20px 0;
@@ -105,9 +117,9 @@
     }
 
     .modifyAddress {
+      text-align: center;
       font-size: 16px;
       flex: 1 1 0;
-      text-align: left;
 
       .nowAddress {
         display: block;

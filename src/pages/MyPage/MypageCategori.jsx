@@ -1,10 +1,10 @@
 import React from 'react';
 import MypageBtn from './components/MypageBtn';
-import './MypageCategory.scss';
+import './MypageCategori.scss';
 
-const MypageCategory = ({ renderFn }) => {
+const MypageCategori = ({ renderFn }) => {
   return (
-    <div className="mypageCategory">
+    <div className="mypageCategori">
       <div className="myGgoginame">마이꼬기</div>
       <ul>
         {MAINPAGELIST.map(({ id, name, link }) => {
@@ -21,7 +21,7 @@ const MypageCategory = ({ renderFn }) => {
   );
 };
 
-export default MypageCategory;
+export default MypageCategori;
 
 const MAINPAGELIST = [
   { id: 1, name: '주문 내역', link: 'MypageOrder' },

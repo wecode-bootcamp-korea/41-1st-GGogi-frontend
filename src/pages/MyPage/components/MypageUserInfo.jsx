@@ -1,95 +1,98 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MypageUserInfo.scss';
 
 const MypageUserInfo = () => {
   const [userAddressData, setUserAddressData] = useState([]);
   const [userNewPwd, setUserNewPwd] = useState({
-    confirmPwdagain: '',
-    confirmPwd: '',
+    oldPassword: '',
+    newPassword: '',
+    againPassword: '',
   });
 
-  const samePassword = (e) => {
+  const passwordValue = (e) => {
     const { name, value } = e.target;
     setUserNewPwd({ ...userNewPwd, [name]: value });
   };
 
-  const { confirmPwdagain, confirmPwd } = userNewPwd;
-
   const changePsw = (e) => {
     e.preventDefault();
-    if (confirmPwdagain === confirmPwd) {
-      fetch('http:10.58.52.116:3000/user/password', {
-        method: 'POST',
+    if (newPassword === againPassword) {
+      fetch('http://10.58.52.62:3000/users/password', {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
           Authorization: localStorage.getItem('Token'),
         },
-        body: JSON.stringify({ password: '' }),
+        body: JSON.stringify({
+          oldPassword: oldPassword,
+          newPassword: againPassword,
+        }),
       });
     }
   };
 
-  const userAddressPostData = (e) => {
-    e.preventDefault();
+  const { oldPassword, newPassword, againPassword } = userNewPwd;
 
-    fetch(`http://10.58.52.116:3000/users/mypage`, {
-      method: 'POST',
+  const { email, name, phone } = userAddressData;
+
+  useEffect(() => {
+    fetch(`http://10.58.52.62:3000/users/profile`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
         Authorization: localStorage.getItem('Token'),
       },
-      body: JSON.stringify({
-        address: 'update title',
-      }),
     })
       .then((response) => response.json())
       .then((userAddress) => setUserAddressData(userAddress.data[0]));
-  };
+  }, []);
 
-  const USERMODIFYLIST = [
+  const USERMODIFY = [
     {
       id: 1,
-      title: '이메일',
       name: 'email',
+      title: '이메일',
       type: 'email',
-      placeholder: '아이디를 입력해주세요',
+      placeholder: email,
     },
     {
       id: 2,
+      name: 'oldPassword',
       title: '현재 비밀번호',
-      name: 'pwd',
       type: 'password',
       placeholder: '현재 사용중인 비밀번호를 입력해주세요',
     },
     {
       id: 3,
+      name: 'newPassword',
       title: '새 비밀번호',
-      name: 'confirmPwd',
       type: 'password',
       placeholder: '변경하실 비밀번호를 입력해주세요',
     },
     {
       id: 4,
+      name: 'againPassword',
       title: '새 비밀번호 확인',
-      name: 'confirmPwdagain',
       type: 'password',
       placeholder: '비밀번호를 한 번 더 입력해주세요',
     },
     {
       id: 5,
-      title: '이름',
       name: 'named',
+      title: '이름',
       type: 'text',
-      placeholder: '이름을 입력해주세요',
+      placeholder: name,
     },
     {
       id: 6,
-      title: '휴대폰',
       name: 'phone',
+      title: '휴대폰',
       type: 'tel',
-      placeholder: '숫자를 입력해주세요',
+      placeholder: phone,
     },
   ];
+
+  console.log(userNewPwd);
 
   return (
     <div className="mypageUserModify">
@@ -100,25 +103,39 @@ const MypageUserInfo = () => {
         <div></div>
       </div>
       <div className="userInfoModify">
-        {USERMODIFYLIST.map(({ id, title, name, type, placeholder }) => (
-          <form key={id} className="usersInfoModify">
-            <div className="userInfoModifytitle">{title}</div>
-            <div className="userInputTextFiled">
-              <input
-                className="userInputModify"
-                name={name}
-                type={type}
-                placeholder={placeholder}
-                value={userNewPwd.name}
-                onChange={samePassword}
-              />
-            </div>
-          </form>
-        ))}
+        {USERMODIFY.map(({ id, name, title, type, placeholder }) => {
+          return (
+            <form className="usersInfoModify" key={id}>
+              <div className="userInfoModifytitle">{title}</div>
+              <div className="userInputTextFiled">
+                {id >= 2 && id <= 4 ? (
+                  <input
+                    className="userInputModify"
+                    name={name}
+                    type={type}
+                    placeholder={placeholder}
+                    autoComplete="on"
+                    value={userNewPwd[name]}
+                    onChange={passwordValue}
+                  />
+                ) : (
+                  <input
+                    className="userInputModify"
+                    name={name}
+                    type={type}
+                    placeholder={placeholder}
+                  />
+                )}
+              </div>
+            </form>
+          );
+        })}
       </div>
       <div className="userInfoModifyDoneBtn">
         <button className="deleteID">탈퇴하기</button>
-        <button className="deleteID">회원정보수정</button>
+        <button className="deleteID" onClick={changePsw}>
+          회원정보수정
+        </button>
       </div>
     </div>
   );

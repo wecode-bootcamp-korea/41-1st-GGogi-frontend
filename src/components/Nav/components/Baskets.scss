@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+.cartCountIcon {
+  position: absolute;
+  top: 40px;
+  right: 433px;
+  padding: 2.5px 0.5px 0 0;
+  text-align: center;
+  background-color: $basic-color;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 17px;
+  height: 17px;
+  border: 1px solid $basic-color;
+  border-radius: 100%;
+}
