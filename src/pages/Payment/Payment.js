@@ -13,6 +13,7 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
+  const [availlablePoint, setAvailablePoint] = useState(0);
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
@@ -40,10 +41,6 @@ const Payment = () => {
       });
   }, []);
 
-  const convertPrice = (price) => {
-    return price.toLocaleString();
-  };
-
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -60,14 +57,19 @@ const Payment = () => {
     <div className="payment">
       <h1 className="paymentTitle">주문서</h1>
       <div className="PaymentComponentSection">
-        <OrderProduct cartProducts={cartProducts} convertPrice={convertPrice} />
+        <OrderProduct cartProducts={cartProducts} />
         <OrdererInfo
           userName={userName}
           userPhone={userPhone}
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay userPoint={userPoint} convertPrice={convertPrice} />
+        <HowToPay
+          userPoint={userPoint}
+          calTotalPrice={calTotalPrice}
+          availlablePoint={availlablePoint}
+          setAvailablePoint={setAvailablePoint}
+        />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">

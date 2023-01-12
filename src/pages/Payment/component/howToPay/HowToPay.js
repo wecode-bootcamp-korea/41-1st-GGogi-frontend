@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PaymentAmount from './PaymentAmount';
 import './HowToPay.scss';
 
-const HowToPay = ({ userPoint, convertPrice }) => {
+const HowToPay = ({ userPoint, availlablePoint, setAvailablePoint }) => {
+  const usePoint = () => {
+    setAvailablePoint(userPoint);
+  };
   return (
     <div className="howToPay">
       <div className="howToPaySection">
@@ -18,13 +21,19 @@ const HowToPay = ({ userPoint, convertPrice }) => {
           <div className="payContentRow">
             <span className="payTitle">적립금 적용</span>
             <div className="usePointSection">
-              <input type="text" className="usePointInput" placeholder="0" />
-              <button className="allUseBtn">모두사용</button>
+              <input
+                type="text"
+                className="usePointInput"
+                value={parseInt(availlablePoint).toLocaleString()}
+              />
+              <button className="allUseBtn" onClick={usePoint}>
+                모두사용
+              </button>
               <div className="pointInfo">
                 <p className="availablePointInfo">
-                  사용가능 적립금{' '}
+                  사용가능 적립금
                   <span className="availablePoint">
-                    {userPoint && convertPrice(parseInt(userPoint))}
+                    {userPoint && parseInt(userPoint).toLocaleString()}
                   </span>
                   원
                 </p>

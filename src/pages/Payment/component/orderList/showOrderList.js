@@ -1,7 +1,7 @@
 import React from 'react';
 import './showOrderList.scss';
 
-const ShowOrderList = ({ cartProducts, convertPrice }) => {
+const ShowOrderList = ({ cartProducts }) => {
   return (
     <div className="orderList">
       {cartProducts.map((product) => {
@@ -17,7 +17,8 @@ const ShowOrderList = ({ cartProducts, convertPrice }) => {
             <div className="orderProductName">{productName}</div>
             <span className="orderQuantity">{quantity}개</span>
             <span className="orderItemPrice">
-              {price * quantity && convertPrice(price * quantity)} 원
+              {price * quantity && parseInt(price * quantity).toLocaleString()}
+              원
             </span>
           </div>
         );

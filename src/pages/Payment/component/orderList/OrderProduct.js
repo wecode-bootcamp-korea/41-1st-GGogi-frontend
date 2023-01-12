@@ -4,7 +4,7 @@ import ShowOrderList from './showOrderList';
 
 import './OrderProduct.scss';
 
-const OrderProduct = ({ cartProducts, convertPrice }) => {
+const OrderProduct = ({ cartProducts }) => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
   const onClickArrowIcon = () => {
     setClickArrowIcon(!clickArrowIcon);
@@ -27,10 +27,7 @@ const OrderProduct = ({ cartProducts, convertPrice }) => {
       </div>
       <div className="orderProductContent">
         {clickArrowIcon ? (
-          <ShowOrderList
-            cartProducts={cartProducts}
-            convertPrice={convertPrice}
-          />
+          <ShowOrderList cartProducts={cartProducts} />
         ) : (
           <p className="reperesnetTitle">
             {cartProducts[0].price && cartProducts[0].productName} 외&nbsp;
