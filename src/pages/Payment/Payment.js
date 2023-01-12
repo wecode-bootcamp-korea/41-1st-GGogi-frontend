@@ -13,7 +13,7 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
-  // 총 결제 금액 state에 담기 => 결제 시 보내야함
+
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
       method: 'GET',
@@ -40,10 +40,6 @@ const Payment = () => {
       });
   }, []);
 
-  const convertPrice = (price) => {
-    return price.toLocaleString();
-  };
-
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -53,15 +49,15 @@ const Payment = () => {
       return totalPriceArr.reduce((a, b) => a + b, 0);
     } else return 0;
   };
-
-  // Total 금액 담아줘야함, cartProducts 에서 썸네일 빼야됨...
+  //[Todo] 총 결제 금액 state로 관리해서 보내주기
+  // cartProducts 에서 썸네일 빼기
   // fetch('http://10.58.52.62:3000/order', {
   //   method: 'POST',
   //   headers: {
   //     Authorization: localStorage.getItem('Token'),
   //   },
   //   body: JSON.stringify({
-  //     name: 'yeri',
+  //     totalPrice: 'aai',
   //     cartInfos: cartProducts,
   //   }),
   // })
@@ -76,18 +72,14 @@ const Payment = () => {
     <div className="payment">
       <h1 className="paymentTitle">주문서</h1>
       <div className="PaymentComponentSection">
-        <OrderProduct cartProducts={cartProducts} convertPrice={convertPrice} />
+        <OrderProduct cartProducts={cartProducts} />
         <OrdererInfo
           userName={userName}
           userPhone={userPhone}
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay
-          userPoint={userPoint}
-          convertPrice={convertPrice}
-          calTotalPrice={calTotalPrice}
-        />
+        <HowToPay userPoint={userPoint} calTotalPrice={calTotalPrice} />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">

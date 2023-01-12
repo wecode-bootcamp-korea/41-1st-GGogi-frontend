@@ -1,5 +1,4 @@
 import CheckBtn from '../../../components/CheckBtn/CheckBtn';
-import { useEffect, useState } from 'react';
 import './CartProductList.scss';
 
 const CartProductList = ({
@@ -7,20 +6,8 @@ const CartProductList = ({
   setCartList,
   setSelectedItemIdArr,
   handleCheckBtn,
-  convertPrice,
 }) => {
-  // useEffect(()=>{},[deleteItem])
-
-  const [deleteItem, setDeleteItem] = useState('');
-
-  //1. deleteItem 변수 저장하기 V
-  //2. 클릭했을 때 useEffcet로 fetch Delete 전송 V
-  //3. 결과가 좋으면 그때 삭제 기능 발동!
-
   const handleDeleteItem = (id) => {
-    // setDeleteItem(id);
-    console.log(id);
-
     fetch(`http://10.58.52.62:3000/carts/deleteItem?cartId=${id}`, {
       method: 'DELETE',
       headers: {
@@ -84,7 +71,7 @@ const CartProductList = ({
               </button>
             </div>
             <span className="price">
-              {price * quantity && convertPrice(price * quantity)}원
+              {price * quantity && parseInt(price * quantity).toLocaleString}원
             </span>
             <button
               className="deleteBtn"

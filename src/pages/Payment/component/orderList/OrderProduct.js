@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import ShowOrderList from './showOrderList';
-
 import './OrderProduct.scss';
 
-const OrderProduct = ({ cartProducts, convertPrice }) => {
+const OrderProduct = ({ cartProducts }) => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
-  console.log(cartProducts);
   const onClickArrowIcon = () => {
     setClickArrowIcon(!clickArrowIcon);
   };
 
   const showWhatYouOrder = (
-    //[Todo] 상품 리스트 목록이 1개일 때와 여러 개일 때 구분할 것
     <p className="reperesnetTitle">
       {cartProducts || cartProducts[0].productName} 외&nbsp;
       {cartProducts && cartProducts.length - 1}개의 상품을 주문합니다.
@@ -30,10 +27,7 @@ const OrderProduct = ({ cartProducts, convertPrice }) => {
       </div>
       <div className="orderProductContent">
         {clickArrowIcon ? (
-          <ShowOrderList
-            cartProducts={cartProducts}
-            convertPrice={convertPrice}
-          />
+          <ShowOrderList cartProducts={cartProducts} />
         ) : (
           showWhatYouOrder
         )}

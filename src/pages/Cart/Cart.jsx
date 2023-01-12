@@ -6,7 +6,6 @@ import './Cart.scss';
 
 const Cart = ({ cartList, setCartList }) => {
   const [selectedItemIdArr, setSelectedItemIdArr] = useState([]);
-  const [orderList, setOrderList] = useState([]);
   const [address, setAddress] = useState();
 
   const navigate = useNavigate();
@@ -26,7 +25,6 @@ const Cart = ({ cartList, setCartList }) => {
       });
   }, []);
 
-  console.log(cartList);
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartList) {
@@ -37,29 +35,11 @@ const Cart = ({ cartList, setCartList }) => {
     } else return 0;
   };
 
-  const convertPrice = (price) => {
-    return price.toLocaleString();
-  };
-
-  // 보낼 값 계산하기
-  let orderProductList = [];
-  const orderProduct = () => {
-    for (let i = 0; i < selectedItemIdArr.length; i++) {
-      orderProductList.push(
-        cartList.find((el) => el.cartId === selectedItemIdArr[i])
-      );
-    }
-    return orderProduct;
-  };
-
-  // 주문하기 버튼 OnClick
   const handleOrderBtn = (e) => {
     e.preventDefault();
     orderProduct();
-    console.log(orderProductList);
     orderProductList.map((el) => {
       const { cartId, productId, quantity } = el;
-      console.log(cartId, productId, quantity);
       fetch('http://10.58.52.62:3000/carts', {
         method: 'PATCH',
         headers: {
@@ -79,13 +59,17 @@ const Cart = ({ cartList, setCartList }) => {
           }
         });
     });
-
-    // 주문 필요한 상품 백엔드로 송신
-
-    console.log(selectedItemIdArr);
   };
-  // 버튼을 눌렀을 때 전송해야 할 데이터 담기
-  // const onClickSignUp = (e) => {
+
+  let orderProductList = [];
+  const orderProduct = () => {
+    for (let i = 0; i < selectedItemIdArr.length; i++) {
+      orderProductList.push(
+        cartList.find((el) => el.cartId === selectedItemIdArr[i])
+      );
+    }
+    return orderProduct;
+  };
 
   const handleCheckBtn = (cartId) => {
     const hasSelectedCartId = selectedItemIdArr.includes(cartId);
@@ -106,7 +90,6 @@ const Cart = ({ cartList, setCartList }) => {
           handleCheckBtn={handleCheckBtn}
           selectedItemIdArr={selectedItemIdArr}
           setSelectedItemIdArr={setSelectedItemIdArr}
-          convertPrice={convertPrice}
         />
         <CartInfo
           address={address}
@@ -114,7 +97,6 @@ const Cart = ({ cartList, setCartList }) => {
           setCartList={setCartList}
           handleOrderBtn={handleOrderBtn}
           calTotalPrice={calTotalPrice}
-          convertPrice={convertPrice}
         />
       </div>
     </div>

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import './OrdererInfo.scss';
 
 const OrdererInfo = ({ userName, userPhone, userEmail }) => {

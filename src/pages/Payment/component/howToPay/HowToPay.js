@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import PaymentAmount from './PaymentAmount';
 import './HowToPay.scss';
 
-const HowToPay = ({ userPoint, convertPrice, calTotalPrice }) => {
+const HowToPay = ({ userPoint, calTotalPrice }) => {
   const [usePoint, setUsePoint] = useState(0);
-  // 클릭 시 주문금액 - 전체 적립금
 
   const payAllPoint = (userPoint) => {
     setUsePoint(userPoint);
@@ -26,12 +25,7 @@ const HowToPay = ({ userPoint, convertPrice, calTotalPrice }) => {
           <div className="payContentRow">
             <span className="payTitle">적립금 적용</span>
             <div className="usePointSection">
-              <input
-                type="text"
-                className="usePointInput"
-                placeholder="0"
-                value={usePoint}
-              />
+              <input type="text" className="usePointInput" value={usePoint} />
               <button className="allUseBtn" onClick={payAllPoint}>
                 모두사용
               </button>
@@ -39,7 +33,7 @@ const HowToPay = ({ userPoint, convertPrice, calTotalPrice }) => {
                 <p className="availablePointInfo">
                   사용가능 적립금
                   <span className="availablePoint">
-                    {userPoint && convertPrice(parseInt(userPoint))}
+                    {parseInt(userPoint).toLocaleString}
                   </span>
                   원
                 </p>
@@ -74,7 +68,6 @@ const HowToPay = ({ userPoint, convertPrice, calTotalPrice }) => {
       <div className="paymentAside">
         <div className="paymentAsideSticky">
           <PaymentAmount
-            convertPrice={convertPrice}
             calTotalPrice={calTotalPrice}
             payAllPoint={payAllPoint}
           />

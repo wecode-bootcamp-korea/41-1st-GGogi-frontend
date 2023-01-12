@@ -1,5 +1,6 @@
-import { Fragment } from 'react';
-import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
+import { Fragment, useState } from 'react';
+// [Todo] 전체 체크버튼과 개별 체크버튼 연결하기
+// import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import CartProductList from './CartProductList';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './CartProduct.scss';
@@ -10,15 +11,25 @@ const CartProduct = ({
   selectedItemIdArr,
   setSelectedItemIdArr,
   handleCheckBtn,
-  convertPrice,
 }) => {
+  const [isChecked, setIsChecked] = useState(false);
+  // [Todo] 전체 체크버튼과 개별 체크버튼 연결하기
+  const onClickChangeIcon = (e) => {
+    setIsChecked((prev) => !prev);
+  };
+
   return (
     <div className="cartProduct">
       <div className="checkSection">
-        <BsCheckCircleFill className="checkIcon" />
-        {/* [Todo] 선택 여부에 따라 버튼 다르게 만들기
-        <BsCheckCircle className="uncheckIcon" /> */}
-        <span className="wholeCheckWord">전체선택</span>
+        {/* [Todo] 전체 체크버튼과 개별 체크버튼 연결하기 */}
+        {/* <div className="checkBtn" onClick={onClickChangeIcon}>
+          {isChecked ? (
+            <BsCheckCircleFill className="checkBtnTrue" />
+          ) : (
+            <BsCheckCircle className="checkBtnFalse" />
+          )}
+        </div>
+        <span className="wholeCheckWord">전체선택</span> */}
         <div className="checkCountSection">
           <span className="checkedQuantity">
             {selectedItemIdArr && selectedItemIdArr.length}
@@ -47,7 +58,6 @@ const CartProduct = ({
             setCartList={setCartList}
             setSelectedItemIdArr={setSelectedItemIdArr}
             handleCheckBtn={handleCheckBtn}
-            convertPrice={convertPrice}
           />
         </Fragment>
       )}
