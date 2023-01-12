@@ -6,7 +6,7 @@ const PaymentAmount = ({ calTotalPrice, payAllPoint }) => {
     {
       id: 1,
       title: '주문금액',
-      price: parseInt(calTotalPrice()).toLocaleString(),
+      // price: parseInt(calTotalPrice()).toLocaleString(),
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const PaymentAmount = ({ calTotalPrice, payAllPoint }) => {
     {
       id: 4,
       title: '최종결제금액',
-      price: parseInt(payAllPoint()).toLocaleString,
+      // price: parseInt(payAllPoint()).toLocaleString,
     },
   ];
   return (

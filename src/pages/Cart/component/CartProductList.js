@@ -44,6 +44,7 @@ const CartProductList = ({
     <div className="cartProductList">
       {cartList?.map((cart) => {
         const { cartId, price, productName, quantity, thumbnailImage } = cart;
+        const totalPrice = price * quantity;
         return (
           <div key={cartId} className="productList">
             <CheckBtn
@@ -71,7 +72,7 @@ const CartProductList = ({
               </button>
             </div>
             <span className="price">
-              {price * quantity && parseInt(price * quantity).toLocaleString}원
+              {parseInt(totalPrice).toLocaleString()}원
             </span>
             <button
               className="deleteBtn"

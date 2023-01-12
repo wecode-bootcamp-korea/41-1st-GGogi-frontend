@@ -40,6 +40,10 @@ const Payment = () => {
       });
   }, []);
 
+  const convertPrice = (price) => {
+    return price.toLocaleString();
+  };
+
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -49,37 +53,21 @@ const Payment = () => {
       return totalPriceArr.reduce((a, b) => a + b, 0);
     } else return 0;
   };
-  //[Todo] 총 결제 금액 state로 관리해서 보내주기
-  // cartProducts 에서 썸네일 빼기
-  // fetch('http://10.58.52.62:3000/order', {
-  //   method: 'POST',
-  //   headers: {
-  //     Authorization: localStorage.getItem('Token'),
-  //   },
-  //   body: JSON.stringify({
-  //     totalPrice: 'aai',
-  //     cartInfos: cartProducts,
-  //   }),
-  // })
-  //   .then((res) => res.json())
-  //   .then((res) => {
-  //     if (res.success) {
-  //       alert('저장 완료');
-  //     }
-  //   });
+
+  if (cartProducts.length === 0) return null;
 
   return (
     <div className="payment">
       <h1 className="paymentTitle">주문서</h1>
       <div className="PaymentComponentSection">
-        <OrderProduct cartProducts={cartProducts} />
+        <OrderProduct cartProducts={cartProducts} convertPrice={convertPrice} />
         <OrdererInfo
           userName={userName}
           userPhone={userPhone}
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay userPoint={userPoint} calTotalPrice={calTotalPrice} />
+        <HowToPay userPoint={userPoint} convertPrice={convertPrice} />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
