@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MyPageUserInterface from './MyPageUserInterface';
-import MypageCategory from './MypageCategory';
+import MypageCategori from './MypageCategori';
 import MypageOrder from './components/MypageOrder';
 import MypageUserInfo from './components/MypageUserInfo';
 import MypageAddress from './components/MypageAddress';
@@ -37,7 +37,7 @@ const MyPage = () => {
     <div>
       <MyPageUserInterface name={name} point={point} />
       <div className="mypageUnderLayout">
-        <MypageCategory renderFn={renderFunction} />
+        <MypageCategori renderFn={renderFunction} />
         {renderPage && selectComponent[renderPage]}
       </div>
     </div>

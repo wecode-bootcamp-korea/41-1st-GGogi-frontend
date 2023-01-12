@@ -1,6 +1,6 @@
 import Navloginsignup from './Navloginsignup';
 import Navsearchline from './Navsearchline';
-import Navcategory from './Navcategory';
+import Navcategori from './Navcategori';
 import './Nav.scss';
 
 const Nav = () => {
@@ -8,7 +8,7 @@ const Nav = () => {
     <nav className="nav">
       <Navloginsignup />
       <Navsearchline />
-      <Navcategory />
+      <Navcategori />
     </nav>
   );
 };

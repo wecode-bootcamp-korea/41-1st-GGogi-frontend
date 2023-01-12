@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import React, { useState, useEffect } from 'react';
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
+import React, { useEffect, useState } from 'react';
 
 const MyPageUserInterface = ({ name, point }) => {
   const [state, setState] = useState();
   const [mypageUserData, setMypageUserData] = useState([]);
+
   const pointStr = Number(point);
   const pointDeleteDot = Math.floor(pointStr);
 
