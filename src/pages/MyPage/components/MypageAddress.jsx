@@ -34,7 +34,7 @@ const MypageAddress = () => {
             배송지에 따라 상품정보 및 배송 유형이 달라질 수 있습니다.
           </span>
         </div>
-        <div></div>
+        <div />
       </div>
       <div className="addressModify">
         <div className="addressModifyCategory">

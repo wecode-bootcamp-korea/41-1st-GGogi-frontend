@@ -13,7 +13,7 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
-  const [availlablePoint, setAvailablePoint] = useState(0);
+  const { availlablePoint, setAvailablePoint } = useState(0);
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
@@ -41,6 +41,10 @@ const Payment = () => {
       });
   }, []);
 
+  const usePoint = () => {
+    setAvailablePoint(userPoint);
+  };
+
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -64,16 +68,11 @@ const Payment = () => {
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay
-          userPoint={userPoint}
-          calTotalPrice={calTotalPrice}
-          availlablePoint={availlablePoint}
-          setAvailablePoint={setAvailablePoint}
-        />
+        <HowToPay userPoint={userPoint} calTotalPrice={calTotalPrice} />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
-        <button className="paymentBtn">49310원 결제하기</button>
+        <button className="paymentBtn">0원 결제하기</button>
         <div className="paymentInfo">
           [주문완료]상태일 경우에만 주문 취소 가능합니다.
           <br />

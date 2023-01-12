@@ -34,7 +34,6 @@ const Cart = ({ cartList, setCartList }) => {
       return totalPriceArr.reduce((a, b) => a + b, 0);
     } else return 0;
   };
-
   const handleOrderBtn = (e) => {
     e.preventDefault();
     orderProduct();

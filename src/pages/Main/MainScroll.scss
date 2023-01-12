@@ -9,12 +9,13 @@
 
   .mainScrollBox {
     display: flex;
-    width: 5760px;
+    width: 5300px;
     height: 100%;
 
     .mainScrollImg {
-      width: 5760px;
+      width: 5300px;
       height: 100%;
+      object-fit: cover;
     }
   }
 

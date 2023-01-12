@@ -7,9 +7,9 @@ import './Main.scss';
 const Main = () => {
   return (
     <div className="main">
-      <MainCardMini />
-      <MainCard />
       <MainScroll />
+      <MainCard />
+      <MainCardMini />
     </div>
   );
 };

@@ -9,12 +9,6 @@ const OrderProduct = ({ cartProducts }) => {
   const onClickArrowIcon = () => {
     setClickArrowIcon(!clickArrowIcon);
   };
-
-  // const showWhatYouOrder = (
-  //   //[Todo] 상품 리스트 목록이 1개일 때와 여러 개일 때 구분할 것
-
-  // );
-
   return (
     <div className="orderProduct">
       <div className="titleSection">

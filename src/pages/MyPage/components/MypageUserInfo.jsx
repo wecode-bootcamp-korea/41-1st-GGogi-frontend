@@ -100,7 +100,7 @@ const MypageUserInfo = () => {
         <div className="userModifyHaad">
           <span className="userModifyManagement">개인정보수정</span>
         </div>
-        <div></div>
+        <div />
       </div>
       <div className="userInfoModify">
         {USERMODIFY.map(({ id, name, title, type, placeholder }) => {

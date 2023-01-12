@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './MainScroll.scss';
-import beef from '../../../src/assets/images/beef.jpg';
-import chicken1 from '../../../src/assets/images/chicken1.jpg';
-import duck from '../../../src/assets/images/duck.jpg';
+import beef2 from '../../../src/assets/images/beef2.jpg';
+import chicken2 from '../../../src/assets/images/chicken2.jpg';
+import pork2 from '../../../src/assets/images/pork2.jpg';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 function MainScroll() {
   const [slidePx, setSlidePx] = useState(0);
@@ -25,9 +25,9 @@ function MainScroll() {
           transition: '0.5s ease',
         }}
       >
-        <img src={beef} alt="beefImg" className="mainScrollImg" />
-        <img src={chicken1} alt="chickenImg" className="mainScrollImg" />
-        <img src={duck} alt="ductImg" className="mainScrollImg" />
+        <img src={beef2} alt="beefImg" className="mainScrollImg" />
+        <img src={chicken2} alt="chickenImg" className="mainScrollImg" />
+        <img src={pork2} alt="ductImg" className="mainScrollImg" />
       </div>
 
       <div>

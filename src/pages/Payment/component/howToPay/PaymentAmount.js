@@ -6,6 +6,8 @@ const PaymentAmount = ({ calTotalPrice, payAllPoint }) => {
     {
       id: 1,
       title: '주문금액',
+      price: '136,500',
+
       // price: parseInt(calTotalPrice()).toLocaleString(),
     },
     {
@@ -15,12 +17,14 @@ const PaymentAmount = ({ calTotalPrice, payAllPoint }) => {
     },
     {
       id: 3,
-      title: '쿠폰할인',
-      price: 0,
+      title: '적립금 사용',
+      price: '136,500',
     },
     {
       id: 4,
       title: '최종결제금액',
+      price: '0',
+
       // price: parseInt(payAllPoint()).toLocaleString,
     },
   ];

@@ -7,8 +7,8 @@ const MypageOrder = ({ orderList }) => {
   const userAddressPostData = (e) => {
     e.preventDefault();
 
-    fetch(`http://10.58.52.116:3000/users/mypage`, {
-      method: 'POST',
+    fetch(`http://10.58.52.62:3000/users/info`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
         Authorization: localStorage.getItem('Token'),
@@ -29,7 +29,7 @@ const MypageOrder = ({ orderList }) => {
             최대 지난 3년간의 주문 내역까지 확인할 수 있어요
           </span>
         </div>
-        <div></div>
+        <div />
       </div>
       <div className="staticHeader">
         <div className="staticHead">주문 내역 목록</div>
@@ -43,7 +43,6 @@ const MypageOrder = ({ orderList }) => {
                 <div key={idx} className="getCartData">
                   <div className="cartItemListDiv">
                     <img className="orderImg" src={thumbnailImage} />
-
                     <div>
                       <div className="cartItemListDiv">
                         <div className="orderFontSize">상품명 : </div>

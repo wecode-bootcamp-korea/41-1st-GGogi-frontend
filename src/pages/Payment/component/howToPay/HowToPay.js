@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PaymentAmount from './PaymentAmount';
 import './HowToPay.scss';
 
-const HowToPay = ({ userPoint, availlablePoint, setAvailablePoint }) => {
+const HowToPay = ({ userPoint, setAvailablePoint }) => {
   const usePoint = () => {
     setAvailablePoint(userPoint);
   };
@@ -24,7 +24,7 @@ const HowToPay = ({ userPoint, availlablePoint, setAvailablePoint }) => {
               <input
                 type="text"
                 className="usePointInput"
-                value={parseInt(availlablePoint).toLocaleString()}
+                // value={parseInt(availlablePoint).toLocaleString()}
               />
               <button className="allUseBtn" onClick={usePoint}>
                 모두사용
