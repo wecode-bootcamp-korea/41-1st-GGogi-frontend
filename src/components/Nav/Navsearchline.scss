@@ -11,22 +11,25 @@
     .navMarketKurlyEg,
     .navMarketKurlyKr {
       color: #5f0080;
-      font-size: 40px;
+      font-size: 34px;
       margin-right: 20px;
       cursor: pointer;
     }
 
     .navMarketKurlyKr {
       position: relative;
-      bottom: 4.5px;
+      bottom: 5.5px;
       font-size: 18px;
-      font-weight: 500;
-      line-height: 23px;
+      font-weight: bold;
     }
   }
 
   .navSearchBar {
     position: relative;
+    input:focus {
+      outline: none;
+    }
+
     .searchBar {
       color: black;
       width: 400px;
