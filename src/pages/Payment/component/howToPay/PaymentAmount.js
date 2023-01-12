@@ -19,7 +19,9 @@ const PaymentAmount = () => {
           return (
             <div className="paymentAmountItem" key={id}>
               <span className="AmountTitle">{title}</span>
-              <span className="paymentAmountNum">{price}원</span>
+              <span className="paymentAmountNum">
+                {parseInt(price).toLocaleString()}원
+              </span>
             </div>
           );
         })}

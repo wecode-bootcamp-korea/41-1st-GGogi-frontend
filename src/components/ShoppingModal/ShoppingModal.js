@@ -9,14 +9,18 @@ const ShoppingModal = ({ product, isShoppingModal }) => {
       <div className="shoppingModalTop">
         <div className="shoppingModalName">{name}</div>
         <div className="shoppingModalCount">
-          <div className="shoppingModalPrice">{price}원</div>
+          <div className="shoppingModalPrice">
+            {parseInt(price).toLocaleString()}원
+          </div>
           <PlusMinusBtn />
         </div>
       </div>
       <div className="shoppingModalMiddle">
         <div className="shoppingModalTotal">
           <span>합계</span>
-          <div className="modalTotalPrice">{price}원</div>
+          <div className="modalTotalPrice">
+            {parseInt(price).toLocaleString()}원
+          </div>
         </div>
       </div>
       <div className="shoppingModalBottom">

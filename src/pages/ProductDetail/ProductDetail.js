@@ -34,7 +34,9 @@ const ProductDetail = () => {
               <MdShare className="productDetailNameMiddleR" />
             </div>
           </div>
-          <div className="productDetailPrice">{price}</div>
+          <div className="productDetailPrice">
+            {parseInt(price).toLocaleString()}원
+          </div>
           <ProductDetailInfo />
           <ProductDetailCart product={productDetail} />
         </section>

@@ -1,17 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
-import React, { useEffect, useState } from 'react';
 
 const MyPageUserInterface = ({ name, point }) => {
   const [mypageUserData, setMypageUserData] = useState([]);
-
-  const pointStr = Number(point);
   const [state, setState] = useState([]);
+  const pointStr = Number(point);
   const pointDeleteDot = Math.floor(pointStr);
-
   const USERBIGDATA = [
     {
       id: 1,

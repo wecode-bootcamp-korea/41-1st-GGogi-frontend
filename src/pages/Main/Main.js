@@ -9,13 +9,6 @@ import MainScroll from './MainScroll';
 
 const Main = () => {
   return (
-    <Fragment>
-      <div className="main">
-        <ShoppingModal />
-        <ProductCardList productList={productList} />
-      </div>
-      <Category />
-    </Fragment>
     <div className="main">
       <MainCardMini />
       <MainCard />
