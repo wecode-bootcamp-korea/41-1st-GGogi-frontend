@@ -5,12 +5,12 @@ const PlusMinusBtn = ({ num }) => {
   const [quantity, setQuantity] = useState(num);
 
   const plusCount = () => {
-    return setQuantity(quantity + 1);
+    return setQuantity((prev) => prev + 1);
   };
 
   const minusCount = () => {
     if (quantity > 1) {
-      return setQuantity(quantity - 1);
+      return setQuantity((prev) => prev - 1);
     }
   };
   return (
