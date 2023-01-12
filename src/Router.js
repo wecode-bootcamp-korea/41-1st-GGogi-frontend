@@ -28,7 +28,7 @@ const Router = () => {
           element={<Cart cartList={cartList} setCartList={setCartList} />}
         />
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/order/checkout" element={<Payment />} />
+        <Route path="/order" element={<Payment />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -55,7 +55,7 @@ const Cart = ({ cartList, setCartList }) => {
         .then((response) => response.json())
         .then((result) => {
           if (result.message === 'UPDATE_ITEM_QUANTITY_SUCCESS') {
-            navigate('/order/checkout');
+            navigate('/order');
           }
         });
     });
