@@ -13,7 +13,6 @@ const CartProduct = ({
   handleCheckBtn,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
-  // [Todo] 전체 체크버튼과 개별 체크버튼 연결하기
   const onClickChangeIcon = (e) => {
     setIsChecked((prev) => !prev);
   };
