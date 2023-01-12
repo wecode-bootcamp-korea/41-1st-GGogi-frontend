@@ -1,14 +1,14 @@
 import React from 'react';
 import './CartInfoPrice.scss';
 
-const CartInfoPrice = () => {
-  //[Todo] 차후 백엔드에서 가격 정보 가져오기
+const CartInfoPrice = ({ calTotalPrice }) => {
   const CART_PRICEINFO = [
     {
       id: 1,
       name: '상품금액',
-      price: '46,360',
+      price: parseInt(calTotalPrice()).toLocaleString(),
     },
+
     {
       id: 2,
       name: '배송비',
@@ -17,18 +17,19 @@ const CartInfoPrice = () => {
     {
       id: 3,
       name: '결제예정금액',
-      price: '46,360',
+      price: parseInt(calTotalPrice()).toLocaleString(),
     },
   ];
 
   return (
     <div className="cartInfoPrice">
       {CART_PRICEINFO.map((item) => {
+        const { id, name, price } = item;
         return (
-          <div key={item.id} className="priceInfoSection">
-            <span className="priceTitle">{item.name}</span>
+          <div key={id} className="priceInfoSection">
+            <span className="priceTitle">{name}</span>
             <div className="priceSection">
-              <span className="priceInfo">{item.price}</span>
+              <span className="priceInfo">{price}</span>
               <span className="priceUnit"> 원</span>
             </div>
           </div>

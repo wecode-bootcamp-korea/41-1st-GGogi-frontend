@@ -3,17 +3,12 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import ShowOrderList from './showOrderList';
 import './OrderProduct.scss';
 
-const OrderProduct = () => {
+const OrderProduct = ({ cartProducts, convertPrice }) => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
-
   const onClickArrowIcon = () => {
     setClickArrowIcon((prev) => !prev);
   };
 
-  const showWhatYouOrder = (
-    //[Todo] 상품 리스트 목록이 1개일 때와 여러 개일 때 구분할 것
-    <p> [KF365] 한돈 삼겹살 구이용 1kg (냉장) 외 3개 상품을 주문합니다.</p>
-  );
   return (
     <div className="orderProduct">
       <div className="titleSection">
@@ -25,7 +20,17 @@ const OrderProduct = () => {
         )}
       </div>
       <div className="orderProductContent">
-        {clickArrowIcon ? <ShowOrderList /> : showWhatYouOrder}
+        {clickArrowIcon ? (
+          <ShowOrderList
+            cartProducts={cartProducts}
+            convertPrice={convertPrice}
+          />
+        ) : (
+          <p className="reperesnetTitle">
+            {cartProducts[0].price && cartProducts[0].productName} 외&nbsp;
+            {cartProducts && cartProducts.length - 1}개의 상품을 주문합니다.
+          </p>
+        )}
       </div>
     </div>
   );

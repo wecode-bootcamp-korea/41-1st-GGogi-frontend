@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
@@ -14,6 +15,8 @@ import MyPage from './pages/MyPage/MyPage';
 import Test from './pages/Test';
 
 const Router = () => {
+  const [cartList, setCartList] = useState([]);
+
   return (
     <BrowserRouter>
       <Nav />
@@ -24,7 +27,10 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={<Cart cartList={cartList} setCartList={setCartList} />}
+        />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/order" element={<Payment />} />
         <Route path="/search" element={<Search />} />

@@ -4,7 +4,6 @@ import '../../styles/common.scss';
 
 const MyPageUserInterface = ({ name, point }) => {
   const [mypageUserData, setMypageUserData] = useState([]);
-  const [state, setState] = useState([]);
   const pointStr = Number(point);
   const pointDeleteDot = Math.floor(pointStr);
   const USERBIGDATA = [

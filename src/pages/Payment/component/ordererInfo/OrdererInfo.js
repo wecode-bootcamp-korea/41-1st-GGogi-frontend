@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './OrdererInfo.scss';
 
-const OrdererInfo = () => {
-  const [ordererInfoList, setOrdererInfoList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/ordererInfoData.json')
-      .then((result) => result.json())
-      .then((data) => setOrdererInfoList(data));
-  }, []);
+const OrdererInfo = ({ userName, userPhone, userEmail }) => {
+  const userInfo = [
+    {
+      id: 1,
+      title: '보내는 분',
+      content: userName,
+    },
+    {
+      id: 2,
+      title: '휴대폰',
+      content: userPhone,
+    },
+    {
+      id: 3,
+      title: '이메일',
+      content: userEmail,
+    },
+  ];
 
   return (
     <div className="ordererInfo">
       <h2 className="ordererInfoTitle">주문자 정보</h2>
       <div className="ordererInfoSection">
-        {ordererInfoList.map((item) => {
+        {userInfo.map((item) => {
           const { id, title, content } = item;
           return (
             <div key={id} className="ordererInfoRow">

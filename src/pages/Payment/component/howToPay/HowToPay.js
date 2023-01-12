@@ -2,7 +2,7 @@ import React from 'react';
 import PaymentAmount from './PaymentAmount';
 import './HowToPay.scss';
 
-const HowToPay = () => {
+const HowToPay = ({ userPoint, convertPrice }) => {
   return (
     <div className="howToPay">
       <div className="howToPaySection">
@@ -22,7 +22,11 @@ const HowToPay = () => {
               <button className="allUseBtn">모두사용</button>
               <div className="pointInfo">
                 <p className="availablePointInfo">
-                  사용가능 적립금 <span className="availablePoint">0</span>원
+                  사용가능 적립금{' '}
+                  <span className="availablePoint">
+                    {userPoint && convertPrice(parseInt(userPoint))}
+                  </span>
+                  원
                 </p>
                 <span className="howToSeePointHistory">
                   적립금 내역 : 마이컬리 - 적립금

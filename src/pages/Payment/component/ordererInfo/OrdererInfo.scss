@@ -5,13 +5,12 @@
   flex-direction: column;
   justify-content: center;
   width: 1050px;
-  margin-top: 50px;
 
   .ordererInfoTitle {
     display: flex;
     align-items: center;
     height: 62px;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid black;
     font-size: 20px;
     font-weight: 500;
   }

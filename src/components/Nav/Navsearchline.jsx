@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Pin from '../../assets/images/pin.png';
 import Heart from '../../assets/images/heart.png';
 import Cart from '../../assets/images/shoppingCart.png';
-import Baskets from './components/Baskets';
 import './Navsearchline.scss';
 
 const Navsearchline = () => {

@@ -1,6 +1,6 @@
 import './CartInfoAddress.scss';
 
-const CartInfoAddress = () => {
+const CartInfoAddress = ({ address }) => {
   return (
     <div className="CartInfoAddress">
       <div className="addressWrapper">
@@ -9,7 +9,8 @@ const CartInfoAddress = () => {
           <p className="title">배송지</p>
         </div>
         <p className="addressInfo">
-          경기도 ㅇㅇ시 ㅇㅇ구 ㅇㅇ로 100 (ㅇㅇ아파트) 1000-1000
+          {address}
+          <br />
         </p>
         <div className="pointSection">
           <span className="point">샛별배송</span>
