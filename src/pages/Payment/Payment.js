@@ -55,6 +55,34 @@ const Payment = () => {
     } else return 0;
   };
 
+  const handlePayBtn = (e) => {
+    e.preventDefault();
+    cartProducts.map((el) => {
+      const { cartId, productId, quantity } = el;
+      fetch('http://10.58.52.62:3000/orders', {
+        method: 'POST',
+        headers: {
+          Authorization: localStorage.getItem('Token'),
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({
+          totalPrice: calTotalPrice(),
+          cartInfos: [
+            {
+              cartId: cartId,
+              productId: productId,
+              quantity: quantity,
+            },
+          ],
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+        });
+    });
+  };
+
   if (cartProducts.length === 0) return null;
 
   return (
@@ -72,7 +100,9 @@ const Payment = () => {
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
-        <button className="paymentBtn">0원 결제하기</button>
+        <button className="paymentBtn" onClick={handlePayBtn}>
+          0원 결제하기
+        </button>
         <div className="paymentInfo">
           [주문완료]상태일 경우에만 주문 취소 가능합니다.
           <br />
