@@ -1,9 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';
-import React, { useEffect, useState } from 'react';
 
 const MyPageUserInterface = ({ name, point }) => {
-  const [state, setState] = useState([]);
+  const [mypageUserData, setMypageUserData] = useState([]);
   const pointStr = Number(point);
   const pointDeleteDot = Math.floor(pointStr);
 
@@ -19,7 +19,7 @@ const MyPageUserInterface = ({ name, point }) => {
   ];
 
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/users/mypage`, {
+    fetch(`http://10.58.52.62:3000/users/info`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -27,7 +27,7 @@ const MyPageUserInterface = ({ name, point }) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setState(data.data[0]));
+      .then((data) => setMypageUserData(data.data[0]));
   }, []);
 
   return (
@@ -80,7 +80,7 @@ const MyPageUserInterface = ({ name, point }) => {
               <div className="kurlyBtnColors">
                 컬리 퍼플 박스
                 <span className="spanArrowColor">
-                  <i className="fa-solid fa-angle-right"></i>
+                  <i className="fa-solid fa-angle-right" />
                 </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>
@@ -91,7 +91,7 @@ const MyPageUserInterface = ({ name, point }) => {
               <div className="kurlyBtnColors">
                 컬리 패스
                 <span className="spanArrowColor">
-                  <i className="fa-solid fa-angle-right"></i>
+                  <i className="fa-solid fa-angle-right" />
                 </span>
               </div>
               <div className="kurlyBtnPurpleColors">알아보기</div>

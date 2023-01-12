@@ -15,10 +15,11 @@ const PaymentAmount = () => {
       <h2 className="paymentAmountTitle"> 결제 금액</h2>
       <div className="paymentAmountInfo">
         {paymentAmountList.map((item) => {
+          const { id, title, price } = item;
           return (
-            <div className="paymentAmountItem" key={item.id}>
-              <span className="AmountTitle">{item.title}</span>
-              <span className="paymentAmountNum">{item.price}원</span>
+            <div className="paymentAmountItem" key={id}>
+              <span className="AmountTitle">{title}</span>
+              <span className="paymentAmountNum">{price}원</span>
             </div>
           );
         })}
