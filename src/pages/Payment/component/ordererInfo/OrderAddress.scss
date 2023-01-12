@@ -29,10 +29,10 @@
   }
 
   .changeAddressInfoWindow {
-    @include flexColumn(center, flex-start);
     position: absolute;
     top: 50px;
     right: 20px;
+    @include flexColumn(center, flex-start);
     width: 188px;
     height: 60px;
     padding: 0 20px;

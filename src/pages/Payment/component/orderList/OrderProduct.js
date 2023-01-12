@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import ShowOrderList from './showOrderList';
+
 import './OrderProduct.scss';
 
 const OrderProduct = ({ cartProducts, convertPrice }) => {
   const [clickArrowIcon, setClickArrowIcon] = useState(false);
   const onClickArrowIcon = () => {
-    setClickArrowIcon((prev) => !prev);
+    setClickArrowIcon(!clickArrowIcon);
   };
+
+  // const showWhatYouOrder = (
+  //   //[Todo] 상품 리스트 목록이 1개일 때와 여러 개일 때 구분할 것
+
+  // );
 
   return (
     <div className="orderProduct">
