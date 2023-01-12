@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.checkBtn {
+  width: 24px;
+  margin: 5px;
+  cursor: pointer;
+
+  .checkBtnFalse {
+    font-size: 24px;
+    color: $border-color;
+  }
+
+  .checkBtnTrue {
+    font-size: 24px;
+    color: $basic-color;
+  }
+}

@@ -3,17 +3,30 @@ import CartInfoPrice from './CartInfoPrice';
 import { CARTINFO_ASIDE } from './CartInfoAside';
 import './CartInfo.scss';
 
-const CartInfo = () => {
+const CartInfo = ({
+  cartList,
+  setCartList,
+  address,
+  handleOrderBtn,
+  calTotalPrice,
+}) => {
   return (
     <div className="cartInfo">
-      <CartInfoAddress />
-      <CartInfoPrice />
-      <button className="orderBtn">주문하기</button>
+      <CartInfoAddress address={address} />
+      <CartInfoPrice
+        cartList={cartList}
+        setCartList={setCartList}
+        calTotalPrice={calTotalPrice}
+      />
+      <button className="orderBtn" onClick={handleOrderBtn}>
+        주문하기
+      </button>
       <div className="cartInfoAside">
         {CARTINFO_ASIDE.map((item) => {
+          const { id, content } = item;
           return (
-            <ul key={item.id}>
-              <li className="cartInfoAsideList">・ {item.content}</li>
+            <ul key={id}>
+              <li className="cartInfoAsideList">・ {content}</li>
             </ul>
           );
         })}

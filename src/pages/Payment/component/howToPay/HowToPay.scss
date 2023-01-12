@@ -52,6 +52,7 @@
           color: #cccccc;
           cursor: pointer;
         }
+
         .usePointSection {
           position: relative;
 
@@ -75,6 +76,11 @@
             border-radius: 4px;
             color: #c9c9c9;
             cursor: pointer;
+
+            &:hover {
+              color: white;
+              background-color: $basic-color;
+            }
           }
         }
         .pointInfo {
@@ -108,6 +114,11 @@
         border: 1px solid $border-color;
         border-radius: 4px;
         cursor: pointer;
+
+        &:hover {
+          color: white;
+          background-color: $basic-color;
+        }
       }
 
       .paymentInfo {

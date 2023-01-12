@@ -3,7 +3,7 @@ import { BsQuestionCircle } from 'react-icons/bs';
 import { MdOutlineClose } from 'react-icons/md';
 import './OrderAddress.scss';
 
-const OrderAddress = () => {
+const OrderAddress = ({ userAddress }) => {
   const [showMsg, setShowMsg] = useState(false);
 
   const onClickShowMsg = () => {
@@ -34,9 +34,7 @@ const OrderAddress = () => {
         <span className="addressTitle">배송지</span>
         <div className="addressInfo">
           <span className="defaultAddress">기본배송지</span>
-          <p className="userAddress">
-            경기도 ㅇㅇ시 ㅇㅇ구 ㅇㅇ로 (ㅇㅇ아파트) 0000-0000
-          </p>
+          <p className="userAddress">{userAddress}</p>
         </div>
       </div>
       <div className="orderAddressSection">
