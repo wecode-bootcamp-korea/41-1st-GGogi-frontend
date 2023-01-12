@@ -5,25 +5,30 @@ import { VscHeart } from 'react-icons/vsc';
 import { BsBell } from 'react-icons/bs';
 
 const ProductDetailCart = ({ product }) => {
+  const { name, price } = product;
   return (
     <div className="productDetailCart">
       <div className="tableRow">
         <div className="tableHead">배송</div>
         <div className="tableBody">
           <div className="detailCartCount">
-            <div className="detailCartCountName">{product.name} </div>
+            <div className="detailCartCountName">{name} </div>
             <div className="detailCartCountBottom">
               <div className="detailCartCountBtn">
                 <PlusMinusBtn product={product} />
               </div>
-              <div className="detailCartCountPrice">{product.price}</div>
+              <div className="detailCartCountPrice">
+                {parseInt(price).toLocaleString()}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="detailCartTotal">
         <div className="detailCartTotalTop">총 상품금액:</div>
-        <div className="detailCartTotalPrice">{product.price}</div>
+        <div className="detailCartTotalPrice">
+          {parseInt(price).toLocaleString()}
+        </div>
       </div>
       <div className="detailCartTotalBtn">
         <VscHeart className="cartIcon" />

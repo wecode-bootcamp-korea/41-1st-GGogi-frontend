@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
       <div className="productInfo">
         <h3 className="productName">{name}</h3>
         <div className="contentRow">
-          {price}
+          {parseInt(price).toLocaleString()}
           <span> 원</span>
         </div>
       </div>
