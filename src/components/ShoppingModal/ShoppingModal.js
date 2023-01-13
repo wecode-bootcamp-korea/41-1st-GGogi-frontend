@@ -30,6 +30,7 @@ const ShoppingModal = ({ product, isShoppingModal }) => {
       .then((result) => {
         if (result.message === 'CARTS_CREATED_SUCCESS') {
           alert('장바구니에 추가 완료');
+          isShoppingModal();
         } else {
           alert('장바구니에 추가 실패');
         }
