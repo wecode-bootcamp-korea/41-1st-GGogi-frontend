@@ -1,4 +1,6 @@
-# GGOGI 🥩
+![waving](https://capsule-render.vercel.app/api?type=waving&height=200&fontAlignY=40&text=MarketGGOGI&color=gradient)
+
+- 식품 판매 사이트를 모델링한 프로젝트 입니다.
 
 ---
 
@@ -45,25 +47,66 @@
 
 ### 3-2. 필수 구현 사항
 
-1. 로그인 페이지 - 윤지수
-2. 회원가입 페이지 - 윤지수
-   - 회원가입 완료 알람 - 윤지수
-3. 전체 상품 페이지 - 박예솔
-   - 페이지 네이션 - 박예솔
-4. 메인 페이지 - 박예솔
-   - 슬라이드 상품 - 박예솔
-5. 상품 상세 페이지 - 박예솔
-   - 상품 설명 - 박예솔
-   - 상세 정보 - 박예솔
-6. 마이페이지 - 하평안
-   - 적립금 - 하평안
-   - 장바구니 - 윤지수
-   - 개인정보 수정 - 하평안
-7. 결제 페이지 - 윤지수
-8. nav - 하평안
-   - 검색 필터 반응형 - 하평안
-9. footer - 하평안
+1. 로그인 페이지 : 윤지수
+2. 회원가입 페이지 : 윤지수
+3. 메인 페이지 : 박예솔
+4. 상품 상세 페이지 : 박예솔
+5. 장바구니 : 윤지수
+6. 결제 페이지 : 윤지수
+7. 마이페이지 : 하평안
+8. Nav : 하평안
+9. Footer : 하평안
 
+### 3-3 추가 구현 사항
+
+1. 예솔
+- 
+- 
+
+2. 지수
+- 
+-
+ 
+3. 평안
+- 검색 필터 기능
+- Nav 카테고리
+- 배송지 수정 페이지
+- 개인 정보 수정 페이지
+- 결제 내역 페이지
+
+---
+# 기능 구현 영상
+
+| ??? | <img width=50% src=https://gif> | 박예솔 |
+| :--: | :--: | :--: |
+| ??? | <img width=50% src=https://gif> | 박예솔 |
+| ??? | <img width=50% src=https://gif> | 윤지수 |
+| ??? | <img width=50% src=https://gif> | 윤지수 |
+| Nav | <img width=50% src=https://gif> | 하평안 |
+| 마이페이지 | <img width=50% src=gif> | 하평안 |
+
+
+---
+# 협업 툴
+
+<div>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
+<img src="https://img.shields.io/badge/Slack-4A154B?style=flat&logo=Slack&logoColor=white"/>
+<img src="https://img.shields.io/badge/Trello-0052CC?style=flat&logo=Trello&logoColor=white"/>
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=Notion&logoColor=white"/>
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white"/>
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=flat&logo=Visual Studio Code&logoColor=white"/>
+</div>
+
+---
+# 기술 스택
+
+|JavaScript|React|scss|esLint|Prettier|
+| :--: | :--: | :--: | :--: | :--: |
+| <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/sass-icon.svg" width="65" height="65" /></div> | <img src="https://techstack-generator.vercel.app/eslint-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/prettier-icon.svg" alt="icon" width="65" height="65" /> |
+
+---
 ### Reference
 
 이 프로젝트는 마켓컬리 사이트를 참조하여 학습목적으로 만들었습니다.
