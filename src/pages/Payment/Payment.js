@@ -55,32 +55,32 @@ const Payment = () => {
     } else return 0;
   };
 
+  console.log(cartProducts);
   const handlePayBtn = (e) => {
     e.preventDefault();
-    cartProducts.map((el) => {
-      const { cartId, productId, quantity } = el;
-      fetch('http://10.58.52.62:3000/orders', {
-        method: 'POST',
-        headers: {
-          Authorization: localStorage.getItem('Token'),
-          'Content-Type': 'application/json; charset=utf-8',
-        },
-        body: JSON.stringify({
-          totalPrice: calTotalPrice(),
-          cartInfos: [
-            {
-              cartId: cartId,
-              productId: productId,
-              quantity: quantity,
-            },
-          ],
-        }),
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result);
-        });
+    let newCartProducts = cartProducts.map((product) => {
+      return {
+        cartId: product.cartId,
+        productId: product.productId,
+        quantity: product.quantity,
+      };
     });
+
+    fetch('http://10.58.52.62:3000/orders', {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('Token'),
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+      body: JSON.stringify({
+        totalPrice: calTotalPrice(),
+        cartInfos: newCartProducts,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+      });
   };
 
   if (cartProducts.length === 0) return null;
