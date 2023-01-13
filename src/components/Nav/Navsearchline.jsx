@@ -53,7 +53,9 @@ const Navsearchline = () => {
           alt="navLocationPinIcon"
         />
         <img src={Heart} className="navHeartIcon" alt="navHeartIcon" />
-        <img src={Cart} className="navCartIcon" alt="navCartIcon" />
+        <a href="/cart">
+          <img src={Cart} className="navCartIcon" alt="navCartIcon" />
+        </a>
       </div>
     </div>
   );

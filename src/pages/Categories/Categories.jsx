@@ -16,7 +16,6 @@ const Categories = () => {
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, [searchParams.length, searchParams]);
-
   return (
     <div>
       {categories.map((product) => (
