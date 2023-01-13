@@ -3,6 +3,7 @@ import './MypageUserInfo.scss';
 
 const MypageUserInfo = () => {
   const [userAddressData, setUserAddressData] = useState([]);
+  const [info, setInfo] = useState('');
   const [userNewPwd, setUserNewPwd] = useState({
     oldPassword: '',
     newPassword: '',
@@ -27,7 +28,15 @@ const MypageUserInfo = () => {
           oldPassword: oldPassword,
           newPassword: againPassword,
         }),
-      });
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.message === 'UPDATE_USER_PASSWORD_SUCCESS') {
+            alert('수정 완료!!');
+          } else if (res.message == undefined) {
+            alert('비밀번호를 확인해주세요.');
+          }
+        });
     }
   };
 
