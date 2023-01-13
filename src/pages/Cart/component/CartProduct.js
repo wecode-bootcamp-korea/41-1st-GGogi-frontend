@@ -34,7 +34,9 @@ const CartProduct = ({
             {selectedItemIdArr && selectedItemIdArr.length}
           </span>
           <span className="slash"> / </span>
-          <span className="wholeQuantity">{cartList && cartList.length}</span>
+          <span className="wholeQuantity">
+            {cartList ? cartList.length : 0}
+          </span>
         </div>
         <div className="stick">|</div>
         <div className="deleteBtnSection">
