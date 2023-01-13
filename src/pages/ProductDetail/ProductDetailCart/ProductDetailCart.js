@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductDetailCart.scss';
 import { VscHeart } from 'react-icons/vsc';
 import { BsBell } from 'react-icons/bs';
 
 const ProductDetailCart = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
   const { id, name, price } = product;
   const plusBtn = () => {
     setQuantity(quantity + 1);
@@ -27,9 +29,15 @@ const ProductDetailCart = ({ product }) => {
       }),
     })
       .then((res) => res.json())
-      .then();
+      .then((result) => {
+        if (result.message === 'CARTS_CREATED_SUCCESS') {
+          alert('장바구니에 추가 완료');
+          navigate(`/cart`);
+        } else {
+          alert('장바구니에 추가 실패');
+        }
+      });
   };
-
   return (
     <div className="productDetailCart">
       <div className="tableRow">
