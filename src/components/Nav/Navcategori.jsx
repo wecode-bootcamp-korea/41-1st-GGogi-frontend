@@ -42,13 +42,12 @@ const Navcategori = () => {
       .then((response) => response.json())
       .then((data) => setCategoriData(data));
   }, []);
-
   return (
     <div className={scrollActive ? ' navCategorifixed' : 'navCategori'}>
       <div className="categoriStyle">
         <div className="sideCategori">
           <button className="categori">
-            <i className="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars" />
             카테고리
           </button>
           <ul className="middleCategori">

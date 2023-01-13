@@ -76,7 +76,9 @@ const Payment = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === 'ORDER_SUCCESS') {
+        if (result.message === 'NOT_ENOUGH_POINT') {
+          alert('적립금이 부족합니다.');
+        } else if (result.message === 'ORDER_SUCCESS') {
           alert('주문이 완료되었습니다.');
           navigate('/mypage');
         }
