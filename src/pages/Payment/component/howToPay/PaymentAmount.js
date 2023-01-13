@@ -1,7 +1,7 @@
 import React from 'react';
 import './PaymentAmount.scss';
 
-const PaymentAmount = ({ calTotalPrice }) => {
+const PaymentAmount = ({ calTotalPrice, userPoint }) => {
   const PAYMENT_AMOUNT = [
     {
       id: 1,
@@ -16,12 +16,13 @@ const PaymentAmount = ({ calTotalPrice }) => {
     {
       id: 3,
       title: '적립금 사용',
-      price: 0,
+      price: parseInt(userPoint).toLocaleString(),
     },
     {
       id: 4,
       title: '최종결제금액',
-      price: calTotalPrice && parseInt(calTotalPrice()).toLocaleString(),
+      price: 0,
+      // price: calTotalPrice && parseInt(calTotalPrice()).toLocaleString(),
     },
   ];
   return (

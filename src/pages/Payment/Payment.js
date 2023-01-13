@@ -15,7 +15,6 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
-  const [usingPoint, setUsingPoint] = useState();
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
@@ -82,10 +81,6 @@ const Payment = () => {
       });
   };
 
-  const handleUsingPoint = () => {
-    setUsingPoint(userPoint);
-  };
-
   if (cartProducts.length === 0) return null;
 
   return (
@@ -99,13 +94,7 @@ const Payment = () => {
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay
-          userPoint={userPoint}
-          usingPoint={usingPoint}
-          setUsingPoint={setUsingPoint}
-          handleUsingPoint={handleUsingPoint}
-          calTotalPrice={calTotalPrice}
-        />
+        <HowToPay userPoint={userPoint} calTotalPrice={calTotalPrice} />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
