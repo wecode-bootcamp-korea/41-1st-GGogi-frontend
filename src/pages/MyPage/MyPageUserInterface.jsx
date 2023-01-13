@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import React, { useState, useEffect } from 'react';
 import './MyPageUserInterface.scss';
 import '../../styles/common.scss';

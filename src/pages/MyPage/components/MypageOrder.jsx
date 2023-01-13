@@ -59,7 +59,7 @@ const MypageOrder = ({ orderList }) => {
                       </div>
                       <div className="cartItemListDiv">
                         <div className="orderFontSize">결제금액 : </div>
-                        <div className="getCartItem">29,900원</div>
+                        <div className="getCartItem">38,700원</div>
                       </div>
                     </div>
                   </div>

@@ -5,6 +5,13 @@ import './MypageAddress.scss';
 
 const MypageAddress = () => {
   const [userAddressData, setUserAddressData] = useState([]);
+  const [isAddress, setIsAddress] = useState('');
+
+  const handleIsAddress = (e) => {
+    setIsAddress(e.target.value);
+  };
+
+  const postAddress = userAddressData;
 
   useEffect(() => {
     fetch(`http://10.58.52.62:3000/users/address`, {
@@ -17,6 +24,19 @@ const MypageAddress = () => {
       .then((response) => response.json())
       .then((data) => setUserAddressData(data.data[0]));
   }, []);
+
+  const handleAddressData = () => {
+    fetch(`http://10.58.52.62:3000/users/address`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Authorization: localStorage.getItem('Token'),
+      },
+      body: JSON.stringify({
+        address: isAddress,
+      }),
+    });
+  };
 
   const { address, name, phone } = userAddressData;
 
@@ -52,6 +72,7 @@ const MypageAddress = () => {
           </div>
           <input
             className="modifyAddress blockpaddingmargin inputCreateBorderCss"
+            onChange={handleIsAddress}
             placeholder={address}
           />
           {}
@@ -60,7 +81,10 @@ const MypageAddress = () => {
             {userPhoneNum}
           </div>
           <div className="postDetail blockpaddingmargin">샛별배송</div>
-          <div className="modifypencil blockpaddingmargin">
+          <div
+            className="modifypencil blockpaddingmargin"
+            onClick={handleAddressData}
+          >
             <HiOutlinePencil />
           </div>
         </div>
