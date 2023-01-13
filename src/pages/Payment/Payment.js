@@ -5,7 +5,9 @@ import OrderAddress from './component/ordererInfo/OrderAddress';
 import HowToPay from './component/howToPay/HowToPay';
 import PersonalInfo from './component/personalInfo/PersonalInfo';
 import './Payment.scss';
-
+// 모두 사용을 눌렀을 때 적립금 전액으로 value 바뀌게 하기
+// 적립금 사용에 value 표시
+// 최종결제금액 - 적립금 사용
 const Payment = () => {
   const [cartProducts, setCartProducts] = useState([]);
   const [userAddress, setUserAddress] = useState();
@@ -13,7 +15,7 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
-  const { availlablePoint, setAvailablePoint } = useState(0);
+  const [availlablePoint, setAvailablePoint] = useState(0);
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
@@ -41,10 +43,6 @@ const Payment = () => {
       });
   }, []);
 
-  const usePoint = () => {
-    setAvailablePoint(userPoint);
-  };
-
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -55,6 +53,7 @@ const Payment = () => {
     } else return 0;
   };
 
+  console.log(calTotalPrice());
   console.log(cartProducts);
   const handlePayBtn = (e) => {
     e.preventDefault();
