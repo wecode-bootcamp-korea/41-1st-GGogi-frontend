@@ -39,13 +39,7 @@ const MypageOrder = ({ orderList }) => {
         {orderList &&
           orderList.map(
             (
-              {
-                orderNum,
-                orderStatus,
-                productName,
-                thumbnailImage,
-                totalPrice,
-              },
+              { orderNum, orderStatus, productName, thumbnailImage, price },
               idx
             ) => {
               return (
@@ -67,7 +61,9 @@ const MypageOrder = ({ orderList }) => {
                       </div>
                       <div className="cartItemListDiv">
                         <div className="orderFontSize">결제금액 : </div>
-                        <div className="getCartItem">{totalPrice}</div>
+                        <div className="getCartItem">
+                          {parseInt(price).toLocaleString()}원
+                        </div>
                       </div>
                     </div>
                   </div>
