@@ -32,7 +32,7 @@ const ShoppingModal = ({ product, isShoppingModal }) => {
           alert('장바구니에 추가 완료');
           isShoppingModal();
         } else {
-          alert('장바구니에 추가 실패');
+          alert('장바구니에 추가 실패!');
         }
       });
   };
