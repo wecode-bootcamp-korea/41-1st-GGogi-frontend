@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// [TODO] 체크 아이콘 컴포넌트 merge 되면 사용하기!
 import { BsCheckCircleFill, BsCheckCircle } from 'react-icons/bs';
 import { GrRotateRight } from 'react-icons/gr';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';

@@ -22,7 +22,6 @@ const PaymentAmount = ({ calTotalPrice, userPoint }) => {
       id: 4,
       title: '최종결제금액',
       price: 0,
-      // price: calTotalPrice && parseInt(calTotalPrice()).toLocaleString(),
     },
   ];
   return (

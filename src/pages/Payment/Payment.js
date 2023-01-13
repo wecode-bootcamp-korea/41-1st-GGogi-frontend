@@ -6,9 +6,7 @@ import OrderAddress from './component/ordererInfo/OrderAddress';
 import HowToPay from './component/howToPay/HowToPay';
 import PersonalInfo from './component/personalInfo/PersonalInfo';
 import './Payment.scss';
-// 모두 사용을 눌렀을 때 적립금 전액으로 value 바뀌게 하기
-// 적립금 사용에 value 표시
-// 최종결제금액 - 적립금 사용
+
 const Payment = () => {
   const [cartProducts, setCartProducts] = useState([]);
   const [userAddress, setUserAddress] = useState();
