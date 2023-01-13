@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AlertModal from '../../components/AlertModal/AlertModal';
 import './ShoppingModal.scss';
 
 const ShoppingModal = ({ product, isShoppingModal }) => {
@@ -26,7 +27,13 @@ const ShoppingModal = ({ product, isShoppingModal }) => {
       }),
     })
       .then((res) => res.json())
-      .then();
+      .then((result) => {
+        if (result.message === 'CARTS_CREATED_SUCCESS') {
+          alert('장바구니에 추가 완료');
+        } else {
+          alert('장바구니에 추가 실패');
+        }
+      });
   };
 
   return (
