@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './PlusMinusBtn.scss';
 
-const PlusMinusBtn = ({ num }) => {
-  const [quantity, setQuantity] = useState(num);
-
+const PlusMinusBtn = () => {
+  const [quantity, setQuantity] = useState(1);
   const plusCount = () => {
     return setQuantity((prev) => prev + 1);
   };
