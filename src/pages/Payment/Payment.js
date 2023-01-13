@@ -15,7 +15,7 @@ const Payment = () => {
   const [userName, setUserName] = useState();
   const [userPhone, setUserPhone] = useState();
   const [userPoint, setUserPoint] = useState();
-  const [availlablePoint, setAvailablePoint] = useState(0);
+  const [usingPoint, setUsingPoint] = useState();
 
   useEffect(() => {
     fetch('http://10.58.52.62:3000/orders', {
@@ -53,8 +53,6 @@ const Payment = () => {
     } else return 0;
   };
 
-  console.log(calTotalPrice());
-  console.log(cartProducts);
   const handlePayBtn = (e) => {
     e.preventDefault();
     let newCartProducts = cartProducts.map((product) => {
@@ -78,8 +76,14 @@ const Payment = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        if (result.message === 'ORDER_SUCCESS') {
+          alert('주문이 완료되었습니다.');
+        }
       });
+  };
+
+  const handleUsingPoint = () => {
+    setUsingPoint(userPoint);
   };
 
   if (cartProducts.length === 0) return null;
@@ -95,7 +99,13 @@ const Payment = () => {
           userEmail={userEmail}
         />
         <OrderAddress userAddress={userAddress} />
-        <HowToPay userPoint={userPoint} calTotalPrice={calTotalPrice} />
+        <HowToPay
+          userPoint={userPoint}
+          usingPoint={usingPoint}
+          setUsingPoint={setUsingPoint}
+          handleUsingPoint={handleUsingPoint}
+          calTotalPrice={calTotalPrice}
+        />
         <PersonalInfo />
       </div>
       <div className="paymentBtnSection">
