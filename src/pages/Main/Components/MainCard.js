@@ -7,10 +7,10 @@ import './MainCard.scss';
 const MainCard = () => {
   const [productCard, setProductCard] = useState([]);
   const [searchProductCard, setSearchProductCard] = useSearchParams();
-  const offset = searchProductCard.get('offset');
+  const offset = searchProductCard.get('offset', 0);
 
   useEffect(() => {
-    fetch(`http://10.58.52.62:3000/products?offset=${offset}&limit=4`)
+    fetch(`http://15.164.226.7:3000/products?offset=${offset}&limit=4`)
       .then((response) => response.json())
       .then((result) => setProductCard(result));
   }, [offset]);

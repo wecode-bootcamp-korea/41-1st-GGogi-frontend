@@ -28,7 +28,9 @@ const ProductCardMini = ({ product }) => {
         onClick={() => showMiniProduct(product.id)}
       >
         <div className="productCardMinititle">{name}</div>
-        <div className="productCardMiniprice">{price}원</div>
+        <div className="productCardMiniprice">
+          {parseInt(price).toLocaleString()}원
+        </div>
       </div>
       <div className="productCardMiniCart">
         <button className="productCart2Btn" onClick={isShoppingModal2}>

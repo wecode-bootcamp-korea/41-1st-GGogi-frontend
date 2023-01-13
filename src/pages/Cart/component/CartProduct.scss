@@ -73,6 +73,12 @@
     }
   }
 
+  .emptyBaseketSection {
+    @include flexRow(center, center);
+    height: 200px;
+    font-size: 18px;
+    color: $border-color;
+  }
   .cartLineUnder {
     width: 100%;
     border: 1px solid $border-color;
