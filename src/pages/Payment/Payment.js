@@ -60,6 +60,7 @@ const Payment = () => {
         cartId: product.cartId,
         productId: product.productId,
         quantity: product.quantity,
+        price: product.price * product.quantity,
       };
     });
 
