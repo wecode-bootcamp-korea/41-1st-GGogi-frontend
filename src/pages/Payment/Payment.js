@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import OrderProduct from './component/orderList/OrderProduct';
 import OrdererInfo from './component/ordererInfo/OrdererInfo';
 import OrderAddress from './component/ordererInfo/OrderAddress';
@@ -42,6 +43,8 @@ const Payment = () => {
       });
   }, []);
 
+  const navigate = useNavigate();
+
   const calTotalPrice = () => {
     let totalPriceArr = [];
     if (cartProducts) {
@@ -77,6 +80,7 @@ const Payment = () => {
       .then((result) => {
         if (result.message === 'ORDER_SUCCESS') {
           alert('주문이 완료되었습니다.');
+          navigate('/mypage');
         }
       });
   };
@@ -99,7 +103,7 @@ const Payment = () => {
       </div>
       <div className="paymentBtnSection">
         <button className="paymentBtn" onClick={handlePayBtn}>
-          0원 결제하기
+          결제하기
         </button>
         <div className="paymentInfo">
           [주문완료]상태일 경우에만 주문 취소 가능합니다.

@@ -16,7 +16,7 @@ const PaymentAmount = ({ calTotalPrice, userPoint }) => {
     {
       id: 3,
       title: '적립금 사용',
-      price: parseInt(userPoint).toLocaleString(),
+      price: parseInt(calTotalPrice()).toLocaleString(),
     },
     {
       id: 4,

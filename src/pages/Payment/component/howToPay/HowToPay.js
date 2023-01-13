@@ -22,7 +22,7 @@ const HowToPay = ({ userPoint, calTotalPrice }) => {
                 type="text"
                 className="usePointInput"
                 placeholder="0"
-                defaultValue={parseInt(userPoint).toLocaleString()}
+                defaultValue={parseInt(calTotalPrice()).toLocaleString()}
               />
               <button className="allUseBtn">모두사용</button>
               <div className="pointInfo">
