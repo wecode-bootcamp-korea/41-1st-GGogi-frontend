@@ -2,24 +2,6 @@ import React, { useState } from 'react';
 import './MypageOrder.scss';
 
 const MypageOrder = ({ orderList }) => {
-  const [userAddressData, setUserAddressData] = useState([]);
-
-  const userAddressPostData = (e) => {
-    e.preventDefault();
-
-    fetch(`http://10.58.52.62:3000/users/info`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        Authorization: localStorage.getItem('Token'),
-      },
-      body: JSON.stringify({
-        address: 'update title',
-      }),
-    })
-      .then((response) => response.json())
-      .then((userAddress) => setUserAddressData(userAddress.data[0]));
-  };
   return (
     <div className="mypageOrder">
       <div className="ordersHaader">
