@@ -93,5 +93,9 @@
       border: 1px solid $basic-color;
       cursor: pointer;
     }
+    .deleteID:hover {
+      background-color: $basic-color;
+      color: white;
+    }
   }
 }

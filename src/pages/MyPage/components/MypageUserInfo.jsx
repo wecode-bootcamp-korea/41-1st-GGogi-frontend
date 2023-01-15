@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MypageUserInfo.scss';
 
 const MypageUserInfo = () => {
   const [userAddressData, setUserAddressData] = useState([]);
+  const [isSuccessMessage, setIssuccessMassage] = useState([]);
   const [userNewPwd, setUserNewPwd] = useState({
     oldPassword: '',
     newPassword: '',
     againPassword: '',
   });
+  const navigate = useNavigate();
+
+  const goToMypage = () => {
+    navigate(0);
+  };
 
   const passwordValue = (e) => {
     const { name, value } = e.target;
@@ -27,8 +34,14 @@ const MypageUserInfo = () => {
           oldPassword: oldPassword,
           newPassword: againPassword,
         }),
-      });
+      })
+        .then((res) => res.stringify.json())
+        .then((res) => setIssuccessMassage(res));
+      if (isSuccessMessage.massage === 'UPDATE_USER_PASSWORD_SUCCESS') {
+        alert('비밀번호를 변경하였습니다.');
+      }
     }
+    return goToMypage();
   };
 
   const { oldPassword, newPassword, againPassword } = userNewPwd;
@@ -92,8 +105,6 @@ const MypageUserInfo = () => {
     },
   ];
 
-  console.log(userNewPwd);
-
   return (
     <div className="mypageUserModify">
       <div className="userModifyHaader">
@@ -124,6 +135,7 @@ const MypageUserInfo = () => {
                     name={name}
                     type={type}
                     placeholder={placeholder}
+                    disabled
                   />
                 )}
               </div>

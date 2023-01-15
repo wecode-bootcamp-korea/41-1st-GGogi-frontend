@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { HiOutlinePencil } from 'react-icons/hi';
 import { AiOutlineCheck } from 'react-icons/ai';
 import './MypageAddress.scss';
@@ -6,10 +7,15 @@ import './MypageAddress.scss';
 const MypageAddress = () => {
   const [userAddressData, setUserAddressData] = useState([]);
   const [isAddress, setIsAddress] = useState('');
+  const navigete = useNavigate();
+  const refreshMypage = () => {
+    navigete(0);
+  };
+
   const handleIsAddress = (e) => {
     setIsAddress(e.target.value);
   };
-  const postAddress = userAddressData;
+
   useEffect(() => {
     fetch(`http://10.58.52.62:3000/users/address`, {
       method: 'GET',
@@ -21,6 +27,7 @@ const MypageAddress = () => {
       .then((response) => response.json())
       .then((data) => setUserAddressData(data.data[0]));
   }, []);
+
   const handleAddressData = () => {
     fetch(`http://10.58.52.62:3000/users/address`, {
       method: 'PATCH',
@@ -35,14 +42,17 @@ const MypageAddress = () => {
       .then((res) => res.json())
       .then((res) => {
         if (res.message === 'UPDATE_USER_ADDRESS_SUCCESS') {
-          alert('수정 완료');
+          alert('배송지를 변경하였습니다!');
         }
+        return refreshMypage();
       });
   };
+
   const { address, name, phone } = userAddressData;
   const phoneline = (e) =>
     e && e.replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
   const userPhoneNum = phoneline(phone);
+
   return (
     <div className="mypageAddress">
       <div className="addressHaader">
