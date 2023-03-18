@@ -79,18 +79,6 @@
 - 결제 내역 페이지
 
 ---
-# 기능 구현 영상
-
-| ??? | <img width=50% src=https://gif> | 박예솔 |
-| :--: | :--: | :--: |
-| ??? | <img width=50% src=https://gif> | 박예솔 |
-| ??? | <img width=50% src=https://gif> | 윤지수 |
-| ??? | <img width=50% src=https://gif> | 윤지수 |
-| Nav | <img width=50% src=https://gif> | 하평안 |
-| 마이페이지 | <img width=50% src=gif> | 하평안 |
-
-
----
 # 협업 툴
 
 <div>
